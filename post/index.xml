@@ -6,7 +6,7 @@
         <description>Recent content in Posts on 小李的神秘空间</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>梅利</copyright>
+        <copyright>『呼吸别停』</copyright>
         <lastBuildDate>Wed, 11 Sep 2024 22:03:09 +0800</lastBuildDate><atom:link href="https://hugo-add.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Aaaaa</title>
         <link>https://hugo-add.github.io/p/aaaaa/</link>
@@ -22,8 +22,20 @@
         
         <guid>https://hugo-add.github.io/p/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAhugo%E5%8D%9A%E5%AE%A2/</guid>
         <description>&lt;h3 id=&#34;hello-word&#34;&gt;Hello Word
-&lt;/h3&gt;&lt;p&gt;###文章遵循md马克党语法&lt;/p&gt;
-</description>
+&lt;/h3&gt;&lt;h3 id=&#34;文章遵循md马克党语法&#34;&gt;文章遵循md马克党语法
+&lt;/h3&gt;&lt;h1 id=&#34;自动部署步骤&#34;&gt;自动部署步骤
+&lt;/h1&gt;&lt;h4 id=&#34;第一步&#34;&gt;第一步
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;第二步&#34;&gt;第二步
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;update&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;第三步&#34;&gt;第三步
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;git push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;本地运行&#34;&gt;本地运行
+&lt;/h1&gt;&lt;h4 id=&#34;hugo-server--d&#34;&gt;hugo server -D
+&lt;/h4&gt;</description>
         </item>
         <item>
         <title>MyFirstBlog</title>
