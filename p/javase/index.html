@@ -1,0 +1,2969 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="JavaSE 基础 基础讲解 cmd命令\n1：netstat -ano | findstr &ldquo;端口号&rdquo; -|- &ldquo;软件&rdquo; -version 查看软件安装情况\n2：服务-server 启动服务 -|- Ctrl+shift+R 打开替换面板\n3：盘符：(回车可以切换盘符) -|- dir 查看路径 cd 切换目录 cd.. 回到上级\n4：ipconfig:查看本机IP地址 -|- 环境变量：系统找文件的路径\n5：#include&lt;stdio.h&gt; #define 定义常量\n6：cmd里面 javac &hellip;.java 编译Java文件 -|- Java &hellip; 运行.class\n7：JDK:Java开发工具包；JRE:Java运行环境；JVM:Java运行的地方(虚拟机)\n8：JDK包含JRE:JRE包含JVM\n9：引用数据类型和基本数据类型 -|- 成员变量和局部变量\n">
+<title>JavaSE</title>
+
+<link rel='canonical' href='https://hugo-add.github.io/p/javase/'>
+
+<link rel="stylesheet" href="/scss/style.min.20102724f4df2edd9fef3944ca03ad30862ed6f1a669298afddfa5260f83fe57.css"><meta property='og:title' content="JavaSE">
+<meta property='og:description' content="JavaSE 基础 基础讲解 cmd命令\n1：netstat -ano | findstr &ldquo;端口号&rdquo; -|- &ldquo;软件&rdquo; -version 查看软件安装情况\n2：服务-server 启动服务 -|- Ctrl+shift+R 打开替换面板\n3：盘符：(回车可以切换盘符) -|- dir 查看路径 cd 切换目录 cd.. 回到上级\n4：ipconfig:查看本机IP地址 -|- 环境变量：系统找文件的路径\n5：#include&lt;stdio.h&gt; #define 定义常量\n6：cmd里面 javac &hellip;.java 编译Java文件 -|- Java &hellip; 运行.class\n7：JDK:Java开发工具包；JRE:Java运行环境；JVM:Java运行的地方(虚拟机)\n8：JDK包含JRE:JRE包含JVM\n9：引用数据类型和基本数据类型 -|- 成员变量和局部变量\n">
+<meta property='og:url' content='https://hugo-add.github.io/p/javase/'>
+<meta property='og:site_name' content='小李的神秘空间'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-19T11:15:10&#43;08:00'/><meta property='article:modified_time' content='2024-09-19T11:15:10&#43;08:00'/><meta property='og:image' content='https://hugo-add.github.io/p/javase/a.jpg' />
+<meta name="twitter:title" content="JavaSE">
+<meta name="twitter:description" content="JavaSE 基础 基础讲解 cmd命令\n1：netstat -ano | findstr &ldquo;端口号&rdquo; -|- &ldquo;软件&rdquo; -version 查看软件安装情况\n2：服务-server 启动服务 -|- Ctrl+shift+R 打开替换面板\n3：盘符：(回车可以切换盘符) -|- dir 查看路径 cd 切换目录 cd.. 回到上级\n4：ipconfig:查看本机IP地址 -|- 环境变量：系统找文件的路径\n5：#include&lt;stdio.h&gt; #define 定义常量\n6：cmd里面 javac &hellip;.java 编译Java文件 -|- Java &hellip; 运行.class\n7：JDK:Java开发工具包；JRE:Java运行环境；JVM:Java运行的地方(虚拟机)\n8：JDK包含JRE:JRE包含JVM\n9：引用数据类型和基本数据类型 -|- 成员变量和局部变量\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://hugo-add.github.io/p/javase/a.jpg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu3989462456473419747.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">小李的神秘空间</a></h1>
+            <h2 class="site-description">欢迎来到我的博客网站,该网站基于hugo&#43;github搭建,主要用于分享学习使用,有兴趣可以邮箱联系</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1298911982'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.549px" height="438.549px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549;"
+	 xml:space="preserve">
+<g>
+	<path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365
+		c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63
+		c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996
+		c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136
+		c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559
+		c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559
+		c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997
+		c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851
+		c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136
+		c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41
+		c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126
+		c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817
+		c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994
+		c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849
+		c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24
+		c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979
+		c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146
+		c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995
+		c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906
+		C438.536,184.851,428.728,148.168,409.132,114.573z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://Twitter.com/'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" ?><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#00aade;}.cls-2{fill:#fff;}</style></defs><title/><g data-name="6-twitter" id="_6-twitter"><rect class="cls-1" height="64" rx="11.2" ry="11.2" transform="translate(64 64) rotate(180)" width="64"/><path class="cls-2" d="M47.2,20.8a8,8,0,0,0,4-4.8c-1.6,1.6-5,2.13-5,2.13A8,8,0,0,0,32.37,25.6H32a23.45,23.45,0,0,1-16.8-8.8S10.4,23.2,17.6,28c0,0-3.2,0-4-.8,0,0-.8,4.8,6.4,8a3.86,3.86,0,0,1-3.2,0c0,3.09,3.22,5.6,7.2,5.6,0,2.21-5.37,4-12,4C22.4,52,47.2,50.4,48.8,23.2l4-4Z"/></g></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#基础讲解">基础讲解</a></li>
+    <li><a href="#封装继承">封装/继承</a></li>
+    <li><a href="#多态">多态</a></li>
+    <li><a href="#接口">接口</a></li>
+    <li><a href="#内部类">内部类</a></li>
+    <li><a href="#图形ui">图形UI</a></li>
+    <li><a href="#类">类</a></li>
+    <li><a href="#biginteger--大整数br">Biginteger  大整数<br></a></li>
+    <li><a href="#bigdecimabr">BigDecima<br></a></li>
+    <li><a href="#正则表达式br">正则表达式<br></a></li>
+    <li><a href="#时间br">时间<br></a></li>
+    <li><a href="#包装类br">包装类<br></a></li>
+    <li><a href="#算法br">算法<br></a></li>
+    <li><a href="#arrays-数组操作br">Arrays 数组操作<br></a></li>
+    <li><a href="#函数式编程br">函数式编程<br></a></li>
+    <li><a href="#集合进阶-类br">集合进阶-类<br></a>
+      <ol>
+        <li><a href="#collection单列集合br">Collection单列集合<br></a></li>
+        <li><a href="#list集合br">List集合<br></a>
+          <ol>
+            <li><a href="#arraylist集合br">ArrayList集合<br></a></li>
+            <li><a href="#linkedlist集合br">LinkedList集合<br></a></li>
+          </ol>
+        </li>
+        <li><a href="#set集合br">Set集合<br></a>
+          <ol>
+            <li><a href="#hashset集合br">HashSet集合<br></a></li>
+            <li><a href="#treeset集合br">TreeSet集合<br></a></li>
+          </ol>
+        </li>
+        <li><a href="#map双列集合br">Map双列集合<br></a>
+          <ol>
+            <li><a href="#hashmap集合br">HashMap集合<br></a></li>
+          </ol>
+        </li>
+        <li><a href="#源码分析br">源码分析<br></a></li>
+      </ol>
+    </li>
+    <li><a href="#集合进阶-泛型br">集合进阶-泛型<br></a></li>
+    <li><a href="#collections工具类-br">Collections工具类 <br></a></li>
+    <li><a href="#可变参数不可变参数br">可变参数/不可变参数<br></a></li>
+    <li><a href="#stream流br">Stream流<br></a></li>
+    <li><a href="#方法引用br">方法引用<br></a></li>
+    <li><a href="#异常br">异常<br></a></li>
+    <li><a href="#filebr">File<br></a></li>
+    <li><a href="#io流br">IO流<br></a>
+      <ol>
+        <li><a href="#字节流">字节流</a></li>
+        <li><a href="#字符流br">字符流<br></a></li>
+        <li><a href="#高级流br">高级流<br></a></li>
+      </ol>
+    </li>
+    <li><a href="#权重br">权重<br></a></li>
+    <li><a href="#配置文件br">配置文件<br></a></li>
+    <li><a href="#乱码问题br">乱码问题<br></a></li>
+    <li><a href="#多线程br">多线程<br></a></li>
+    <li><a href="#网络编程br">网络编程<br></a></li>
+    <li><a href="#反射br">反射<br></a></li>
+    <li><a href="#动态代理br">动态代理<br></a></li>
+    <li><a href="#数据结构br">数据结构<br></a></li>
+    <li><a href="#问题br">问题<br></a></li>
+    <li><a href="#快捷键br">快捷键<br></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/javase/">
+                <img src="/p/javase/a_hu8193327906004575727.jpg"
+                        srcset="/p/javase/a_hu8193327906004575727.jpg 800w, /p/javase/a_hu5867528222832571404.jpg 1600w"
+                        width="800" 
+                        height="504" 
+                        loading="lazy"
+                        alt="Featured image of post JavaSE" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/javase/" style="background-color: #2a9d8f; color: #fff;">
+                JavaSE
+            </a>
+        
+            <a href="/categories/%E7%AC%AC%E4%B8%80%E6%9C%9F/" style="background-color: #2a9d8f; color: #fff;">
+                第一期
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/javase/">JavaSE</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-09-19</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="javase-基础">JavaSE 基础
+</h1><h2 id="基础讲解">基础讲解
+</h2><p><strong>cmd命令</strong><br>
+1：netstat  -ano | findstr &ldquo;端口号&rdquo;   -|-   &ldquo;软件&rdquo; -version  查看软件安装情况<br>
+2：服务-server 启动服务   -|-   Ctrl+shift+R 打开替换面板<br>
+3：盘符：(回车可以切换盘符)   -|-   dir 查看路径  cd 切换目录  cd.. 回到上级<br>
+4：ipconfig:查看本机IP地址   -|-   环境变量：系统找文件的路径<br>
+5：#include&lt;stdio.h&gt;    #define 定义常量<br>
+6：cmd里面  javac  &hellip;.java 编译Java文件   -|-   Java  &hellip; 运行.class<br>
+7：JDK:Java开发工具包；JRE:Java运行环境；JVM:Java运行的地方(虚拟机)<br>
+8：JDK包含JRE:JRE包含JVM<br>
+9：引用数据类型和基本数据类型   -|-   成员变量和局部变量<br></p>
+<p><strong>关键字</strong><br>
+1：整数 小数 字符串 字符 布尔 空<br>
+2：long:数据值后面加上L   -|-   float:数据值后面加上F<br>
+3：class:后面跟随类名   -|-   ＇t＇:制表符，补齐八个<br>
+4：continue/break:跳过本次循环/结束循环   -|-   int [ ]=new int[ ]:定义动态数组<br>
+5：int ??[ ] []=new int[ ][?]定义二维动态数组   -|-   int [ ][ ]={{}，{}}定义静态二维数组<br>
+6：类名 ??[]=new 类名[?]:封装类定义数组<br>
+7：this:成员变量[本质是调用者的地址]，在虚拟机中就是个局部变量<br>
+8：equals和equalslgnoreCase:不忽略大小写/忽略   -|-   字符串比较用==是地址用equals比较内容<br>
+9：?.charAt():字符串索引   -|-   ?.substring (int ，int):截取字符串   -|-   ?.replace(&quot;&quot;，&quot;&quot;):替换字符<br>
+10：??.toCharArray():转换字符串为字符数组<br></p>
+<p><strong>栈和堆</strong><br>
+1：栈:系统运行开辟的空间，代码的运行空间<br>
+2：堆:关键字new开辟的空间类<br>
+3：类可以看成是创建 Java 对象的模板。<br></p>
+<p><strong>方法</strong><br>
+1：void无返回值调用:有返回值调用，有参数调用:无参数调用<br>
+2：无参和有参都得写，put和get方法 [标准的Javabean]<br>
+3：方法重载:方法名一样，参数不一样<br></p>
+<p><strong>stringbuilder</strong><br>
+可以看成一个容器，内容是可变的，new创建.适应场景：字符串拼接/反转<br>
+常见方法：public StringBuilder ~~<br>
+1：append(任意类型):添加数据，并返回对象本身<br>
+2：reverse:反转容器的内容<br>
+3：public int length():返回长度<br>
+4：public String toString():把SB转成string<br></p>
+<p><strong>StringJoiner</strong><br>
+也是一个容器，创建后内容可变<br>
+常见方法:public StringJoiner ~~<br>
+(间隔符号):..<br>
+(间隔符号，开始符号，结束符号):&hellip;<br>
+add:添加数据<br>
+public int length():返回长度<br>
+public String toString():返回字符串<br></p>
+<p><strong>集合</strong><br>
+可以自动扩容<br>
+和数组区别:数组可以存基本数据类型和引用数据类型；集合存引用数据类型和包装类：数组长度固定；集合内存随时扩容或减小<br>
+泛型:限定集合中的数据类型  &lt;&gt;</p>
+<ul>
+<li>list.add(&quot;&quot;):添加元素<br></li>
+<li>list.remove(&quot; &ldquo;)/( ):删除字符串内容/删除索引内容<br></li>
+<li>list.set(  ，&rdquo;?&quot;):修改索引的内容<br></li>
+<li>list.get(?):查询索引内容<br></li>
+<li>list.size( ):集合的长度<br></li>
+</ul>
+<p><strong>javabean类</strong> 用来描述一下事物的类<br>
+<strong>测试类</strong> 用来检查其他类是否书写正确，带有main方法的类，是程序入口<br>
+<strong>工具类</strong> 不是描述，而是帮我们做事情的一些类<br></p>
+<p><strong>static静态方法</strong> <br>
+静态方法没有this<br>
+静态方法中只能调用静态<br>
+非静态可以调用静态和非静态<br></p>
+<p><strong>标号</strong><br>
+break 标号： 跳出标号循环<br>
+continue;跳出本次循环，继续下次<br>
+system.exit(0);停止虚拟机运行<br></p>
+<p><strong>链式编程</strong> 调用方法是不用接受结果，继续调用其他方法<br></p>
+<p><strong>网址</strong><br>
+URL url = new URL(&quot;&hellip;&quot;)&ndash;创建一个网址对象<br>
+URLConnection conn = url.openConnection()&ndash;链接网址<br></p>
+<h2 id="封装继承">封装/继承
+</h2><p><strong>public class  a extendz b<br></strong>
+a :子类(派生类)，b :父类(基类/超类)<br>
+只支持单继承不能多继承 ， 但是能多层继承 ， 所有类继承与 Object(系统类)<br>
+子类只能访问父类中非私有的成员<br>
+父类的构造方法不管是不是私有的子类都无法继承；父类成员变量不管是否私有都会继承，但是私有的子类无法调用；父类的成员方法非私有可以继承私有无法继承<br>
+就近原则：先在本类局部找→父类局部找逐级往上，重名的变量名就近原则<br>
+       1. this.:本类的成员，成员变量<br>
+       2. super.:父类的成员，成员变量<br></p>
+<p><strong>方法的重写</strong><br>
+父类方法在子类中要实现出来<br>
+@Override 重写注解<br>
+建议重写方法与父类保持一致<br>
+只有被添加到虚方法表中的才可以被重写<br></p>
+<p><strong>构造方法</strong><br>
+父类构造方法不会被子类继承<br>
+子类所有构造方法默认会先访问父类无参构造再执行自己<br>
+要是想父类有参构造，必须得手动书写<br></p>
+<h2 id="多态">多态
+</h2><p>前提：1.有继承/实现关系 2.有父类引用指向子类对象 3.有方法的重写<br>
+好处：父类作为参数可以接受子类的所有对象，体型多态的扩展与便利(给父类赋值后，所有子类都可以适应)<br></p>
+<p><strong>规则</strong><br></p>
+<ul>
+<li>父类 ?? = new 子类<br></li>
+<li>调用成员变量：编译看左边，运行也看左边<br>
+(成员变量定义是父类的，子类会继承，所以要看父类是否有)<br></li>
+<li>调用成员方法：编译看左边，运行看右边<br>
+(方法子类会覆盖虚方法表，所以运行要看右边)<br></li>
+</ul>
+<p><strong>优势</strong><br>
+右边(子类)可以实现解耦合，便于拓展和维护<br>
+定义时适应父类做参数，便于接收所有子类对象，提现多态拓展与便利<br></p>
+<p><strong>弊端</strong><br>
+不能调用子类的特有功能(解决方案: (子类)?? 强制转换成子类)<br></p>
+<ul>
+<li>if(a instanceof b){ }  / if(a instanceof b d){ }: <br>
+判断a是否是b类型是否可以强制转换/新特性先判读是否是b属性，是就强制转换，变量为d(比第一个省一行强制转换代码)<br></li>
+</ul>
+<p><strong>包</strong>
+包名规则:公司域名反写+包的作用，需要全部英文小写，见名知意<br>
+使用同一个包中的类不用导包，使用Java.lang包中的类时也不用导包，其他情况需要导包，如果要同时使用两个包的类，需要用全类名<br></p>
+<p><strong>final (最终)</strong><br>
+关键字final表示最终的结果无法更改，无法继承<br>
+final修饰变量内容是地址，地址无法修改，地址变量表示的内容可以修改<br>
+权限修改符<br>
+private&lt;默认/空着&lt;protected&lt;public <br>
+同一个类&lt;同一个类其他包&lt;不同包下的子类&lt;不同包下的无关类<br></p>
+<p><strong>代码块</strong><br>
+局部代码块：用不到了.随用随释放内存<br>
+构造代码块：用不到了.成员位置的代码块<br>
+静态代码块：用static修饰，随着类加载而加载，只执行一次，可以在代码初始化是做些数据<br></p>
+<p><strong>抽象类</strong>
+不确定具体方法体，该方法可以定义为抽象方法如果一个类中存在抽象方法，那这个类必须声明为抽血类<br>
+抽象修饰关键字：abstract <br>
+抽象类不用花括号<br></p>
+<p><strong>注意点</strong><br>
+抽象类不能创建对象(不能实例化) <br>
+抽象类不一定有抽象方法，有抽象方法一定是抽象类 <br>
+可以有构造方法<br>
+抽象类子类要么重写抽象类的所以抽象方法，要么是抽象类<br></p>
+<h2 id="接口">接口
+</h2><p>接口就是一种规则<br></p>
+<p><strong>定义和使用</strong><br>
+修饰关键字：interface(public interface 接口{ })<br>
+接口不能实例化<br>
+接口和类是实现关系，通过implements表示(public class 类名 implements 接口名{})<br>
+接口子类(实现类) 要么重写接口的所以抽象方法，要么是抽象类<br></p>
+<p><strong>注意</strong><br></p>
+<ol>
+<li>接口和类可以单实现也可以多实现<br></li>
+<li>public class 类名 implements 接口名1，接口名2<br></li>
+<li>实现类可以在继承一个父类的同时实现多个接口<br></li>
+<li>public class 类名 extends 父类 implements 接口名1，接口名2{}<br></li>
+<li>接口里面没有抽象对象表示当前接口是一个标记性接口<br></li>
+</ol>
+<p><strong>成员特点</strong><br>
+变量：只能是常量，修饰符: public static final <br>
+构造方法：没有<br>
+成员方法：只能是抽象方法(jdk7前的规则)，   修饰符 public abstract <br>
+jdk8开始接口新增的方法<br>
+public default/static void ???(){}<br>
+允许接口定义默认方法，需要用default修饰<br>
+作用: 解决接口升级问题<br></p>
+<p><strong>注意</strong><br></p>
+<ol>
+<li>默认方法不是抽象类，所以不用被强制重写，如果要重写，重写时不要加default <br></li>
+<li>如果实现多个接口，多个接口存在相同名字的默认方法，子类必须对该方法重写<br></li>
+<li>允许接口定义静态方法，需要用static修饰<br></li>
+<li>静态方法只能用接口名调用<br></li>
+</ol>
+<p>jdk9开始接口新增的方法<br></p>
+<ol>
+<li>私有方法 private ， 只能接口中的方法调用<br></li>
+<li>private 返回值类型 ??( ){ }<br></li>
+</ol>
+<p>给接口中的静态方法调用<br></p>
+<ol>
+<li>private static 返回值类型 ??( ){ }<br></li>
+</ol>
+<p><strong>应用</strong><br>
+想要什么对象类有什么规则就实现这个接口；一个方法参数是接口时可以传递接口所有实现类的对象称为接口多态<br>
+设计模式<br>
+适配器设计模式：解决接口与接口实现类之间的矛盾问题{用一个中间类把接口所有抽象类实现出来，然后接口实现类继承这个中间类，然后用哪个方法就重写哪个就行，不用实现全部的抽象类了}<br></p>
+<p><strong>接口和类之间的关系</strong><br>
+类与类<br>
+继承关系，只能单继承，可以多层继承<br>
+类与接口<br>
+实现关系，可以单实现也可多实现，还可以在继承一个类同时实现多个接口<br>
+接口与接口<br>
+继承关系，可单继承，也可多继承，实现类如果要实现子接口的话，需要把所有的父接口抽象类都实现<br></p>
+<h2 id="内部类">内部类
+</h2><p>在类的里面再定义一个类<br></p>
+<p><strong>特点</strong><br>
+内部类可以直接访问外部类的成员，包括私有；外部类访问内部类的成员必须创建对象<br>
+使用场景<br>
+表示B是A类的一部分，且B是单独存在没有意义<br>
+比如：汽车发动机，人的心脏<br></p>
+<p><strong>分类</strong><br>
+成员内部类.静态内部类.局部内部类(了解)  匿名内部类(掌握)<br></p>
+<p>成员内部类<br>
+可以被修饰权限符修饰<br>
+创建内部类：外部类名.内部类名 ? = new 外部类.new 内部类<br>
+注意：成员内部类jkd16之前不能定义静态变量<br>
+内部类私有化后就无法直接实现内部类对象了，可以在外部类创建后，再去实现<br>
+内部类调用重名的外部类 1.直接调用_2.用this调用_3.类名.thia.??调用<br></p>
+<p>静态内部类<br>
+注意：静态内部类是成员内部类一种，只能访问外部类中的静态变量和静态方法，如果要访问非静态的需要创建对象<br>
+创建静态内部类：外部类名.内部类名 ? = new 外部类.内部类<br>
+调用静态内部类中的方法：<br>
+非静态方法格式：先创建对象，用对象调用<br>
+静态方法格式：外部类名.内部类名.方法名<br>
+局部内部类<br>
+注意：内部类定义在方法里面就是局部内部类，外界无法直接调用需要在方法内部创建对象并使用，该类可以直接访问外部类成员也可以直接访问方法内局部变量<br></p>
+<p>匿名内部类<br>
+本质是隐藏了名字的内部类，可以写在成员位置，也可以写在局部位置<br>
+new 接口/抽象类 {&hellip;}<br>
+就是重写所以抽象对象创建的对象<br>
+包含：继承或实现，方法重写，创建对象整体就是一个类的子类对象或者接口的实现类对象<br>
+应用场景：当方法的参数是接口或者类时<br>
+以接口为例，可以传递这个接口的实现类对象<br>
+如果实现类只使用一次，可以使用匿名&hellip;简化<br></p>
+<h2 id="图形ui">图形UI
+</h2><p><strong>JFrame 界面对象</strong><br>
+JFrame a = new JFrame( );<br></p>
+<ol>
+<li>a.setSize(高，宽) 界面大小</li>
+<li>a.setTitle(&quot; &ldquo;) 界面标题</li>
+<li>a.setAlwaysOnTop(true) 界面置顶</li>
+<li>a.setLocationRelativeTo(null) 设置页面居中</li>
+<li>a.setDefaultCloseOperation(3) 设置关闭方式</li>
+<li>a.setLayout(null) 设置取消默认放置内容方式</li>
+<li>a.setVisible(ture/false) 是否显示</li>
+<li>setIconImage(Toolkit.getDefaultToolkit().getImage(&hellip;.));</li>
+</ol>
+<p><strong>JMenuBar 菜单对象创建菜单</strong><br></p>
+<ul>
+<li>创建菜单<br>
+JMenuBar a = new JMenuBar();<br></li>
+<li>创建菜单内容<br>
+JMenu b = new JMenuBar();<br></li>
+<li>创建菜单下的子菜单<br>
+JMenuItem c = new JMenuBar();<br></li>
+<li>菜单和子菜单关联<br>
+b.add(c);        a.add(b);<br></li>
+<li>菜单添加到页面里<br></li>
+<li>界面变量.setJMenuBar(a);<br></li>
+</ul>
+<p><strong>ImageIcon 图片对象</strong><br></p>
+<ul>
+<li>创建一个图片<br>
+ImageIcon a = new ImageIcon(&rdquo;??/???/???.jpg&quot;);<br></li>
+<li>创建一个管理容器<br>
+JLabel b = new JLabel(a);<br></li>
+<li>指定图片位置大小<br>
+b.setBounds(x ， y ， 高 ， 宽); <br></li>
+<li>将这个容器添加到界面中<br>
+JFrame a / this.getContenPane.add(b);<br></li>
+<li>刷新时会用到这俩个方法<br>
+清除缓存图片<br>
+this.getContenPane.removeAll( );<br>
+刷新图片<br>
+this.getContenPane.repaint();<br>
+细节：先加载图片在上面，后加载图片在下面<br></li>
+</ul>
+<p><strong>JLabel 容器</strong><br>
+容器特点:  可以添加照片文字等<br></p>
+<ul>
+<li>创建一个容器<br>
+JLabel j = new JLabel( );<br></li>
+<li>设置容器大小位置<br>
+b.setBounds(x ， y ， 高 ， 宽);<br></li>
+<li>设置容器位置<br>
+b.setLocation<br></li>
+<li>设置容器大小<br>
+b.setSize<br>
+图片等只能添加到容器中然后再添加到界面<br></li>
+</ul>
+<p><strong>设置字体样式和大小</strong><br></p>
+<ul>
+<li>创建一个字体格式<br>
+Font f =new Font(&ldquo;宋体&rdquo;， 字体样式 ， 20);<br></li>
+<li>应用font样式<br>
+j.setFont(f);<br></li>
+<li>设置字体颜色<br>
+j.setForeground(Color.red);<br></li>
+</ul>
+<p><strong>JButton 按钮对象</strong><br></p>
+<ul>
+<li>创建一个按钮<br>
+JButton a = new Button(&quot;??&quot;);<br></li>
+<li>设置按钮大小<br>
+a.setBounds(x ， y ， 宽 ， 高); <br></li>
+<li>添加按钮到界面<br>
+this.setContenPane(a);<br></li>
+</ul>
+<p><strong>事件</strong><br></p>
+<ul>
+<li>事件源：按钮，窗体，图片&hellip;.<br></li>
+<li>某些操作如：鼠标点击，划入&hellip;<br></li>
+<li>事件是抽象的想实现需要继承<br>
+绑定监听：当事件源上发生某个事件则执行某段代码<br></li>
+<li>KeyListener - 键盘监听<br></li>
+<li>MouseListener - 鼠标监听<br></li>
+<li>ActionListener - 动作监听<br>
+先继承这些事件类然后重写抽象方法<br>
+添加事件，当事件发生去找(this)本类中重写的方法<br></li>
+<li>this.addKeyListener(this);<br></li>
+<li>this.addMouseListener(this);<br></li>
+<li>this.addActionListener(this);<br>
+KeyListener-键盘监听 不用专门绑定事件<br>
+ActionListener-动作监听 需要去绑定某个东西实现<br></li>
+</ul>
+<p><strong>弹窗</strong><br></p>
+<ul>
+<li>创建一个弹窗对象<br>
+JDialog j = new JDialog();<br></li>
+<li>把容器添加到弹窗中(容器步骤找容器那块说明)<br>
+j.getContentPane( ).add( j );<br></li>
+</ul>
+<ol>
+<li>设置弹窗大小 - - j.setSize(344，344);<br></li>
+<li>让弹窗置顶 - - j.setAlwaysOnTop(true);<br></li>
+<li>让弹窗居中 - - j.setLocationRelativeTo(null);<br></li>
+<li>让弹窗不关闭就无法操作 - - j.setModal(true);<br></li>
+<li>让弹窗显示 - - j.setVisible(true);<br></li>
+</ol>
+<p><strong>输入框</strong><br></p>
+<ul>
+<li>创建一个输入框<br>
+JTextField name = new JTextField( );<br>
+JTextArea和JTextField基本一样JTexttArea更大还可以输入多行回车<br></li>
+<li>设置大小<br>
+name.setBounds(x ， y ， 宽 ， 高);<br></li>
+<li>设置不可编辑<br>
+name.setEditable(false);<br></li>
+<li>添加到界面<br>
+this.setContenPane.add(name);<br></li>
+</ul>
+<p><strong>密码框</strong><br>
+同上(关键字是：JPasswordField)<br></p>
+<p><strong>表格</strong><br></p>
+<ul>
+<li>定义一个一维数组表示表格头<br>
+Object[] tableTitle = {&ldquo;aa&rdquo;，&ldquo;bb&rdquo;，&ldquo;cc&rdquo;};<br></li>
+<li>定义一个二维数组表示表格内容<br>
+Object[] tableData = {&ldquo;11&rdquo;，&ldquo;22&rdquo;，&ldquo;33&rdquo;}，{&ldquo;44&rdquo;，&ldquo;55，&ldquo;66&rdquo;};<br></li>
+<li>创建一个表格组件<br>
+JTable table = new JTable(tableTitle，tableData)<br>
+table.setBounds(x，y，width，heigh);&ndash;设置大小<br></li>
+<li>创建一个滚轮框架，把表格组件添加到里面<br>
+JScrollPane js =new JScrollPane(table)<br></li>
+<li>把滚轮框架添加到界面中<br>
+this.getContenPane().add(js)<br></li>
+</ul>
+<h2 id="类">类
+</h2><p><strong>工具类</strong><br></p>
+<p>Scanner 类&ndash;键盘录入<br>
+Scanner sc=new Scanner(System.in);<br>
+int a=sc.nextint(); {nextdouble.next.nextLine}<br></p>
+<p>Random 类&ndash;随机数字<br>
+Random r=new Random();<br>
+int a=r.nextint(随机数范围);<br></p>
+<p>Math 类&ndash;包含基本执行数学运算的方法<br>
+1：绝对值:  abs <br>
+2：向上取整:  ceil <br>
+3：向下取整:  floor<br>
+4：四舍五入:  round <br>
+5：大值:  max   小值:  min<br>
+6：a的b次幂:  pow   <br>
+7：随机数:  random<br>
+8：sqrt:  开平方  cbrt:  开立方<br>
+9：int范围  (-2147483648~2147483647)<br></p>
+<p>System 类<br>
+1：exit:  终止虚拟机  <br>
+2：currentTimeMillis:  返回时间毫秒形式  <br>
+3：arraycopy:  数组拷贝<br></p>
+<p>Runtime 类<br>
+getRuntime:当前系统运行的环境对象<br>
+Runtime.getRuntime().~~~方法<br>
+1：exit:停止虚拟机  <br>
+2：availableProcesssors:获取CPU线程  <br>
+3：maxMemory:JVM能从系统获取内存大小  <br>
+4：titalMenory:JVM已经从系统获取内存大小  <br>
+5：freeMenory:JVM剩余内存大小  <br>
+6：exec:运行cmd命令<br></p>
+<p>Object 类<br>
+如果一个类没有指定父类，默认就是继承Object类。<br>
+所以类的父类 11和方法<br>
+toString:变成字符串  <br>
+equals:比较  <br>
+clone:克隆<br>
+toString:一般打印属性时重写<br>
+equals:一般比较属性会重写<br>
+使用clone需要重写，要javabean类实现Cloneable接口并且学要继承Cloneable标志性接口，表示可被克隆<br>
+深克隆，浅克隆<br></p>
+<p>Objects 类<br>
+Objects类是final修饰的类，不可继承，内部方法都是static方法，从jdk1.7开始才引入了Objects类<br>
+equals:先非空判断 后比较对象<br>
+isNull:判断对象是否为null，是返回true<br>
+nonNull:和isNull结果相反<br></p>
+<h2 id="biginteger--大整数br">Biginteger  大整数<br>
+</h2><p>对象一旦创建，内部记录的值不能发生改变<br>
+Biginteger(int num，Random r);  获取随机大整数<br></p>
+<ul>
+<li>获取指定的大整数 ， 字符串中得是整数<br>
+Biginteger(String val);  <br></li>
+<li>获取指定进制大整数<br>
+Biginteger(String val ， int  二进制/八进制/十进制/十六进制);  <br></li>
+<li>静态方法获取Biginteger的对象(缺点: 范围小是long的范围，内部优化把-16~16提前创建好多次获取不会创建新的)<br>
+valueOf(long val) <br></li>
+</ul>
+<p>方法<br>
+1：add  加法 <br>
+2：subtract  减法<br>
+3：multiply  乘法<br>
+4：divide  除法 <br>
+5：divideAndRemaimder  除法获取商和余数  <br>
+6：equals   <br>
+7：pow  次幂  <br>
+8：max/min   <br>
+9：intValie  转Int型<br></p>
+<h2 id="bigdecimabr">BigDecima<br>
+</h2><p>作用:  表示较大小数和解决小数运算失真的问题<br>
+创建后内容不可变<br></p>
+<ul>
+<li>小数传递这种方式可能不精确，不建议使用<br>
+public BigDecima(double val)<br></li>
+<li>字符传递这种方式精确<br>
+public BigDecima(String val)<br></li>
+<li>静态对象<br>
+valueOf(double val)<br></li>
+</ul>
+<p>细节:操作数没超过double范围建议用静态操作，超过用字符构造方法<br>
+内部优化提前创建好了0~10<br></p>
+<p>方法<br>
+1：add  相加 <br>
+2：subtract  减法 <br>
+3：multiply  乘法  <br>
+4：divide  除法(除法除不尽就要加上精确到几位)<br></p>
+<h2 id="正则表达式br">正则表达式<br>
+</h2><p>string a = &ldquo;正则判读条件&rdquo;<br>
+方法<br></p>
+<ul>
+<li>&quot;  &ldquo;.matches(string a);  判读是否符合<br></li>
+<li>&quot;  &ldquo;.replaceAll(string a ， string b);  替换字符，字符串本身不发生改变<br></li>
+<li>&ldquo;??&quot;.split(string a);  切割字符串<br></li>
+</ul>
+<p>查看api文档方法是否有regex有表示可以识别正则<br>
+注意:  一个大括号只能()匹配一个字符   两个\表示一个表达式<br></p>
+<p>表达式<br>
+1：[abc] 表示只能是abc  <br>
+2：[^abc] 表示不能是abc <br>
+3：[a-zA-Z] 表示a到z和A到Z的范围  <br>
+4：[a-z[A-Z]] 表示a-z或者A-Z  <br>
+5：[a-z&amp;&amp;[def]] 表示交集<br>
+6：[a-z&amp;&amp;[^def]] 表示a-z与非def的交集<br>
+7：[a-z&amp;&amp;[^m-p]] 表示a-z和除了m到p的交集<br></p>
+<p>匹配字符<br>
+1：. 任何字符<br>
+2：\d 一个数字<br>
+3：\D 非数字<br>
+4：\s 一个空白字符<br>
+5：\S 非空白字符<br>
+6：\w[a-zA-Z_0-9] 英文数字下划线 <br>
+7：\W[^\w] 一个非单词字符<br></p>
+<p>数量词<br>
+1：X? 一次或零次<br>
+2：X? 零次或多次<br>
+3：X+ 一次或多次<br>
+4：X{n} 正好n次<br>
+5：X{N， } 至少n次<br>
+6：X{n，m} 至少n次但不超过m次<br></p>
+<p>符号<br>
+1：[ ] 里内容出现一次<br>
+2：( ) 分组<br>
+3：^ 取反<br>
+4：&amp;&amp; 交集<br>
+5：| 或集 <br>
+6：\ 表示转义字符<br>
+7：(?i) 忽略大小写 <br>
+8：a((?i)b)c 忽略b的大小写<br></p>
+<p>爬虫<br>
+字符的运用<br></p>
+<ul>
+<li>String reg = &ldquo;(Java(?=8|11|17)&rdquo; - - 找到匹配字符后只显示前面的不显示比较条件<br></li>
+<li>(Java(8|11|17))或(Java(?:8|11|17)) - - 显示比较条件<br></li>
+<li>(Java(?!8|11|17)) - - 找除了这些的数据&rdquo;<br></li>
+</ul>
+<p>类<br></p>
+<ul>
+<li>Pattern: 表示正则表达式类<br>
+Pattern p = Pattern.compile(reg)<br></li>
+<li>Matcher: 文本匹配器类，作业按照正则表达式去读取字符串<br>
+Matcher m = p.matcher(str)<br></li>
+</ul>
+<p>贪婪爬取(默认) / 非贪婪爬取(在数量词后面加上问号)<br></p>
+<ul>
+<li>贪婪爬取<br>
+String reg = &ldquo;ab+&quot;<br>
+Pattern p = Pattern.compile(reg)<br>
+Matcher m = p.matcher(str)<br></li>
+<li>非贪婪爬取<br>
+String reg = &ldquo;ab+?&quot;<br>
+Pattern p = Pattern.compile(reg)<br>
+Matcher m = p.matcher(str)<br></li>
+</ul>
+<h2 id="时间br">时间<br>
+</h2><p>JDK7以前时间相关类<br>
+<strong>Date 类</strong><br>
+计算机时间原点:1970年1月1号0时0分0秒<br>
+空参构造创建对象默认表示系统当前时间<br>
+有参构造创建对象表示指定时间<br></p>
+<ul>
+<li>Date d = date(); 当前时间<br></li>
+<li>Date d = date(0); 从时间原点开始过了0毫秒的时间<br></li>
+<li>d.setTime(1000L); 修改时间 1000毫秒=1秒<br></li>
+<li>d.getTime(); 获取当前时间的毫秒值<br></li>
+</ul>
+<p><strong>SimpleDateFormat 类</strong><br>
+作用:格式化时间  解析<br>
+构造方法: 无参/有参 (参数是日期格式)<br>
+方法<br>
+1：format(Date date) 格式化(日期对象-&gt;字符串)<br>
+2：parse(String source) 解析(字符串-&gt;日期对象)<br></p>
+<p><strong>Calendar 类</strong><br>
+代表系统当前时间的日历对象可以单独修改，获取时间中的年，月，日<br>
+注意<br>
+1：Calender是一个抽象类，不能直接创建<br>
+2：用静态方法获取当前日历对象<br>
+3：该类获取对象值是存在数组中的<br>
+public static Calender getInstance( )<br></p>
+<p>方法<br>
+1：getTime 获取日期对象  <br>
+2：setTime 给日历设置日期对象   <br>
+3：getTimeInMillis 拿到时间毫秒值<br>
+4：setTimeInMillis 给日历设置时间毫秒值  <br>
+5：get 获取日历中某个字段信息<br>
+6：set 修改日历的某个字段信息  <br>
+7：add 为某个字段增加/减少时间值<br></p>
+<p>细节<br></p>
+<ul>
+<li>这个把获取的日期放在数组中月份范围是0~11(0代表1月)<br></li>
+<li>星期是从日开始的<br></li>
+<li>数组:  [纪元，年，月，一年的第几周，一月的第几周，一月的第几天，&hellip;&hellip;]<br></li>
+<li>get方法是用数组索引获取代表的内容0~16 ， Java中定义常量替换了这些数字增加程序阅读性<br></li>
+</ul>
+<br>
+<br>
+<p>JDK8新增时间相关类<br>
+jdk8时间日期对象是不可变的，修改时间会产生一个新的时间对象<br>
+<strong>Date 类</strong><br>
+ZoneId:时区<br>
+1：static getAvailableZoneIds()方法  获取Java中支持的所有时区<br>
+2：static systemDefault()方法  获取系统默认时区<br>
+3：static of方法  获取一个指定时区<br></p>
+<p>Instant时间戳<br>
+1：now方法  获取当前时间的instant对象 (静态方法，直接用类名调用)<br>
+2：ofxxx方法  根据秒/毫秒/纳秒获取instant对象 (静态方法，直接用类名调用)<br>
+3：atZone方法  指定时区<br>
+4：isxxx方法  判断系列的方法<br>
+5：minusxxx方法  减少时间系列的方法<br>
+6：plusxxx方法  增加时间系列的方法<br></p>
+<p>ZoneDateTime带时区的时间<br>
+1：now<br>
+2：ofxxx<br>
+3：withxxx 修改<br>
+4：minusxxx 减少<br>
+5：plusxxx 增加<br></p>
+<p><strong>SimpleDateFormat 日期格式化类</strong><br>
+DateTimeFormatter用于时间的格式化和解析<br>
+1：ofPattern方法  获取格式对象 (静态方法，直接用类名调用)<br>
+2：format方法  按照指定方法格式化<br></p>
+<p><strong>Calendar 日历类</strong><br></p>
+<ul>
+<li>LocalDate:年，月，日<br></li>
+<li>LocalTime:时，分，秒<br></li>
+<li>LocalDateTime:年，月，日，时，分，秒<br></li>
+</ul>
+<p>方法<br>
+1：now<br>
+2：of<br>
+3：getxxx  获取日历中的年|月|日|时|分|秒信息<br>
+4：isBefore | isAfter  比较之前 | 之后<br>
+5：withxxx  修改<br>
+6：minusxxx  减少<br>
+7：plusxxx  增加<br></p>
+<p><strong>工具类</strong><br></p>
+<ul>
+<li>Duration:时间间隔(天，分，秒，纳秒)<br>
+Duration.between();第一个减第二个参数，可以用to..转成要求的天/分/秒<br></li>
+<li>Period时间间隔(年，月，日)<br>
+Period.between();第一个减第二个参数，可以用get..获取单独的年月日<br></li>
+<li>ChronoUnit时间间隔(所有单位)<br>
+ChronoUnit.xx.between();计算相差的年/月/日&hellip;<br></li>
+</ul>
+<p><strong>小知识</strong><br>
+以前的时间格林尼治时间简称GMT<br>
+目前世界标准时间替换为原子钟简称UTC<br>
+中国时间：世界标准时间+8小时<br></p>
+<h2 id="包装类br">包装类<br>
+</h2><p>JDK5后增加了自动装箱和自动拆箱<br>
+基本数据类型对应的对象<br>
+char-&gt;Character  int-&gt;Integer 其余的首字母变大写<br>
+Integer 为例子使用<br>
+1：Integer i1=10;<br>
+2：Integer i2=10;<br>
+3：Integer i3=i1+i2;<br>
+直接赋值即可Java底层会自动拆装箱<br>
+四个静态方法，可以直接用类名.调用<br></p>
+<ol>
+<li>toBinaryString(int i)  返回String 得到二进制<br></li>
+<li>toOctalString(int i)  返回String 得到八进制<br></li>
+<li>toHexString(int i)  返回String 得到十六进制<br></li>
+<li>parseInt(String s)  返回int 让字符转成整数<br></li>
+</ol>
+<p>八种包装类中除了Character都有对应的parsexxx方法进行转换<br>
+parsexxx常用转化格式类型<br></p>
+<h2 id="算法br">算法<br>
+</h2><p><strong>查找</strong><br></p>
+<ul>
+<li>
+<p>基本查找(顺序查找)<br>
+普通顺序查找<br></p>
+</li>
+<li>
+<p>二分查找(折半查找)<br>
+前提:数组中数据必须是有序的<br>
+过程变量:  min max mid (最小索引  最大索引  中间索引)<br></p>
+</li>
+<li>
+<p>插值查找(二分查找改进)<br>
+要求数组有序且分布均匀<br>
+min  max mid (最小索引  最大索引  中间索引)<br>
+插值公式:  mid = min+(key-arr(min))/(arr[max]-arr[min])?(max-min)<br></p>
+</li>
+<li>
+<p>斐波那契查找(二分查找改进)<br>
+根据黄金分割点来计算mid位置<br>
+黄金分割:1:0.618<br>
+mid = min+黄金分割点左半边长度-1<br></p>
+</li>
+<li>
+<p>分块查找<br>
+原则1:  前一块中最大数据小于后一块中所有数据(块内无序，块间有序)<br>
+原则2:   块数量一般等于数字的个数开根号 例:16哥分4块<br>
+核心思路:先确定查找的在哪块，然后在块内查找<br>
+max  start/end (一个块的最大值  块的开始索引  块的结束索引)<br>
+扩展(无规律数据)<br>
+max/min  start/end (一个块的最大值  一个块的最小值  块的开始索引  块的结束索引)<br></p>
+</li>
+<li>
+<p>哈希查找<br>
+扩展的分块查找<br>
+数组划分范围查找的过程还需要添加数据<br>
+划分范围&ndash;挂载<br>
+挂载:将同一个范围的数挂载到这个区域数组的后面<br></p>
+</li>
+</ul>
+<p><strong>排序</strong><br></p>
+<ul>
+<li>
+<p>冒泡排序<br>
+相邻的元素两两比较，大的右边，小的左边<br></p>
+</li>
+<li>
+<p>选择排序<br>
+拿0索引挨个比较依次类推<br></p>
+</li>
+<li>
+<p>插入排序<br>
+索引0到n当作是有序的其余是无序的遍历无序数组放到合适位置<br></p>
+</li>
+<li>
+<p>快速排序<br>
+start/end/基准数<br></p>
+</li>
+</ul>
+<p><strong>规则</strong><br>
+1：刚开始基准数是0索引<br>
+2：end从末尾找比基准数小的<br>
+3：start从0开始找比基准数大的<br>
+4：然后交换，如果start和end重合然后基准数和重合索引交换第一轮结束<br>
+等循环结束后基准数左边都比他小，右边都比他大<br>
+<em>注意:如果基准数从0开始要先判断end再判断start<br></em>
+需要用到递归算法<br>
+递归算法:调用方法本身的算法<br>
+递归需要有出口<br>
+递归题型:爬楼梯，不死神兔，猴子吃桃<br></p>
+<h2 id="arrays-数组操作br">Arrays 数组操作<br>
+</h2><p>操作数组的工具类<br>
+方法<br>
+1：toString(数组);  可以把数组拼接成字符串<br>
+2：binarySearch(数组，元素);  二分查找法查找元素&ndash;(前提是数组是升序，元素存在返回真实索引，不存在返回-插入点-1)<br>
+3：copyOf(数组，新长度);  拷贝数组&ndash;(小于数组id部分拷贝，大于补上默认值)<br>
+4：copyOfRange(数组，起始，结束);  拷贝数组(指定范围)&ndash;(包头不包尾)<br>
+5：fill(数组，元素);  填充数组(覆盖)<br>
+6：sort(数组);  按照默认方式进行数组排序<br>
+7：sort(数组，规则);  按照指定规则排序<br></p>
+<ul>
+<li>只能给引用数据类型排序，基本数据类型需要变成其包装类<br></li>
+<li>第二个参数是一个接口可以用匿名内部类重写<br></li>
+<li>简单理解:o1-o2:升序/o2-o1:降序<br></li>
+</ul>
+<h2 id="函数式编程br">函数式编程<br>
+</h2><p>是一种思想特点，忽略面向对象的复杂语法，强调做什么，而不是谁去做<br>
+Lambda表达式就是函数式编程的思想体现<br>
+Lambda表达式<br>
+是jdk8开始后的一种新语法形式<br>
+省略对象名称再加个 -&gt;<br>
+<em>只能简化函数式接口匿名内部类的写法</em><br>
+函数式接口:  有且仅有一个抽象方法的接口叫做函数式接口，接口上方可以加@Functionalinterface注解验证是否是函数式接口<br>
+Lambda表达式省略核心:可推导，可省略<br>
+省略规则:<br>
+1：参数可以省略不写<br>
+2：如果只有一个参数，参数类型可以省略同时( )可以省略<br>
+3：如果Lambda表达式的方法体只有一行，大括号，分号，return都可省，但要同时省略<br></p>
+<h2 id="集合进阶-类br">集合进阶-类<br>
+</h2><p>集合分两大类:  单列集合Collection / 双列集合Map<br></p>
+<ul>
+<li>单列集合一次添加一个元素<br></li>
+<li>双列集合一次添加两个元素<br></li>
+</ul>
+<p><strong>集合大家族</strong><br>
+Collection -&gt; List / Set<br>
+List -&gt; ArrayList / LinkedLis t/ Vector(淘汰)<br>
+List集合添加元素是有序，可重复，有索引<br>
+Set -&gt; HashSet / TreeSet<br>
+HashSet -&gt; LinkedHashSet<br>
+Set集合添加元素是无序，不重复，无索引<br></p>
+<h3 id="collection单列集合br">Collection单列集合<br>
+</h3><p>Collection是单列集合祖宗接口，它的功能是全部单列集合都可继承使用的<br>
+注意:  Collection是一个接口<br>
+方法<br>
+1：add(E e)  添加<br>
+2：clear()  清空元素<br>
+3：remove(E e)  删除给定对象<br>
+4：contains(Object obj)  是否包含对象  <br>
+<em>contains在底层是根据equals判断的，如果是自定义对象要重写equals方法</em><br>
+5：isEmpty()  判断是否为空<br>
+6：size()  返回集合长度<br></p>
+<p><strong>Collection的通用遍历方式</strong><br></p>
+<ul>
+<li>
+<p>迭代器遍历<br>
+迭代器不依赖索引<br>
+迭代器在Java中的类是Iterator，迭代器是集合专用的遍历方式    <br>
+Iterator<E> x=list.iterator( )<br>
+迭代器方法<br>
+a.hasNext();  判断当前位置是否有元素<br>
+b.next();  获取当前位置元素，并将迭代器对象移向下一位置<br>
+c.remove();  删除<br>
+注意:<br>
+a：当前位置没元素，用next会报错<br>
+b：迭代器遍历完，不会复位<br>
+c：循环中next方法只有有一个<br>
+d：迭代器遍历是，不能用集合方法增加或者删除<br></p>
+</li>
+<li>
+<p>增强for遍历<br>
+底层就是迭代器为了简化迭代器JDK5后出现的<br>
+所有单列集合和数组才能使用增强for遍历<br>
+for(String s:list){&hellip;}<br>
+s只是一个第三方变量，不会改变原来的值<br></p>
+</li>
+<li>
+<p>Lambda表达式遍历<br>
+利用匿名内部类遍历用Lambda简化<br></p>
+</li>
+</ul>
+<h3 id="list集合br">List集合<br>
+</h3><p>继承了Collection的方法还有自己的方法<br>
+方法<br>
+1：add(int i，E e):  在集合指定位置插入索引<br>
+2：remove(int i):  删除指定索引元素  <br>
+<em>调用方法时出现重载，优先调用实参和形参一致的方法</em><br>
+3：set(int i，E e):  修改指定索引元素  <br>
+<em>返回被修改的元素</em><br>
+4：get(int i):  返回指定索引元素<br></p>
+<p><strong>List的遍历方式</strong><br></p>
+<ul>
+<li>
+<p>迭代器遍历<br>
+和Collection一样<br></p>
+</li>
+<li>
+<p>列表迭代器遍历<br>
+ListIterator是Iterator的子接口<br>
+方法: add / hasNext / next / remove<br>
+比迭代器多了一个添加的方法<br></p>
+</li>
+<li>
+<p>增强for遍历<br>
+和Collection一样<br></p>
+</li>
+<li>
+<p>Lambda表达式遍历<br>
+和Collection一样<br></p>
+</li>
+<li>
+<p>普通for循环<br>
+利用索引循环<br></p>
+</li>
+</ul>
+<h4 id="arraylist集合br">ArrayList集合<br>
+</h4><p>addAll():一次性添加全部元素<br>
+ArrayList原理<br></p>
+<ol>
+<li>利用空参创建的集合在底层创建为0的数组<br></li>
+<li>添加第一个元素时，创建为10的数组<br></li>
+<li>存满时，会扩容1.5倍<br></li>
+<li>如果一次添加多个元素，1.5倍放不下，会新创建数组以实际长度为准<br></li>
+</ol>
+<h4 id="linkedlist集合br">LinkedList集合<br>
+</h4><p>底层数据结构是双链表，查询慢，增删快<br>
+LinkedList本身多了很多直接操作首尾元素的特有API<br></p>
+<h3 id="set集合br">Set集合<br>
+</h3><p><strong>特点</strong><br>
+Set特点<br></p>
+<ul>
+<li>无序: 存取顺序不一致<br></li>
+<li>不重复: 可以去除重复<br></li>
+<li>无索引: 没有带索引的方法，不能用普通for循环，也不能通过索引来获取元素<br></li>
+</ul>
+<p>Set实现类特点<br></p>
+<ul>
+<li>HashSet: 无序，不重复，无索引<br></li>
+<li>LinkedHashSet: 有序，不重复，无索引<br></li>
+<li>TreeSet: 可排序，不重复，无索引<br></li>
+</ul>
+<p>Set接口中的方法上基本与Collection的API一致<br>
+接口方法可以去看Collection接口方法<br>
+Set集合的 add( )方法返回值要注意，重复会返回false<br></p>
+<p><strong>Set遍历方式</strong><br>
+迭代器遍历<br></p>
+<ul>
+<li>用hasNext( )判断是否有值<br></li>
+<li>用next( )来获取值<br></li>
+</ul>
+<p>增强for方式<br></p>
+<ul>
+<li>自动生成<br></li>
+</ul>
+<p>Lambda表达式<br></p>
+<ul>
+<li>forEach( )方法来生成匿名内部类<br></li>
+<li>用Lambda表达式来简化<br></li>
+</ul>
+<h4 id="hashset集合br">HashSet集合<br>
+</h4><p>HashSet底层采取了哈希表存储数据<br>
+哈希表是一种对于增删改查数据性能都较好的结构<br>
+哈希表组成<br>
+JDK8前: 数组+链表<br>
+JDK8后: 数组+链表+红黑树<br>
+哈希表核心 -&gt; 哈希值<br>
+哈希值: 对象的整数形式<br>
+int index = (数组长度 -1) &amp; 哈希值<br>
+哈希值<br></p>
+<ul>
+<li>根据hashCode方法算出来的int类型的整数<br></li>
+<li>该方法定义在Object类中，所有对象都可以调用，默认是使用地址值来计算(不建议)<br></li>
+<li>一般情况下，重写hashCode方法，利用对象内部的属性值计算哈希值<br></li>
+</ul>
+<p>对象的哈希值特点<br></p>
+<ul>
+<li>如果没有重写hashCode方法，不同对象计算出的哈希值不同(因为地址值不同)<br></li>
+<li>如果重写hashCode方法，不同对象只有属性相同，计算出的哈希值相同<br></li>
+<li>在极小概率下，不同属性或不同地址值计算出哈希值一样 (哈希碰撞)<br></li>
+</ul>
+<p><strong>HashSet添加元素过程</strong><br>
+1：创建一个默认长度为16，默认加载因子为0.75的数组，数组名为table<br>
+2：根据元素的哈希值根数组长度计算出应存入的位置<br>
+<em>int index = (数组长度 -1) &amp; 哈希值</em><br>
+3：判读当前是否为null，如果是null则直接存入<br>
+4：如果不为null，则用equals方法比较属性值<br>
+5：如果有一样的值了就不存，不一样就存进数组形成链表<br>
+<em>JDK8以前: 新元素存入数组，老元素挂载在新元素下面</em><br>
+<em>JDK8以后: 新元素直接挂载到老元素下面</em><br>
+6：当数组存了 16?0.75 = 12 个元素时，数组会扩容成原来的两倍<br>
+<em>当链表长度大于8而且数组长度大于64时，当前链表会自动转成红黑树</em><br>
+<em>如果集合中存储的是自定义对象，必须重新hashCode和equals方法(否则是地址值来比较，没啥意义)</em><br></p>
+<p><strong>HashSet的三个问题</strong><br>
+HashSet为什么存取顺序不一致?<br>
+因为有挂载链表，会先遍历完当前链表才会去下一个地址<br></p>
+<p>HashSet为什么没有索引?<br>
+因为HashSet底层是数组+链表+红黑树没法用索引<br></p>
+<p>HashSet是利用什么机制保证数据去重的?<br>
+hashCode方法和equals方法<br></p>
+<p><strong>LinkedHashSet集合</strong><br>
+LinkedHashSet底层原理特点<br></p>
+<ul>
+<li>有序，不重复，无索引<br></li>
+<li>这里有序是指保证存储和取出的元素顺序一致<br></li>
+<li>原理: 底层结构依然是哈希表，不过每个元素额外多了一个双链表的机制记录存储的顺序<br></li>
+</ul>
+<p><strong>总结</strong><br>
+1：如果要数据去重默认使用HashSet<br>
+2：如果要求去重还有存取有序才使用LinkedHashSet<br></p>
+<h4 id="treeset集合br">TreeSet集合<br>
+</h4><p>TreeSet&lt;&hellip;&gt; ts = new TreeSet &lt;&gt;( );<br>
+<strong>TreeSet的底层原理特点</strong><br></p>
+<ul>
+<li>不重复，无索引，可排序<br></li>
+<li>可排序: 按照元素的默认规则(由小到大)排序<br></li>
+<li>TreeSet集合底层是基于红黑树的数据结构实现排序的，增删改查性能都较好<br></li>
+</ul>
+<p><strong>遍历方式</strong><br></p>
+<ul>
+<li>
+<p>迭代器<br>
+Iterator<Integer> it = ts.iterator( ); 创建一个迭代器对象 <br>
+it.hasNext(); 判读是否有元素<br>
+it.next(); 获取当前元素，然后自动指向下一个元素位置<br></p>
+</li>
+<li>
+<p>增强for<br>
+for(int t : ts){&hellip;}<br></p>
+</li>
+<li>
+<p>lambda表达式<br>
+ts.forEach(new Consumer<integer>(){&hellip;}) 生成匿名内部类<br>
+ts.forEach(i -&gt; System.out.println(i)); lambda简化匿名内部类<br></p>
+</li>
+</ul>
+<p><strong>TreeSet集合默认的规则</strong><br>
+对于数值类型: Integer  Double  &hellip;  默认按照从小到大的顺序排序<br>
+对于字符  字符串类型: 按照字符在ASCLL码表中的数字升序进行排序<br></p>
+<p><strong>TreeSet的两种比较方式</strong><br>
+使用原则: 默认是使用第一种，如果第一种不能满足当前需求，就使用第二种<br>
+当方式一和方式二重复时，以方式二为准<br></p>
+<ul>
+<li>
+<p>默认排序/自然排序: javabean类实现Comparable接口指定比较规则<br>
+重写方法，然后在方法里面写排序规则 (红黑树的添加规则)<br>
+<img src="/p/javase/%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99.jpg"
+	width="486"
+	height="381"
+	srcset="/p/javase/%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99_hu13552163033206555518.jpg 480w, /p/javase/%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99_hu5729640291507210303.jpg 1024w"
+	loading="lazy"
+	
+		alt="排序规则"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="127"
+		data-flex-basis="306px"
+	
+></p>
+</li>
+<li>
+<p>比较器排序: 在创建TreeSet对象的时候，在小括号里面传递比较器Comparator指定规则<br>
+Comparator是一个接口用匿名内部类创建<br>
+o1: 表示当前添加的元素<br>
+o2: 表示当前在红黑树存在的元素<br>
+返回规则和之前一样<br>
+如果一样就根据什么排序: 用三元运算符来判断<br>
+方法返回值特点<br>
+1：负数: 表示当前添加的元素是小的，存左边<br>
+2：正数: 表示当前添加的元素是大的，存右边<br>
+3：0:  表示当前添加的元素已经存在，舍弃<br></p>
+</li>
+</ul>
+<p><strong>单列集合小结</strong><br></p>
+<ol>
+<li>如果想要集合中的元素可重复<br>
+用ArrayList集合，基于数组的 (用的最多)<br></li>
+<li>如果想要集合中的元素可重复，而且当前的增删操作明显多于查询<br>
+用LinkedList集合，基于链表的<br></li>
+<li>如果想对集合中的元素去重<br>
+用HashSet集合，基于哈希表(用的最多)<br></li>
+<li>如果对集合中的元素去重，而且要保证存取顺序<br>
+用LinkedHashSet集合，基于哈希表和双链表，效率低于HashSet<br></li>
+<li>如果想对集合中的元素进行排序<br>
+用TreeSet集合，基于红黑树.后续也可以用List集合实现排序<br></li>
+</ol>
+<h3 id="map双列集合br">Map双列集合<br>
+</h3><p><strong>双列集合特点</strong><br></p>
+<ol>
+<li>双列集合一次需要添加一对数据，分别为键和值<br></li>
+<li>键不能重复，值可以重复<br></li>
+<li>键和值是一一对应的，每一个键只能找到自己的值<br></li>
+<li>键+值这个整体我们称为 &ldquo;键值对&rdquo; 或者 &ldquo;键值对对象&rdquo; ，在Java中叫做 &ldquo;Entry对象&rdquo;<br></li>
+</ol>
+<p><strong>Map的常见API</strong><br>
+Map是双层集合的顶层接口，它的功能是全部双列集合都可以继承使用的<br>
+方法<br>
+1：put(k key，v value): 添加元素<br>
+<em>添加对象是如果存在了，就会覆盖原来的对象，然后返回被覆盖的值</em><br>
+2：remove(object key): 根据键删除元素<br>
+3：void clear( ): 移除所有元素<br>
+4：boolean containsKey(object key): 判断集合是否包含指定的键<br>
+5：boolean containsValue(object value): 判断集合是否包含指定的值<br>
+6：boolean isEmpty(): 判断集合是否为空<br>
+7：int size(): 集合的长度，也就是集合中键值的个数<br></p>
+<p><strong>Map的遍历方式</strong><br></p>
+<ul>
+<li>
+<p>键找值<br>
+Set<String> keys = map.keySet(); <br>
+先获得所有的键，存储到单列集合中<br>
+for(String key : keys){&hellip;}; 再循环遍历<br>
+(还可以用迭代器和lambda表达式)<br>
+利用map集合中的键获取对应的值  get<br>
+String value = map.get(key) 写在大括号里面<br>
+依次获取键对应的值<br></p>
+</li>
+<li>
+<p>键值对<br>
+用entrySet来获取所有的键值对<br>
+Set&lt;Entry&lt;String， String&raquo; strs = map.entrySet();<br>
+获取所有的键值对，可以用getKey() / getValue()获取对应的元素<br>
+如何可以用循环遍历依次获取每个<br></p>
+</li>
+<li>
+<p>Lambda表达式<br>
+就是利用第二章方式，依次得到每个值，然后调用accept方法<br></p>
+</li>
+</ul>
+<h4 id="hashmap集合br">HashMap集合<br>
+</h4><p>是Map中比较常用的，没有新的方法用Map的方法就行<br>
+<strong>HashMap的特点</strong><br></p>
+<ol>
+<li>HashMap是Map的实现类<br></li>
+<li>没有额外的特有方法，直接使用Map的方法就行<br></li>
+<li>特点是由键决定的: 无序，不重复，无索引<br></li>
+<li>HashMap根HashSet底层原理一样，都是哈希表结构<br>
+<em>依赖HashCode和equals方法保证键的唯一(值无所谓)</em><br>
+<em>根据键来计算哈希值存储数组</em><br>
+<em>如果当前数组元素和要存储元素一样会覆盖</em><br></li>
+<li>HashMap的键位置如果是自定义对象，要重写HashCode和equals方法<br></li>
+</ol>
+<p><strong>LinkedHashMap集合</strong><br>
+特点<br></p>
+<ol>
+<li>由键决定: 有序，不重复，无索引<br></li>
+<li>这里的有序是指的是保证存储和取出的顺序一致<br></li>
+<li>不重复是保证数据唯一，如果有重复的也是会覆盖<br></li>
+<li>原理: 底层数据结构依然是哈希表，只是每个键值对元素又额外的多了一个双链表的机制存储的顺序<br></li>
+</ol>
+<p><strong>TreeMap集合</strong><br>
+TreeMap跟TreeSet底层原理一样，都是红黑树结构的<br>
+由键决定特性: 不重复，无索引，可排序<br>
+可排序: 对键进行排序<br>
+注意: 默认按照键的从小到大进行排序，也可以自己规定键的排序规则<br></p>
+<p>代码书写两种排序规则<br></p>
+<ul>
+<li>实现Comparable接口，指定规则<br></li>
+<li>创建集合时传递Comparator比较器对象，指定比较规则<br></li>
+<li>如果两个都有按照Comparator为准<br></li>
+<li>之前的set中有排序规则的详情<br></li>
+</ul>
+<h3 id="源码分析br">源码分析<br>
+</h3><p>1：ctrl+B: 追踪源码分析 ; ctrl+F12: 查看所有的方法和类<br>
+2：图标是C的表示是类，图标是M的表示都是方法<br>
+3：方法名和类目一样表示的是构造方法，其余是成员方法<br>
+4：格式:图标·方法名(形参): 返回值<br>
+5：↑箭头表示重写的父类或者接口中的发放<br>
+6：→箭头表示当前的方法继承了别的方法或者类<br>
+7：F图标表示的是使用过的变量或者常量<br>
+8：I图标表示是接口<br>
+9：最后C图标小还有C图标，是内部类<br>
+10：JAVA起飞课程下半部 14，15，16，17 集<br></p>
+<h2 id="集合进阶-泛型br">集合进阶-泛型<br>
+</h2><p>泛型：jdk5中引用的特性，可以在编译阶段约束操作的数据类型，并检查<br>
+<em>泛型格式：&lt;数据类型&gt;</em><br>
+注意：泛型只支持引用数据类型(包装类)<br>
+扩展：Java中的泛型是伪泛型<br>
+细节：不写泛型默认是Object，指定类型后传递数据时可传入其子类型<br></p>
+<p><strong>泛型类</strong><br>
+当一个类中，某个变量类型不确定，就可以定义带有泛型的类<br>
+格式：修饰符 class 类名 <E> {..}<br></p>
+<p>泛型方法<br>
+某个方法变量不确定可以在方法上定义泛型<br>
+区别：类泛型所有方法都可用，方法泛型只有本方法可用<br>
+格式：修饰符 <E> void 名 (E e) {..}<br></p>
+<p>泛型接口<br>
+格式:  修饰符 interface 名 <E> {..}<br>
+使用的两种不同的方式<br>
+1：实现类给出具体类型<br>
+2：实现类延续泛型，创建对象时再确定<br></p>
+<p>泛型的继承与通配符<br>
+泛型不具备继承性但数据具备继承性<br>
+🔣：泛型定义时是父类就没法使用其子类创建<br>
+🔣：但是里面的元素/参数和以前一样不耽误使用<br>
+解决方案 通配符 ?<br>
+🔣：? extends E:  表示可以传递E或者E的所有子类<br>
+🔣：? super E:  表示可以传递E或者E的所有父类<br></p>
+<h2 id="collections工具类-br">Collections工具类 <br>
+</h2><p>java.util.Collections:是集合工具类<br>
+作用: collections不是集合，是集合工具类<br>
+<strong>常见API</strong><br></p>
+<ol>
+<li>public static <T> boolean addAll(Collection<T> c，T&hellip;elements): 批量添加元素<br></li>
+<li>public static void shuffle(List<?> list): 打乱list集合元素的顺序<br></li>
+<li>&hellip;sort(List<T> list) 排序 / &hellip;sort(List<T> list，Comparator<T> c) 根据指定规则排序<br></li>
+<li>binarySearch(List<T> list，T key) 二分查找排序<br></li>
+<li>fill(List<T> list，T obj) 指定元素填充集合<br></li>
+<li>swap(List<?> list ，int i，int j) 交换集合中指定位置元素<br></li>
+<li>copy    max   min  clear<br></li>
+</ol>
+<h2 id="可变参数不可变参数br">可变参数/不可变参数<br>
+</h2><p><strong>可变参数</strong><br>
+方法形参的个数是可变化的<br>
+格式： 在方法形参中写 (数据类型&hellip;名)<br></p>
+<ol>
+<li>在方法的形参中我们最多只写一个可变参数<br></li>
+<li>在方法形参中除了可变参数还有别的参数，可变参数要写在最后<br></li>
+<li>可变参数本质就是一个数组<br></li>
+</ol>
+<p><strong>不可变参数</strong><br>
+注意：这个集合不可添加，不可修改，不可删除<br></p>
+<ul>
+<li>
+<p>创建不可变List集合<br>
+List<String> list = List.of(&rdquo;??&quot;，&rdquo;??&quot;，&rdquo;??&rdquo;);<br></p>
+</li>
+<li>
+<p>创建不可变Set集合<br>
+Set<String> set = Set.of(&rdquo;??&quot;，&quot;??&quot;，&quot;??&quot;);<br>
+细节：当我们创建一个不可变Set集合时，里面参数一定要保证唯一性<br></p>
+</li>
+<li>
+<p>创建Map的不可变集合<br>
+Map&lt;String，String&gt; map = Map.of(&quot;??&quot;，&quot;??&quot;，&quot;??&quot;，&quot;??&quot;);<br>
+Map会自动识别两个为一个键值对<br>
+细节1：建立Map时参数中键是不可重复的<br>
+细节2：Map建立时的参数是有限的，最多20个，十个键值对<br>
+细节3：如果参数大于20个就使用ofEntries方法(需要先转成数组)<br>
+细节4：细节3白学，JDK10出现了copyOf方法直接底层判断更省事<br></p>
+</li>
+</ul>
+<p>总结<br>
+1：定义完成后不可修改，添加，删除<br>
+2：List，Set，Map 接口中，都存在 <em>of</em> 方法可以创建不可变集合<br>
+3：List&ndash;直接用  Set&ndash;元素不可重复  Map&ndash;元素不可重复，数量限制<br></p>
+<h2 id="stream流br">Stream流<br>
+</h2><p>作用：stream就是结合Lambda表达式，简化集合数组的操作<br>
+补充1：startsWith() 方法用于检测字符串是否以指定的前缀开始<br>
+补充2：endsWith() 方法用于检测字符串是否以指定字符结束<br>
+格式：list.stream().filter(name -&gt; name.startsWith(&quot;?&quot;).filter(&hellip;&hellip;).forEach(name -&gt; system.tou&hellip;.))<br>
+filter：筛选条件         forEach循环输出<br>
+例子：<br></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;aaa&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;bbb&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;ccc&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;ddd&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">name</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">)).</span><span class="na">filter</span><span class="p">(</span><span class="n">name</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">==</span><span class="n">3</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">name</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">));</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Stream流的思想： 类似于流水线，一层层筛选<br>
+Stream流的作用： 结合了Lambda表达式，简化集合，数组的操作<br>
+<strong>Stream流的步骤</strong><br></p>
+<ol>
+<li>先得到一条Stream流(流水线)，并把数据放到流水线上<br>
+<img src="/p/javase/Steam%E6%B5%81.jpg"
+	width="1665"
+	height="397"
+	srcset="/p/javase/Steam%E6%B5%81_hu14034006061541440986.jpg 480w, /p/javase/Steam%E6%B5%81_hu12038270486238219093.jpg 1024w"
+	loading="lazy"
+	
+		alt="Steam流"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="419"
+		data-flex-basis="1006px"
+	
+>
+双列集合使用Steam流需要用keySet()或者entrySet()转成单列，再使用<br>
+数组<br></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">1</span><span class="err">，</span><span class="n">2</span><span class="err">，</span><span class="n">3</span><span class="err">，</span><span class="n">1</span><span class="err">，</span><span class="n">2</span><span class="err">，</span><span class="n">3</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">a</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">));</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>零散数据<br>
+a：该方法是一个可变参数，可传零散数据也可传数组，<br>
+b：但是数组必须是引用数据类型，如果是基本数据类型，会把数组当成一个数据放进去<br></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="n">Java</span><span class="w"> </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&#34;1&#34;</span><span class="err">，</span><span class="s">&#34;6&#34;</span><span class="err">，</span><span class="s">&#34;4&#34;</span><span class="err">，</span><span class="s">&#34;2&#34;</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">));</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>使用中间方法对流水线上的数据进行操作<br>
+Stream流的中间方法<br>
+a：filter()  过滤<br>
+b：limit()   获取前几个元素<br>
+c：skip()   跳过前几个元素<br>
+d：distinct()  元素去重，(依赖hashCode和equals方法)<br>
+e：concat(??，??.foE&hellip;)   合并a和b两个为一个流<br>
+f：map(s -&gt; &hellip;..)   转换流中的数据 用parse&hellip;来进行转换<br>
+注意1：返回新的Stream流，原来的Stream流只能使用一次，建议使用链式编程<br>
+注意2：修改Stream中的数据，不会影响原来集合或者数组中的内容<br></p>
+</li>
+<li>
+<p>使用终结方法对流水线上的数据进行操作<br>
+Stream流的终结方法<br>
+a：forEach()  遍历<br>
+b：count()  统计<br>
+c：toArray(value-&gt;new String[value])  收集流中的数据，放到数组中<br>
+　　(1)toArray方法的参数作用：负责创建一个指定数组<br>
+　　(2)toArray方法的底层：会依次得到流里每个数据，然后放到数组中<br>
+　　(3)toArray方法的返回值：是一个装着流里面所有数据的数组<br>
+d：collect()  收集流中的数据，放到集合中<br>
+　　(1)收集到List中：括号里用Collectors.toList()方法来转换<br>
+　　(2)收集到Set中：括号里用Collectors.toSet()方法来转换<br>
+　　(3)收集到Set中是会自动去除重复的元素<br>
+　　(4)收集到Map中：括号里用Collectors.toMap()方法来转换<br>
+　　(5)toMap方法有参数一表示键和参数二表示值<br>
+　　(6)参数中：Function泛型一:表示流中每个数据类型;泛型二表示Map集合中值的数据类型<br>
+　　(7)参数中方法apply:形参:依次表示流中每个数据\方法体:生成键|值的代码\返回值:已经生成的键|值<br>
+　　(8)简略书写 (s-&gt;s.spl&hellip;.，s-&gt;s.int&hellip;)<br>
+　　(9)注意点:收集到Map集合中时，键不能重复<br></p>
+</li>
+</ol>
+<p>中间方法: 方法调用完毕后还可以调用其他方法(过滤，转换)<br>
+终结方法: 方法调用完毕后无法调用其他方法(统计，打印)<br>
+Stream流的输出一般用.forEach(s-&gt;sout(s))<br></p>
+<h2 id="方法引用br">方法引用<br>
+</h2><p>解释: 把已经有的方法拿过来用，当做函数式接口中抽象方法的方法体<br>
+<strong>要求</strong><br>
+1：引用处原本方法必须是函数式接口<br>
+2：被引用的方法必须已经存在<br>
+3：被引用方法的形参和返回值需要跟抽象方法(原本的方法)保持一致<br>
+4：被引用方法的功能要满足当前需求<br>
+:: 是什么符号 &mdash; 方法引用符<br></p>
+<p><strong>分类</strong><br>
+1：引用静态方法<br>
+格式: 类名::静态方法<br>
+2：引用成员方法<br>
+格式: 对象::成员方法<br>
+　　a：引用其 他类的成员方法 其他类对象::方法名<br>
+　　b：引用本类的成员方法 this::方法名(非静态，静态没有this对象，静态只能先创建本类对象再引用)<br>
+　　c：引用父类的成员方法 super::方法名<br>
+3：引用构造方法<br>
+格式：类名::new<br>
+自定义的类要注意里面的方法要和抽象方法的形参一致，不一致就新键个方法<br>
+4：其他调用方式<br>
+　　a：使用类名引用成员方法 <br>
+　　格式: 类名::成员方法<br>
+　　规则: 需要有函数是接口<br>
+　　被引用方法存在，被引用方法的形参需要根抽象方法的第二个形参到最后一个形参保持一致，返回值也要保持一致<br>
+　　详解:<br>
+　　第一个参数决定了可以引用那些类中的方法<br>
+　　第二个参数到最后一个参数需要和引用方法的形参保持一致，如果没有第二个参数就说明引用的方法需要是一个无参的方法<br>
+　　局限性:<br>
+　　不能引用所有类中的方法<br>
+　　b.引用数组的构造方法<br>
+　　格式: 数据类型[]::new<br>
+　　细节:数组的类型需要和流中的数据类型一致<br></p>
+<h2 id="异常br">异常<br>
+</h2><p><img src="/p/javase/%E5%BC%82%E5%B8%B8.jpg"
+	width="1454"
+	height="861"
+	srcset="/p/javase/%E5%BC%82%E5%B8%B8_hu16223925195040471969.jpg 480w, /p/javase/%E5%BC%82%E5%B8%B8_hu4120473227468803120.jpg 1024w"
+	loading="lazy"
+	
+		alt="异常"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="168"
+		data-flex-basis="405px"
+	
+>
+throw：抛出  system.err.println(..): 输出红色信息<br>
+<strong>总结</strong><br>
+异常是什么： 程序中可能出现的问题<br>
+异常体系最上层父类谁： Exception<br>
+异常分两类： 编译时异常和运行时异常<br>
+编译时异常： 没有继承RuntimeExcpetion的异常，直接继承Excpetion.编译阶段就会提示错误<br>
+运行时异常： RuntimeException本身和子类.编译时没有错误提示，运行时会出现<br>
+编译时异常主要在提示程序员检查本地环境错误<br>
+运行时异常就是代码错误<br></p>
+<p><strong>异常的作用</strong><br>
+一: 异常是用来查询bug的关键参考信息<br>
+二: 异常可以作为方法内部的一种特殊返回值，以便通知调用者底层的执行情况<br></p>
+<p><strong>异常的处理方式</strong><br></p>
+<ol>
+<li>JVM默认的处理方式<br>
+把异常的名称，原因及异常出现的位置等信息输出在控制台<br>
+程序停止执行，异常下面的代码也不会执行了<br></li>
+<li>自己处理(捕获异常)<br>
+格式: try{&hellip;}catch(&hellip; e){&hellip;}<br>
+目的: 当代码出现异常时，可以让程序继续执行下去<br>
+try中遇到多个错误可以写多个catch与之对应<br>
+try中遇到第一个错误会直接去找catch，下面不会执行，但解决后再次运行可能会再出别的错误，所有要写多个catch<br>
+如果try中的问题没有被捕获(catch中没有)最终还是会交给虚拟机处理<br>
+细节:如果我们捕获多个异常，这些异常中如果存在父子关系，父类一定要在最下面<br>
+<em>了解:JKD7后，就可以才catch中同时捕获多个异常用|分隔开就行表示或</em><br></li>
+</ol>
+<p><strong>Throwable的成员方法</strong><br>
+e就表示调用的Throwable的printStackTrace方法<br>
+public String getMessage() | 返回此throwable的详细消息字符串(了解)<br>
+public String toString() | 返回此可抛出的简短描述(了解)<br>
+public void printStackTrace() | 把异常的错误信息输出在控制台<br>
+printStackTrace包含了前两个的提示信息，同时printStackTrace仅仅是打印不会停止程序<br></p>
+<p><strong>抛出处理</strong><br>
+throws: 写在方法的定义处，表示声明一个异常 告诉调用者，使用本方法可能会出现一些异常<br>
+throw: 写在方法内，结束方法 手动抛出异常对象，交给调用者，方法中下面的代码就不再执行了<br>
+自定义异常<br></p>
+<ol>
+<li>定义异常类<br></li>
+<li>写继承关系<br></li>
+<li>空参构造<br></li>
+<li>带参构造<br></li>
+</ol>
+<h2 id="filebr">File<br>
+</h2><p>File对象就表示一个路径，可以是文件的路劲，也可以是文件夹的路径<br>
+这个路径可以是存在的，也可以是不存在的<br>
+只能对文件本身进行操作，不能读写文件里面存储的数据<br></p>
+<p><strong>构造方法</strong><br></p>
+<ul>
+<li>publi File(String pathname) &mdash; 根据文件路径创建文件对象<br></li>
+<li>publi File(String parent，String child) &ndash; 根据父路径名字符串和子路径名字符串创建对象<br></li>
+<li>publi File(String parent，String child) &ndash; 根据父路径对应文件对象和子路径名字符串创建对象<br></li>
+</ul>
+<p><strong>方法</strong><br></p>
+<ol>
+<li>判断类型方法<br>
+isDirectory() 判断此路径名是否表示File为文件夹<br>
+isFile() 判断此路径名是否表示File为文件<br>
+exists() 判断此路径名表示的File是否存在<br></li>
+<li>获取类型方法<br>
+length() 返回文件的大小(单位:字节)<br>
+getAbsolutePath() 返回文件绝对路径<br>
+getPath() 返回定义文件时使用的路径<br>
+getName() 返回文件或者文件夹的名称，带后缀<br>
+lastModified() 返回文件最后的修改时间<br></li>
+<li>创建和删除方法<br>
+createNewFile() 创建一个新的空文件<br>
+如果文件不存在就创建返回true否则返回false如果路径不存在就报错.<br>
+如果没有写后缀就会创建一个无后缀的文件<br>
+　　mkdir() 创建单级文件夹<br>
+　　mkdirs() 创建多级文件夹<br>
+　　delete() 删除文件，空文件夹(不走回收站)<br></li>
+<li>获取并遍历方法<br>
+listFiles() 获取当前路径下所有内容<br>
+路径不存在或者是文件或者路径需要权限都是返回null<br>
+空文件返回为0的数组<br>
+有内容会返回到file数组中，包括隐藏文件夹<br></li>
+</ol>
+<h2 id="io流br">IO流<br>
+</h2><p>存储和读取数据的解决方案<br>
+I： input　　　　O：output　　　　流：像水流一样传输数据<br>
+<strong>IO流的分类</strong><br>
+流的方向分为: 输入流和输出流<br>
+操作文件类型分为: 字节流和字符流(字节流可操作所有文件，字符流只能操作纯文本文件)<br></p>
+<p><strong>IO流的作用</strong><br>
+用于读写数据(本地文件，网络)<br></p>
+<p><strong>IO流的体系</strong><br>
+字节流: InputStream(字节输入流)   OutputStream(字节输出流)<br>
+字符流: Reader(字符输入流)    Writer(字符输出流)<br>
+都是抽象类，要使用还得看子类<br></p>
+<h3 id="字节流">字节流
+</h3><p>FileOutputStream写数据的3种方式<br>
+1：write(int b) 一次写一个字节数据<br>
+2：write(byte[] b) 一次写一个字节数组数据<br>
+3：write(byte[] b，int off，int len) 一次写一个字节数组的部分数据<br>
+<strong>字节流输出细节</strong><br>
+1.创建字节输出流对象<br>
+参数是字符串表示的路径或者是File对象都可以<br>
+如果文件不存在会创建一个新的文件，但要保证父级路劲是存在的<br>
+如果文件存在，默认会清空文件<br>
+但是创建时，传递true当第二个参数可以打开续写功能<br></p>
+<p>2.写数据<br>
+write方法的参数是整数，但实际写到里面的是根据ASCII码来转换的<br>
+可以先定义字符串然后用getBytes()方法来变成字节数组<br>
+如果要换行就定义一个字符串&quot;\r\n&quot;输出就行<br></p>
+<p>3.释放资源<br>
+每次使用完流后都要释放资源<br>
+FileInputStream读数据的方法<br>
+public int read() 一次读取一个字节<br>
+public int read(byte[] buffer) 一次读取一个字节数组数据<br>
+<em>注意: 一次读一个字节数据的数据，每次读取会尽可能把数组装满</em><br></p>
+<p><strong>字节流输入细节</strong><br>
+1.创建对象<br>
+格式: FileInputStream fis = new FileInputStream(&quot;..\.\.&quot;);<br>
+如果文件不存在就会直接报错<br></p>
+<p>2.读取数据<br>
+一次读取一个字节，读取的是数据对应的ASCII码上的数字<br>
+读到文件末尾了read方法返回-1<br>
+如果是字节数组读取每次读取会覆盖上次数据<br>
+数据不够全部覆盖就会覆盖部分，残余数据不变<br>
+例子:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="w">    </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="n">1024</span><span class="o">?</span><span class="n">1024</span><span class="o">?</span><span class="n">5</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="o">=</span><span class="n">fis</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="c1">//(返回读取字节数)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>3.释放资源<br>
+每次使用完流后都要释放资源<br>
+释放规则:先开的最后关闭<br>
+try&hellip;catch异常处理<br>
+可能会导致没法释放资源，但是用finally{..}可以<br>
+finally{..}里的语句一定会执行，除非虚拟机停止<br></p>
+<h3 id="字符流br">字符流<br>
+</h3><p>字符流底层就是字节流<br>
+字符流=字节流+字符集<br>
+特点: 一次读一个字节，遇到中文时，一次读多个字节<br>
+使用场景: 对于纯文本进行读写操作<br>
+<strong>FileReader字符输入</strong><br>
+1.创建字符输入流对象<br>
+public FileReader(File file) <br>
+public FileReader(String pathname)<br>
+细节: 如果文件不存在直接报错 <br></p>
+<p>2.读取数据<br>
+public int read() &ndash; 读取数据，末尾返回-1<br>
+public int read(char[] buffer) &ndash; 读取多个数据，末尾返回-1<br>
+细节: 按字节读取，遇到中文，一次读多个字节，读取后解码<br>
+细节: 空参是读取字节-&gt;转十进制 有参多了一步强转<br></p>
+<p>3.释放资源<br>
+public int close()<br></p>
+<p><strong>FileWriter字符输出</strong><br>
+1.创建字符输出流对象<br>
+public FileWriter(File file/String pathname)<br>
+public FileWriter(&hellip;，boolean append) 续写开关<br>
+细节: 参数是字符串还是File都可以<br>
+细节: 如果不存在会创建一个，但要保证父级路劲存在<br>
+细节: 如果存在会清空，不想清空就要打开续写开关<br></p>
+<p>2.输出方法<br>
+void write(int c/String str/char[] chs)<br>
+void write(String str，int off，int len) 写字符串一部分<br>
+void write(char[] chs，int off，int len)写字符数组一部分<br>
+细节: 如果write方法参数是整数，实际写的数据是字符集对于的字符<br></p>
+<p>3.释放资源<br></p>
+<p><strong>字符流原理解析</strong><br>
+1.创建字符输入/输出流对象<br>
+底层: 关联文件，并创建缓存区(长度:8192的字节数组)，字节流没有缓存区<br></p>
+<p>2.读取数据<br>
+输入流底层:<br>
+　　(1)判断缓存区是否有数据可以被读取<br>
+　　(2)没有数据，就区文件中获取，尽可能装满缓冲区，文件也没有就返回-1<br>
+　　(3)有数据就从缓冲区中读取数据<br>
+　　(4)缓冲区读取文件会从头开始覆盖缓冲区内容<br>
+空参的read方法:一次读取一个字节，遇到中文一次读取多个字节把字节解码且转成十进制返回<br>
+有参的read方法:读取字节，解码，强转三步合并了，强转后的字符放到数组中<br>
+输出流底层:<br>
+　　(1)把要输出的对象存到缓存区，用flush或者close从缓存区输出到文件<br>
+　　(2)缓冲区满了也会自动输出到文件<br>
+　　(3)手动刷新&ndash;flush 关闭资源&ndash;close <br>
+　　(4)BOM头<br></p>
+<h3 id="高级流br">高级流<br>
+</h3><p>FileInputStream &ndash; FileOutputStream   FileReader &ndash; FileWriter 都属于基本流<br>
+<em>创建带缓冲区的流是高级流</em><br>
+BufferedInputStream &ndash; BufferedOutputStream  BufferedReader &ndash; BufferedWriter<br>
+<strong>字节缓冲流</strong><br>
+原理:底层自带了长度为8192的缓冲区提高性能<br>
+构造方法<br></p>
+<ul>
+<li>public BufferedInputStream(InputStream is)<br></li>
+<li>public BufferedOutputStream(OutputStream os)<br></li>
+<li>把基本流包装成高级流，提高读取/写出数据的性能<br></li>
+<li>输入和输出分别创建两个缓冲区，节约了去硬盘找数据的时间<br></li>
+</ul>
+<p>例: BufferedInputStream buf = new BufferedInputStream(new FileInputStream(&hellip;.));<br></p>
+<p><strong>字符缓冲流</strong><br>
+有独有的方法<br></p>
+<ul>
+<li>public String readLine() 输入的方法，读取一行数据，没有返回null<br></li>
+<li>public void newLine() 跨平台换行<br></li>
+<li>public void flush() 刷新<br></li>
+</ul>
+<p>缓存流自带8192的缓存区，字节流是8192个字节，字符是8192个字符<br>
+建议:IO流随用随键，因为IO建立流会清空文件<br></p>
+<p><strong>转换流</strong><br>
+属于字符流，本身也是一种高级流<br>
+是字符流和字节流之间的桥梁<br>
+InputStreamReader&ndash;转换输入流  OutputStreamWriter&ndash;转换输出流<br>
+作用1:指定编码格式读取/输出文件(11版本淘汰了)<br>
+作用2:字节流想要使用字符流中的方法<br>
+例: 利用转换流指定字符编码读取<br>
+FileReader fr = new FileReader(&quot;&hellip;&quot;，Charset.forName(&ldquo;GBK&rdquo;));<br>
+将文件内容按照GBK编码格式读取出来<br></p>
+<p><strong>序列化流/对象操作输出流</strong><br>
+ObjectInpoutStream&ndash;反序列化流   ObjectOutputStream&ndash;序列化流<br>
+构造方法<br>
+public ObjectOutputStream(OutputStream out)&ndash;把基本流包装成高级流<br>
+成员方法<br>
+public final void writeObject(Object obj)&ndash;把对象序列化写到文本中去<br>
+小细节<br>
+使用对象输出流将对象保存到文件时会出现NotSerializ&hellip;&hellip;异常<br>
+解决方案: 需要让javabean类实现Seriailzable接口<br></p>
+<p><strong>反序列化流/对象操作输入流</strong><br>
+构造方法<br>
+public ObjectInputStream(InputStream out)&ndash;把基本流变成高级流<br>
+成员方法<br>
+public Object readObject()&ndash;把序列化到文件中的对象读取到程序中<br>
+小细节<br>
+序列化到文件后修改JavaBean再反序列化会报错，版本号不一致<br>
+解决方案: 直接手打private static final long seriaLVersionUID=1L;<br>
+　　在Settings中搜索Serializable，勾选两个，然后类名提示自动生成UID<br>
+transient:瞬态关键字&ndash;不会把当前属性序列到本地文件中<br>
+如果要序列化多个对象，一般先添加到集合在序列化到文件，这样读取就直接转成集合就行，方便循环读取<br></p>
+<p><strong>打印流</strong><br>
+打印流不能读只能写<br>
+分类: PrintStream&ndash;字节打印流   PrintWriter&ndash;字符打印流<br>
+特点1: 打印流只操作文件目的地，不操作数据源<br>
+特点2: 特有的写出方法可以实现，数据原样输出<br>
+例 打印 97 文件中 97<br>
+特点3: 特有的写出方法，可以实现自动刷新，自动换行<br>
+打印一次数据 = 写出+换行+刷新<br></p>
+<ol>
+<li>字节打印流<br>
+构造方法<br>
+(1)public PrintStream(OutputStream/File/String)&ndash;关联字节输出流/文件/文件路径<br>
+(2)public PrintStream(String fileName，Charset charset)&ndash;指定字符编码<br>
+(3)字节流底层没有缓存区，开不开自动刷新没有区别，那俩方法没写<br>
+成员方法<br>
+(1)write(int b)&ndash;常规方法，规则和之前一样，将指定字节输出<br>
+(2)println(Xxx xx)&ndash;特有方法，打印任意数据，自动刷新，自动换行<br>
+(3)print(Xxx xx)&ndash;特有方法，打印任意数据，不换行<br>
+(4)printf(String format，object&hellip; args)&ndash;特有方法，带有占符位的打印数据，不换行<br></li>
+<li>字符打印流<br>
+构造方法<br>
+(1)public PrintWriter(Write/File/String)&ndash;关联字符输出流/文件/文件路径<br>
+(2)public PrintWriter(String fileName，Charset charset)&ndash;指定字符编码<br>
+(3)public PrintWriter(Write w，boolean autoFlush)&ndash;自动刷新<br>
+(4)public PrintWriter(OutputStream out，boolean autoFlush，Charset charset)&ndash;指定字符编码且自动刷新<br>
+(5)字符打印流底层有缓存区，想要自动刷新需要开启<br>
+成员方法<br>
+和字节成员方法基本一样<br></li>
+</ol>
+<p><strong>解压缩流/压缩流</strong><br>
+ZipInputStream&ndash;解压缩流   ZipOutputStream&ndash;压缩流<br>
+解压缩流<br>
+解压本质: 把每个ZipEntry按照层级拷贝到本地另一个文件夹中<br>
+getNextEntry(): 获取压缩包里面的文件或文件夹，没有数据会返回null<br>
+read(): 获取文件的字节流<br></p>
+<p><strong>压缩流</strong><br>
+ZipEntry entry = new ZipEntry(&quot;&hellip;txt&quot;): 创建ZipEntry对象<br>
+putNextEntry(entry): 建立压缩包里面的压缩文件或者目录<br>
+压缩包结构搭建好了，再把文件里面的内容用文件输出流传到压缩包中<br>
+write(): 输出到文件里面<br>
+Commons-io<br>
+Commons-io是apache开源基金组织提供的一组有关IO操作的开源工具包<br>
+作用: 提高IO流的开发效率<br>
+有前面IO流的大部分内容，经典白学<br></p>
+<p><strong>Hutool工具包</strong><br>
+中国人发明的工具包<br>
+读取文件内容<br>
+FileUtil.readUtf8Lines(&ldquo;文件地址&rdquo;)<br>
+写入到文件中<br>
+FileUtil.writeLines(user，&ldquo;文件地址&rdquo;，&ldquo;编码格式&rdquo;)<br>
+注册和登录用户的编码核心思想<br></p>
+<h2 id="权重br">权重<br>
+</h2><p>用数组添加0和1来实现权重(适用于小数据)<br>
+计算权重的方法<br></p>
+<ol>
+<li>先提前在每个对象后面写好权重数字<br></li>
+<li>然后用字符流传到内存中<br></li>
+<li>定义一个类好管理对象里面每一个数据(主要是权重变量)<br></li>
+<li>然后把所有权重相加，把每个权重除以总权重，得出每个变量的权重范围<br></li>
+<li>后一个权重的范围是前一个权重数加上本身权重数<br></li>
+<li>然后就可以随机一个小数，去找这个数属于哪个权重范围(二分查找)<br></li>
+<li>会返回一个数然后就可以用数组去获取这个数对应的索引的信息<br></li>
+<li>然后就可以把权重数修改，然后返回给类对象<br></li>
+<li>然后建立字符流保存到文件中<br></li>
+</ol>
+<h2 id="配置文件br">配置文件<br>
+</h2><p>XML   ini   properties   YAML<br>
+properties是一个双列集合，拥有Map集合的所有特点<br>
+重点: 有一些特有方法，可以把集合中的数据按照键值对的形式写到或者读取到配置文件中<br>
+创建properties时没有泛型类，所有properties可以添加任何数据，但是一般只添加字符串<br>
+properties和IO流结合的特有方法<br>
+Properties prop = new Properties();<br>
+prop.put(&quot;..&quot;，&quot;..&quot;)&ndash;直接往文件里面写双列集合数据<br>
+prop.store(file，&quot;&hellip;.&quot;)&ndash;直接往文件里面写注释<br>
+prop.load(file)&ndash;直接读取文件内容(只能读取双列集合的数据)<br></p>
+<h2 id="乱码问题br">乱码问题<br>
+</h2><p><strong>计算机存储规则</strong><br></p>
+<ol>
+<li>GB2321字符集:1980年发布只有简体<br></li>
+<li>BIG5字符集:台湾地区繁体中文字符集<br></li>
+<li>GBK字符集:2000年3月17日发布，有简体，繁体和日韩汉字<br>
+<em>windows系统默认使用GBK.系统显示ANSI</em><br></li>
+<li>Unicode字符集:国际标准字符集，世界各种语言定义一个唯一编码<br></li>
+<li>在计算机中任意数据都是二进制存储<br></li>
+<li>最小存储单位是字节<br></li>
+</ol>
+<p><strong>GBK(汉字)</strong><br>
+完全兼容ASCII码<br>
+规则1：汉字两个字节存储<br>
+规则2：汉字高位字节二进制一定以1开头，转成十进制后是一个负数<br>
+规则3：英文一个字节存储，兼容ASCII码，二进制前面补0，所有首位一定是0<br>
+Unicode:万国码<br>
+开始UTF-16:用2<del>4字节保存<br>
+然后UTF-32:固定用4个字节<br>
+最后UTF-8:用1</del>4字节保存<br></p>
+<p><strong>UTF-8规则</strong><br>
+ASCII:1个字节 0xxxxxxx<br>
+简体中文: 3个字节 1110xxxx 10xxxxxx 10xxxxxx<br>
+x是用对应的二进制去挨个填补<br>
+UTF-8是字符集的一种编码方式<br></p>
+<p><strong>乱码</strong><br>
+原因1: 读取数据时未读取完整个汉字<br>
+原因2: 编码和解码的方式不统一<br>
+编码<br>
+public byte[] getBytes() &ndash; 默认方式<br>
+public byte[] getBytes(String charsetName) &ndash; 指定方式<br>
+解码<br>
+String(byte[] bytes) &ndash; 默认方式<br>
+String(byte[] bytes，String charsetName) &ndash; 指定方式<br></p>
+<h2 id="多线程br">多线程<br>
+</h2><p>线程是操作系统能够进行运算调度的最小单位，它被包含在进程之中，是进程中的实际运作单位<br>
+进程: 进程是程序的基本执行实体<br>
+简单理解: 应用软件中互相独立，可以同时运行的功能<br>
+多线程内容讲解图:<br>
+<img src="/p/javase/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9B%BE%E8%A7%A3.jpg"
+	width="1856"
+	height="902"
+	srcset="/p/javase/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9B%BE%E8%A7%A3_hu10742577049778062944.jpg 480w, /p/javase/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9B%BE%E8%A7%A3_hu9620761446457675128.jpg 1024w"
+	loading="lazy"
+	
+		alt="多线程图解"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="205"
+		data-flex-basis="493px"
+	
+></p>
+<p><strong>并发和并行</strong><br>
+并发:在同一个时刻，有多个指令在CPU上交替进行<br>
+并行:在同一个时刻，有多个指令在多个CPU上同时执行<br></p>
+<p><strong>实现方法</strong><br></p>
+<ol>
+<li>继承Thread类的方式进行实现<br></li>
+<li>实现Runnable接口的方式进行实现<br></li>
+<li>利用Callable接口和Future接口方式实现<br></li>
+</ol>
+<p>Thread实现方法<br>
+用extends继承Thread，然后重写run方法<br>
+public class MyThread extends Thread{ &hellip;run(){}}<br>
+然后再测试类中创建实现Thread的类，然后调用start方法开启线程<br>
+MyThread ts = new MyThread();<br>
+ts.setName(&quot;..&quot;)&ndash;可以给run传数据，run里面调用getName可以获取数据<br>
+ts.start();<br></p>
+<p>Runnable实现方法<br>
+用implements实现Runnable接口，然后重写里面的run方法<br>
+public class MyRunnable implements{&hellip;run(){}}<br>
+创建MyRunnable类对象，然后创建线程对象，用线程对象才可以开启线程<br>
+MyRunnable my = new MyRunnable();<br>
+Thread tr = new Thread(my);<br>
+tr.start();<br>
+在Runnable的run中没法直接用getName获取内容<br>
+先用Thread t = Thread.currenrThread();获取当前线程对象<br>
+然后用t.getName()来获取setName(&quot;&hellip;&quot;)中的内容<br></p>
+<p>Callable接口和Future接口实现方法<br>
+创建一个MyCallable实现Callable接口，然后重写call方法(有返回值)<br>
+public class MyCallable implements Callable&lt;泛型&gt;{&hellip;call()..}<br>
+创建一个MyCallable类对象表示多线程要执行的任务，创建FutureTask的对象管理多线程运行的结果<br>
+MyCallable mc = new MyCallable();<br>
+FutureTask<Integer> ft = new FutureTask&lt;&gt;(mc);<br>
+创建Thread类对象，开启多线程<br>
+Thread t =  new Thread(ft);<br>
+t.start();<br>
+然后调用FutureTask的实例对象的get()方法就可以获取返回值<br>
+ft.get();<br></p>
+<p><strong>成员方法</strong><br></p>
+<ul>
+<li>String getName()&ndash;返回此线程的名称<br></li>
+<li>void setName(String name)&ndash;设置线程的名字(构造方法也可以)<br></li>
+<li>static Thread currentThread()&ndash;获取当前线程的对象<br></li>
+<li>static void sleep(long time)&ndash;让线程休眠指定时间(毫秒)<br></li>
+<li>setPriority(int newPriority)&ndash;设置线程优先级(默认5)<br></li>
+<li>final int getPriority()&ndash;获取线程优先级(不是绝对的，只是概率增加)<br></li>
+<li>final void setDaemon(boolean on)&ndash;设置为守护线程(备胎)<br></li>
+<li>poublic static void yield()&ndash;礼让线程(了解)<br></li>
+<li>public static void join()&ndash;插队线程(了解)<br></li>
+</ul>
+<p>守护线程:非守护线程结束后，守护线程会执行一点然后结束，不一定会执行到底<br>
+生命周期:新建-&gt;就绪(抢CPU执行权)-&gt;运行代码-&gt;结束线程<br>
+　　　　　　中间遇到sleep()或者其他阻塞代码后会回到就绪状态<br></p>
+<p><strong>线程锁(同步代码块)</strong><br>
+把操作共享数据的代码锁起来<br>
+格式: synchronized(锁){&hellip;}<br>
+特点: 锁默认打开，有一个线程进去了，锁自动关闭:里面代码全部执行完毕，线程出来，锁自动打开<br>
+要求: 锁对应可以是任意数据，但必须要唯一，可以用static来定义数据保证数据唯一性<br></p>
+<p><strong>同步方法</strong><br>
+就是把synchronized关键字添加到方法上面<br>
+格式: 修饰符 synchronized 返回值类型 方法名(参数){&hellip;}<br>
+特点1: 同步方法是锁住方法里面所有的代码<br>
+特点2: 锁对象不能自己指定 非静态&ndash;this  静态&ndash;当前类的字节码文件对象<br>
+细节: StringBuilder和StringBuffer方法基本一样，但是StringBuilder用于多线程是不安全的<br></p>
+<p><strong>Lock锁</strong><br>
+为了更加清晰的表达如何加锁和释放锁，JDK5后提高了一个Lock锁<br>
+void lock()&ndash;获得锁<br>
+void unlock()&ndash;释放锁<br>
+Lock是接口不能直接实例化，这里采用它的实现类ReentrantLock来实例化<br>
+static Lock lock = new ReentrantLock();<br>
+加static是因为可能会创建多个实例化对象，但是锁要共享的<br></p>
+<p><strong>死锁</strong><br>
+是个错误的，一个bug<br>
+锁嵌套就容易造成死锁<br></p>
+<p><strong>生产者和消费者(等待唤醒机制)</strong><br>
+消费者步骤<br>
+1.判断桌子上是否有食物<br>
+2.如果没有就等待<br>
+3.如果有就开吃<br>
+4.吃完后唤醒生产者继续做<br>
+生产者步骤<br>
+1.判断桌子上是否有食物<br>
+2.有就等待<br>
+3.没有就做食物<br>
+4.把食物放到桌子上<br>
+5.叫醒等待者开吃<br></p>
+<p>第一种实现方法<br>
+void wait()&ndash;当前线程等待，直到被其他线程唤醒<br>
+void notify()&ndash;随机唤醒单个线程<br>
+void notifyAll()&ndash;唤醒所有线程<br>
+<em>注意:调用方法时用锁对象去调用这些方法</em><br></p>
+<p>第二种实现方法<br>
+阻塞队列方式实现<br>
+put数据时:放不进去，会等会，就叫阻塞<br>
+take数据时:取出第一个数据，取不到时，会等着，也叫阻塞<br>
+阻塞队列继承于四个接口从高到低分别是<br>
+Iterable-&gt;Collection-&gt;Queue-&gt;BlockingQueue<br>
+实现类分别为: ArrayBlockingQueue(底层是数组，有界)，LinkedBlockingQueue(底层是链表，最大值是int最大值，相当于无界)<br>
+<em>细节:生产者和消费者必须使用同一个生产队列，队列不需要写锁了</em><br>
+在主函数实现类对象，在生产者或消费者类中去定义成员变量，如何创建Javabean有参方法<br></p>
+<p><strong>线程的状态</strong><br>
+新建状态(new)&mdash;&ndash;创建线程对象<br>
+就绪状态(runnable)&mdash;&ndash;start方法<br>
+阻塞状态(blocked)&mdash;&ndash;无法获得锁对象<br>
+等待状态(waiting)&mdash;&ndash;wait方法<br>
+计时状态(timed_waiting)&mdash;&ndash;sleep方法<br>
+结束状态(terminated)&mdash;&ndash;全部代码运行完毕<br></p>
+<p><strong>线程池</strong><br>
+主要核心原理<br></p>
+<ol>
+<li>创建一个池子，池子中是空白的<br></li>
+<li>提交任务时，池子会创建一个新的线程对象，任务完毕时，归还线程下次再提交时直接复用线程<br></li>
+<li>如果提交任务时，池子中没有空闲线程，也无法创建新的线程，就会排队等待<br></li>
+</ol>
+<p>线程池一般不会销毁<br>
+用线程池提交任务可以直接执行线程<br>
+创建线程池<br>
+public static ExecutorService newCachedThreadPool()&mdash;创建一个没上限的线程池<br>
+public static ExecutorService newFixedThreadPool(int nThreads)&mdash;创建一个有上限的线程池<br>
+例: ExecutorService pool = Executors.newCachedThreadPool();&ndash;获取线程池对象<br>
+　　　　pool.submit(new MyRunnable());&ndash;提交线程任务<br>
+　　　　pool.shutdown();&ndash;销毁线程池<br></p>
+<p><strong>自定义线程池</strong><br>
+例: ThreadPoolExecutor thor = new ThreadPoolExecutor(3，6，60，TimeUnit.SECONDS，new ArrayBlockINGqUEUE&lt;&gt;(3)，Executors.defaultThreadFactory()，new ThreadPoolExecutor.AbortPolicy());<br></p>
+<ul>
+<li>参数一核心线程数量&mdash;不能小于0<br></li>
+<li>参数二最大线程数&mdash;不能小于0<br></li>
+<li>参数三空闲线程最大存活时间&mdash;不能小于0<br></li>
+<li>参数四时间单位&mdash;用TimeUnit指定<br></li>
+<li>参数五任务队列&mdash;不能为null<br></li>
+<li>参数六创建线程工厂&mdash;不能为null<br></li>
+<li>参数七任务拒绝策略&mdash;不能为null<br></li>
+</ul>
+<p>注意:<br>
+自定义线程池中是核心线程满了然后任务队列也排满了之后剩余的线程再启用临时线程服务，所以不是先来先服务的<br>
+拒绝策略一般都是默认的就行，当临时线程都满了，就会触发拒绝策略<br></p>
+<p><strong>线程池多大合适?</strong><br>
+CPU密集型运算&mdash;-最大并行数+1<br>
+I/O密集型运算&mdash;-最大并行数?期望CPU利用率?总时间(CPU计算时间+等待时间)/CPU计算时间<br>
+最大并行数&mdash;-idea可以获取电脑的最大处理器数<br></p>
+<h2 id="网络编程br">网络编程<br>
+</h2><p>网络编程就是在网络通信协议下，不同计算机上运行的程序，进行的数据传输<br>
+Java中可以使用Java.net包下的技术轻松开发出常见的网络应用程序<br>
+常见的架构<br>
+CS&mdash;&ndash;客服端/服务器　　　　BS&mdash;&ndash;浏览器/服务器<br></p>
+<p><strong>网络编程三要素</strong><br></p>
+<ol>
+<li>IP:设备在网络中的地址，是唯一的标识<br></li>
+<li>端口号:应用程序在设备中的唯一的标识<br></li>
+<li>协议:数据在网络中传输的规则，常见的协议有UDP，TCP，HTTP，HTTPS，FTP<br></li>
+</ol>
+<p>IP: IPV4和IPV6   特殊IP 127.0.0.1&ndash;本机地址<br>
+端口号: 应用程序在设备中唯一的标识，一个端口号只能被一个程序使用<br>
+<img src="/p/javase/%E5%8D%8F%E8%AE%AE.jpg"
+	width="1828"
+	height="880"
+	srcset="/p/javase/%E5%8D%8F%E8%AE%AE_hu12572991746093744994.jpg 480w, /p/javase/%E5%8D%8F%E8%AE%AE_hu9434210132369519944.jpg 1024w"
+	loading="lazy"
+	
+		alt="协议"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="207"
+		data-flex-basis="498px"
+	
+></p>
+<p><strong>InetAddress的使用</strong><br>
+获取InetAddress的对象<br>
+InetAddress address = InetAddress.getByName(&ldquo;ip地址或者主机名&rdquo;);<br>
+然后就可以用address调用方法来获取电脑的信息了<br></p>
+<p><strong>UDP协议</strong><br></p>
+<ul>
+<li>用户数据报协议<br></li>
+<li>UDP是面向无连接通信协议<br></li>
+<li>速度快，有大小限制一次最多64K，数据不安全，易丢失<br></li>
+</ul>
+<p>发送数据<br></p>
+<ol>
+<li>创建对象<br>
+DatagramSocket ds = new DatagramSocket(..);&mdash;有参指定端口号发送，无参在可用端口号中随机选一个<br></li>
+<li>打包数据<br>
+String str = &ldquo;你好&rdquo;;<br>
+byte[] bytes = str.getBytes();<br>
+InetAddress address = InetAddress.getByName(&ldquo;127.0.0.1&rdquo;);<br>
+int port = 10086;<br>
+DatagramPacket dp = new DatagramPacket(bytes，bytes.length，address，port);<br></li>
+<li>发送数据<br>
+ds.send(dp);<br></li>
+<li>释放资源<br>
+ds.close();<br></li>
+</ol>
+<p>接收数据<br></p>
+<ol>
+<li>创建对象<br>
+DatagramSocket ds = new DatagramSocket(10086);&ndash;接收数据时一定要绑定端口，端口还要和打包时端口号一样<br></li>
+<li>接收数据包<br>
+byte[] bytes = new byte[1024];<br>
+DatagramPacket dp = new DatagramPacket(bytes， bytes.length);<br>
+ds.receive(dp);<br></li>
+<li>解析数据包<br>
+byte[] data = dp.getData();&ndash;获取数据<br>
+int length = dp.getLength();&ndash;获取数据长度<br>
+InetAddress address = dp.getAddress();&ndash;获取发送数据的电脑信息<br>
+int port = dp.getPort();&ndash;获取发送数据的端口号<br>
+System.out.println(new String(data，0，length));&ndash;数据需要转成字符串输出<br></li>
+<li>释放资源<br>
+ds.close();<br></li>
+</ol>
+<p>先运行接收后运行发送<br>
+用while就可以实现多次发送数据，实时接收数据的聊天室案例<br></p>
+<p>UDP的三种通信方式<br>
+单播 组播 广播<br>
+单播:上面的代码就是单播<br>
+组播:组播地址224.0.0.0~239.255.255.255 其中224.0.0.0!224.0.0.255为预留的组播地址<br>
+广播:广播地址255.255.255.255<br>
+创建组播&ndash;MulticastSocket ms = new MulticastSocket();<br>
+组播接收端多了一步要将当前本机添加到组播地址中<br>
+InetAddress address = InetAddress.getByName(&ldquo;224.0.0.1&rdquo;);<br>
+ms.joinGroup(address);<br>
+广播:把单播的地址改成255.255.255.255就可以了<br></p>
+<p><strong>TCP协议</strong><br></p>
+<ul>
+<li>传输控制协议TCP<br></li>
+<li>TCP协议是面向连接的通信协议<br></li>
+<li>速度慢，没有大小限制，数据安全<br></li>
+<li>TCP通信协议是一种可靠的，它在通信两端各建立一个Socket对象<br></li>
+<li>通过Socket产生IO流来进行网络通信<br></li>
+</ul>
+<p>客户端<br></p>
+<ol>
+<li>创建客户端对象<br>
+Socket socket = new Socket(&ldquo;127.0.0.1&rdquo;， 10001);<br></li>
+<li>从连接通道中获取输出流<br>
+OutputStream put = socket.getOutputStream();<br>
+3.写出数据<br>
+put.write(&ldquo;aaa&rdquo;.getBytes());<br>
+4.释放资源<br>
+put.close();<br>
+socket.close();<br></li>
+</ol>
+<p>补充: socket.shutdownOutput();&mdash;表示数据传输    结束标志<br></p>
+<p>服务端<br></p>
+<ol>
+<li>创建服务端对象<br>
+ServerSocket ss = new ServerSocket(10001);<br></li>
+<li>监听客户端连接<br>
+Socket socket = ss.accept();<br></li>
+<li>从连接通道中获取输入流<br>
+InputStream str = socket.getInputStream();<br></li>
+<li>输出数据<br>
+int b;<br>
+while ((b = str.read()) != -1){System.out.print((char) b);}
+5.释放资源<br>
+input.close();<br>
+ss.close();<br></li>
+</ol>
+<p>细节:<br>
+客户端如果发送的数据是中文，需要在服务端进行字符流转换，要不会出现乱码<br>
+用三次握手协议保证连接建立 (客-&gt;服请求连接，服-&gt;客响应，客-&gt;服再次确认连接建立)<br>
+用四次挥手协议断开连接，保证连接通道里面的数据处理完毕了 (客-&gt;服请求，服-&gt;客响应，服-&gt;客确认取消，客-&gt;服确认取消)<br>
+小知识UUID: 随机生成一长串字符一般用作文件名<br></p>
+<h2 id="反射br">反射<br>
+</h2><p>反射允许对成员变量，成员方法和构造方法的信息进行编程访问<br>
+可以将类中的信息扒的一干二净 分为获取和解剖<br>
+获取是从class字节码文件中获取的<br>
+获取class对象的三种方式<br></p>
+<ol>
+<li>Class.forName(&ldquo;全类名&rdquo;)&mdash;源代码阶段<br></li>
+<li>类名.class&mdash;加载阶段<br></li>
+<li>对象.getClass()&mdash;运行<br></li>
+</ol>
+<p>这三种获取的是同一个数据<br>
+得到class对象后就这个类的可以得到<br>
+get:获得&ndash;构造方法(Constructor)，字段(Field)，成员方法(Method)<br>
+set:设置&ndash;参数(Parameter)，修饰符(Modifiers)，私有的(Declared)<br></p>
+<p><strong>利用反射获取构造方法和解剖</strong><br>
+Class类中用于获取构造方法的方法<br></p>
+<ul>
+<li>Constructor<?>[] getConstructors(): 返回所有公共构造方法对象的数组<br></li>
+<li>Constructor<?>[] getDeclaredConstructors(): 返回所有构造方法对象的数组<br></li>
+<li>Constructor<?>[] getConstructor(Class<?>&hellip; parameterTypes): 返回单个公共构造方法对象<br></li>
+<li>Constructor<?>[] getDeclaredConstructor(Class<?>&hellip; parameterTypes): 返回单个构造方法对象<br></li>
+</ul>
+<p>Constructor类中用于创建对象的方法<br></p>
+<ul>
+<li>T newInstance(Object&hellip; initargs): 根据指定的构造方法创建对象<br></li>
+<li>setAccessible(boolean flag): 设置为true，表示取消访问检查<br></li>
+</ul>
+<p>解剖构造方法中的各种信息<br></p>
+<ul>
+<li>获取了构造方法就可以调用方法获取构造方法的所有信息，包括但不限于权限修改符，名称，参数，创建对象&hellip;&hellip;.<br></li>
+<li>用T.setAccessible(true)可以临时取消权限，这样就可以创建获取的私有构造方法了(暴力反射)<br></li>
+</ul>
+<p>利用反射获取成员变量和解剖<br>
+Class类中用于获取成员变量的方法<br></p>
+<ul>
+<li>Field[] getFields(): 返回所有公共成员变量对象的数组<br></li>
+<li>Field[] getDeclaredFields():返回所有成员变量的数组<br></li>
+<li>Field getField(String name): 返回单个公共成员变量对象<br></li>
+<li>Field getDeclaredField(String name): 返回单个成员变量<br></li>
+</ul>
+<p>Field类中用于创建对象的方法<br></p>
+<ul>
+<li>void set(Object obj，Object value): 赋值<br></li>
+<li>Object get(Object obj): 获取值<br></li>
+</ul>
+<p>解剖成员变量中的各种信息<br></p>
+<ul>
+<li>当获取了成员变量后就可以调用get&hellip;方法去获取变量的各种信息<br></li>
+<li>成员变量也是如果要操作私有变量的值要提前用setAccessible方法操作一下<br></li>
+</ul>
+<p>利用反射获取成员方法和解剖<br>
+Class类中用于获取成员方法的方法<br></p>
+<ul>
+<li>Method[] getMethods(): 返回所有公共成员方法对象的数组，包括继承的<br></li>
+<li>Method[] getDeclaredMethods(): 返回所有成员方法对象的数组，不包括继承的<br></li>
+<li>Method[] getMethod(): 返回单个公共成员方法<br></li>
+<li>Method[] getDeclaredMethod(): 返回单个成员方法<br></li>
+</ul>
+<p>Method类中用于创建对象的方法<br>
+Object invoke(Object obj，Object&hellip; args): 运行方法<br>
+参数一: 用于obj对象调用该方法<br>
+参数二: 调用方法的传递的参数(如果没有就不写)<br>
+返回值: 方法的返回值(如果没有就不写)<br>
+<em>细节:获取方法的方法中，如果要表示准备获取方法里面的参数要用字节码文件 例:String.class</em><br></p>
+<p>反射的作用<br>
+1.获取一个类里面所有的信息，获取到了之后，再执行其他的业务逻辑<br>
+2.结合配置文件，动态的创建对象并调用方法<br></p>
+<h2 id="动态代理br">动态代理<br>
+</h2><p>特点: 无侵入式的给代码增加额外的功能<br>
+对象如果干的活太多可以用代理来转移部分职责<br>
+对象有什么方法想被代理，代理就一定要有什么方法<br>
+代理是通过接口来来实现的<br>
+要被代理的对象和代理对象都需要实现这个接口<br></p>
+<p><strong>创建代理</strong><br>
+java.lang.reflect.Proxy类: 提高了为对象产生代理对象的方法<br>
+public static Object newProxyInstance(ClassLoader loader，Class<?>[]  interfaces，InvocationHandler h)<br>
+参数一: 用于指定用哪个类加载器，去加载生成的代理类<br>
+参数二: 指定接口，这些接口用于指定生成的代理有哪些方法<br>
+参数三: 用来指定生成的代理对象要干什么事情<br>
+例: public static 接口名 createProxy(原本类名 变量名){<br>
+　　接口名 star = (接口名) Proxy.newProxyInstance(<br>
+　　　　类名.class.getClassLoader()，<br>
+　　　　new Class[] {接口名.class，接口名2.class&hellip;}，<br>
+　　　　重写内部类(代理的对象，要运行的方法，调用方法时传递的参数){<br>
+　　　　可以用if判断当前时要运行哪个方法，然后先把准备工作做好后，然后在return里面调用<br>
+　　　　原本类名.invoke(类，参数&hellip;)方法去执行});}<br>
+测试类中的例子:
+Star proxy = 代理类.createProxy(原本类);<br>
+String result = proxy.方法(&ldquo;参数&rdquo;);&mdash;底层会自动去找invoke方法<br>
+system.out.print(result);<br></p>
+<h2 id="数据结构br">数据结构<br>
+</h2><p>数据结构是计算机底层存储组织数据的方式 ， 为了更加方便管理和使用数据<br></p>
+<p>常见数据结构<br>
+<strong>栈</strong><br>
+后进先出，先进后出(一个口)<br></p>
+<p><strong>队列</strong><br>
+先进先出，后进后出(两个口)<br></p>
+<p><strong>数组</strong><br>
+查询块，增删慢的模型<br>
+查找是用地址值和索引，删除不仅要删数据还要每个数据往前移动，添加也一样<br></p>
+<p><strong>链表</strong><br>
+查询慢，增删块的模型<br>
+一个结点就是一个数据<br>
+一个结点有两个存储空间:数据和下个结点地址值<br>
+<em>扩展(双向链表:有三个元素)</em><br></p>
+<p><strong>二叉树</strong><br>
+度:子节点数量<br>
+普通的二叉树<br>
+内部结构:父结点地址/值/左结点地址/右结点地址<br></p>
+<p><strong>二叉树遍历</strong><br>
+前序遍历:根结点&gt;左结点&gt;右结点<br>
+中序遍历:左结点&gt;根结点&gt;右结点<br>
+后序遍历:左结点&gt;右结点&gt;根结点<br>
+层序遍历:一层一层从左到右<br></p>
+<p><strong>二叉查找树</strong><br>
+又称二叉排序树，二叉搜索树<br>
+特点<br></p>
+<ul>
+<li>每个结点最多两个子结点<br></li>
+<li>任意结点左子树都小于它<br></li>
+<li>任意结点右子树都大于它<br></li>
+</ul>
+<p>添加规则<br></p>
+<ul>
+<li>小的存左边，大存右边，一样的不存<br></li>
+<li>查找:大的往右查，小的往左查<br></li>
+<li>弊端:左右可能不平衡，导致查找效率不高<br></li>
+</ul>
+<p><strong>平衡二叉树</strong><br>
+规则:  任意节点左右子树高度差不超过1<br>
+依靠旋转机制来保持树的平衡<br></p>
+<p>规则1左旋<br></p>
+<ul>
+<li>从添加的结点开始往父结点找不平衡的点<br></li>
+<li>然后把这个点变成自己的左结点<br></li>
+<li>右结点升级变成这个父节点<br></li>
+<li>如果原先的父结点有左结点把这个结点给降级的结点当右结点<br></li>
+</ul>
+<p>规则2右旋<br></p>
+<ul>
+<li>与左旋相反操作<br></li>
+</ul>
+<p>触发旋转机制的情况<br>
+1.左左<br></p>
+<ul>
+<li>一次右旋搞定<br>
+2.左右<br></li>
+<li>一次左旋变成左左情况<br></li>
+<li>然后再一次右旋<br>
+3.右右<br></li>
+<li>一次左旋<br>
+4.右左<br></li>
+<li>一次右旋变成右右<br></li>
+<li>然后再一次左旋<br></li>
+</ul>
+<p><strong>红黑树</strong><br>
+是一个二叉查找树，但不是高度平衡，特有的红黑规则<br>
+红黑树增删改查性能很好<br>
+红黑规则<br></p>
+<ol>
+<li>每个节点只能是红或黑<br></li>
+<li>根结点必须是黑色<br></li>
+<li>如果一个节点没有子节点或者父节点，那该节点对应的指针属性为Nil，Nil视为叶节点，每个叶节点是黑的<br></li>
+<li>如果一个节点是红色呃的那他子节点必须是黑的(不能出现两个红节点相连的情况)<br></li>
+<li>对每个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点<br></li>
+</ol>
+<p>添加节点规则<br>
+添加节点默认是红色(效率高)<br>
+<img src="/p/javase/%E7%BA%A2%E9%BB%91%E6%A0%91.jpg"
+	width="1831"
+	height="883"
+	srcset="/p/javase/%E7%BA%A2%E9%BB%91%E6%A0%91_hu10829713407948990684.jpg 480w, /p/javase/%E7%BA%A2%E9%BB%91%E6%A0%91_hu2580113937205871305.jpg 1024w"
+	loading="lazy"
+	
+		alt="红黑树"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="207"
+		data-flex-basis="497px"
+	
+></p>
+<h2 id="问题br">问题<br>
+</h2><p>Common.rePosition(): 刷新???<br></p>
+<h2 id="快捷键br">快捷键<br>
+</h2><ul>
+<li>字符串转sb/转字符数组<br></li>
+<li>psvm:sout:数组名.fori:<br></li>
+<li>Ctrl+Shift+↑/↓:一行上调或者下调<br></li>
+<li>Ctrl+Alt+M:自动抽取方法<br></li>
+<li>Ctrl+Alt+L:自动格式代码<br></li>
+<li>Ctrl+Alt+V:自动生成左边<br></li>
+<li>Shift+F6:批量修改<br></li>
+<li>Ctrl+P:提示参数<br></li>
+<li>Ctrl+N:搜索类<br></li>
+<li>Ctrl+F12:找方法<br></li>
+<li>Ctrl+B:追踪源码<br></li>
+<li>Ctrl+O:覆盖和实现方法<br></li>
+<li>Ctrl+alt+T:循环包裹选中代码<br></li>
+<li>鼠标滚轮拖动/alt+拖动<br></li>
+<li>shift+F6:更改全部的引用<br></li>
+<li>shutdown -s:一分种后关机<br></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%8B%93%E5%B1%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%8B%93%E5%B1%95/a.e488ad7c0cb22e12558bd37e1e50e639_hu13514776735420934549.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 多线程拓展"
+                        
+                        data-hash="md5-5IitfAyyLhJVi9N&#43;HlDmOQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">多线程拓展</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%BB%91%E9%A9%AC%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%BB%91%E9%A9%AC%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/a.cfe3eb14b3596e6db2e53bb6d2ab1c33_hu12862003949813403367.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 黑马算法笔记"
+                        
+                        data-hash="md5-z&#43;PrFLNZbm2y5Tu20qscMw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">黑马算法笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/myishugo/">
+        
+        
+            <div class="article-image">
+                <img src="/p/myishugo/a.c514d916917173a48a42e0114b469961_hu7626638945853200361.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post MyIsHugo"
+                        
+                        data-hash="md5-xRTZFpFxc6SKQuARS0aZYQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MyIsHugo</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/a.f505751d1ba638b46da99d055f911dcf_hu4406440469892139699.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用手册"
+                        
+                        data-hash="md5-9QV1HRumOLRtqZ0FX5Edzw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用手册</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAhugo%E5%8D%9A%E5%AE%A2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAhugo%E5%8D%9A%E5%AE%A2/a.c514d916917173a48a42e0114b469961_hu7626638945853200361.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 我的第一个hugo博客"
+                        
+                        data-hash="md5-xRTZFpFxc6SKQuARS0aZYQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">我的第一个hugo博客</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 『呼吸别停』
+    </section>
+    
+    <section class="powerby">
+        
+            联系方式 1417451623@qq.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+
+    
+    <script src=https://hugo-add.github.io/js/topbar.min.js></script>
+
+<script>
+    const home = "https://hugo-add.github.io/";
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    
+    fixed: true,
+    mini: true,
+    lrcType: 3,
+    audio: [
+        {
+        name: '护花使者',
+        artist: '黄祖辉',
+        url: home + 'music/护花使者/song.mp3',
+        cover: home + 'music/护花使者/cover.jpg',
+        lrc: home + 'music/护花使者/thing.lrc',
+        },
+        {
+            name: 'My Stupid Heart',
+            artist: '未知',
+            url: home + 'music/My Stupid Heart/song.mp3',
+            cover: home + 'music/My Stupid Heart/cover.jpg',
+            lrc: home + 'music/My Stupid Heart/thing.lrc',
+        },
+        {
+            name: '年轻不懂爱',
+            artist: '方大树',
+            url: home + 'music/年轻不懂爱/song.mp3',
+            cover: home + 'music/年轻不懂爱/cover.jpg',
+            lrc: home + 'music/年轻不懂爱/thing.lrc',
+        },
+        {
+            name: '我的纸飞机',
+            artist: 'GooGoo',
+            url: home + 'music/我的纸飞机/song.mp3',
+            cover: home + 'music/我的纸飞机/cover.jpg',
+            lrc: home + 'music/我的纸飞机/thing.lrc',
+        },
+        {
+            name: '撞地球',
+            artist: '鱼儿七',
+            url: home + 'music/撞地球/song.mp3',
+            cover: home + 'music/撞地球/cover.jpg',
+            lrc: home + 'music/撞地球/thing.lrc',
+        },
+        {
+            name: '年轮',
+            artist: '张碧晨',
+            url: home + 'music/年轮/song.mp3',
+            cover: home + 'music/年轮/cover.jpg',
+            lrc: home + 'music/年轮/thing.lrc',
+        },
+        {
+            name: '秋天不回来',
+            artist: '王强',
+            url: home + 'music/秋天不回来/song.mp3',
+            cover: home + 'music/秋天不回来/cover.jpg',
+            lrc: home + 'music/秋天不回来/thing.lrc',
+        },
+    ]
+});
+    
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container"
+        ]
+        });
+    
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            
+            let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+            
+            let bodyClass = newDom.body.className;
+            document.body.setAttribute("class", bodyClass)
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    };
+
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+    
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+        
+        topbar.hide();
+    })
+</script>
+
+    </body>
+</html>
