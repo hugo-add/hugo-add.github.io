@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="JavaWeb 初始Web前端 Web标准也称网页标准\n三个组成部分\nHTML超文本标记语言: 负责网页的结构(页面元素和内容) CSS层叠样式表: 负责网页的表现(页面元素的外观，位置等) JavaScript: 负责网页的行为(交互效果)\n官方文档\nHTML HTML标签特点\n">
+<title>JavaWeb</title>
+
+<link rel='canonical' href='https://hugo-add.github.io/p/javaweb/'>
+
+<link rel="stylesheet" href="/scss/style.min.20102724f4df2edd9fef3944ca03ad30862ed6f1a669298afddfa5260f83fe57.css"><meta property='og:title' content="JavaWeb">
+<meta property='og:description' content="JavaWeb 初始Web前端 Web标准也称网页标准\n三个组成部分\nHTML超文本标记语言: 负责网页的结构(页面元素和内容) CSS层叠样式表: 负责网页的表现(页面元素的外观，位置等) JavaScript: 负责网页的行为(交互效果)\n官方文档\nHTML HTML标签特点\n">
+<meta property='og:url' content='https://hugo-add.github.io/p/javaweb/'>
+<meta property='og:site_name' content='小李的神秘空间'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-21T12:15:23&#43;08:00'/><meta property='article:modified_time' content='2024-09-21T12:15:23&#43;08:00'/><meta property='og:image' content='https://hugo-add.github.io/p/javaweb/a.jpg' />
+<meta name="twitter:title" content="JavaWeb">
+<meta name="twitter:description" content="JavaWeb 初始Web前端 Web标准也称网页标准\n三个组成部分\nHTML超文本标记语言: 负责网页的结构(页面元素和内容) CSS层叠样式表: 负责网页的表现(页面元素的外观，位置等) JavaScript: 负责网页的行为(交互效果)\n官方文档\nHTML HTML标签特点\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://hugo-add.github.io/p/javaweb/a.jpg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu3989462456473419747.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">小李的神秘空间</a></h1>
+            <h2 class="site-description">欢迎来到我的博客网站,该网站基于hugo&#43;github搭建,主要用于分享学习使用,有兴趣可以邮箱联系</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1298911982'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.549px" height="438.549px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549;"
+	 xml:space="preserve">
+<g>
+	<path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365
+		c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63
+		c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996
+		c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136
+		c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559
+		c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559
+		c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997
+		c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851
+		c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136
+		c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41
+		c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126
+		c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817
+		c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994
+		c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849
+		c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24
+		c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979
+		c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146
+		c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995
+		c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906
+		C438.536,184.851,428.728,148.168,409.132,114.573z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://Twitter.com/'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" ?><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#00aade;}.cls-2{fill:#fff;}</style></defs><title/><g data-name="6-twitter" id="_6-twitter"><rect class="cls-1" height="64" rx="11.2" ry="11.2" transform="translate(64 64) rotate(180)" width="64"/><path class="cls-2" d="M47.2,20.8a8,8,0,0,0,4-4.8c-1.6,1.6-5,2.13-5,2.13A8,8,0,0,0,32.37,25.6H32a23.45,23.45,0,0,1-16.8-8.8S10.4,23.2,17.6,28c0,0-3.2,0-4-.8,0,0-.8,4.8,6.4,8a3.86,3.86,0,0,1-3.2,0c0,3.09,3.22,5.6,7.2,5.6,0,2.21-5.37,4-12,4C22.4,52,47.2,50.4,48.8,23.2l4-4Z"/></g></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#初始web前端">初始Web前端</a>
+      <ol>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#javascriptbr">JavaScript<br></a></li>
+      </ol>
+    </li>
+    <li><a href="#vuebr">Vue<br></a></li>
+    <li><a href="#ajaxbr">Ajax<br></a></li>
+    <li><a href="#前端开发br">前端开发<br></a></li>
+    <li><a href="#mavenbr">Maven<br></a></li>
+    <li><a href="#web后端开发br">Web后端开发<br></a></li>
+    <li><a href="#http协议br">HTTP协议<br></a></li>
+    <li><a href="#tomcatbr">Tomcat<br></a></li>
+    <li><a href="#分层解耦br">分层解耦<br></a></li>
+    <li><a href="#mysql数据库br">MySQL数据库<br></a></li>
+    <li><a href="#mybatis">MyBatis</a></li>
+    <li><a href="#文件上传功能">文件上传功能</a></li>
+    <li><a href="#登录校验">登录校验</a></li>
+    <li><a href="#异常处理">异常处理</a></li>
+    <li><a href="#辅助学习系统实例总结">辅助学习系统实例总结</a></li>
+    <li><a href="#事务管理">事务管理</a></li>
+    <li><a href="#aop">AOP</a></li>
+    <li><a href="#web后端开发原理篇">Web后端开发原理篇</a></li>
+    <li><a href="#maven高级">Maven高级</a></li>
+    <li><a href="#私服">私服</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/javaweb/">
+                <img src="/p/javaweb/a_hu6025104279069718184.jpg"
+                        srcset="/p/javaweb/a_hu6025104279069718184.jpg 800w, /p/javaweb/a_hu9356688590744750344.jpg 1600w"
+                        width="800" 
+                        height="657" 
+                        loading="lazy"
+                        alt="Featured image of post JavaWeb" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                学习笔记
+            </a>
+        
+            <a href="/categories/javaweb/" style="background-color: #2a9d8f; color: #fff;">
+                JavaWeb
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/javaweb/">JavaWeb</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-09-21</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="javaweb">JavaWeb
+</h1><h2 id="初始web前端">初始Web前端
+</h2><p>Web标准也称网页标准<br>
+<strong>三个组成部分</strong><br></p>
+<ul>
+<li>HTML超文本标记语言: 负责网页的结构(页面元素和内容)</li>
+<li>CSS层叠样式表: 负责网页的表现(页面元素的外观，位置等)</li>
+<li>JavaScript: 负责网页的行为(交互效果)<br>
+<a class="link" href="https://www.w3school.com.cn"  target="_blank" rel="noopener"
+    >官方文档</a><br></li>
+</ul>
+<h3 id="html">HTML
+</h3><p><strong>HTML标签特点</strong><br></p>
+<ul>
+<li>不区分大小写</li>
+<li>标签属性值单双引号都可以</li>
+<li>HTML语法松散</li>
+</ul>
+<p><strong>HTML标签</strong></p>
+<ul>
+<li><code>&lt;h1&gt;</code>到<code>&lt;h6&gt;</code>重要程度依次降低，都是提前预定义好的，不能自己随便定义</li>
+<li><code>&lt;hr&gt;</code>水平线标签</li>
+<li><code>&lt;img src=&quot;...&quot; width = &quot;&quot; height=&quot;&quot;&gt;</code>图片标签(./当前目录，../上级目录)</li>
+<li><code>&lt;span&gt;</code>行标签，没有任何意义，就是赋予内容一个标签名字</li>
+<li><code>&lt;video&gt;</code>视频标签 src:规定视频的url   controls:显示播放控件   width:宽 height:高</li>
+<li><code>&lt;audio&gt;</code>音频标签 src:规定音频的url   controls:显示播放控件</li>
+<li><code>&lt;p&gt;</code>段落标签</li>
+<li><code>&lt;b&gt;/&lt;strong&gt;</code>文本加粗标签</li>
+</ul>
+<h3 id="css">CSS
+</h3><p><strong>CSS引入方式</strong></p>
+<ul>
+<li>行内样式: 写在标签的style属性中(不推荐)</li>
+<li>内嵌样式: 写在style标签中(可以写在页面的任何位置，但通常约定写在head标签中)</li>
+<li>外联样式: 写在一个单独的.css文件中(需要通过link标签在网页中引入)</li>
+</ul>
+<p><strong>颜色表示方式</strong></p>
+<ul>
+<li>关键字:预定义的颜色吗&mdash;red，green，blue&hellip;</li>
+<li>rgb表示法:红绿蓝三原色，每项取值时0~255&mdash;rgb(255，0，0)&hellip;</li>
+<li>十六进制表示法:#开头，将数字转换成十六进制表示&mdash;#000000，#cccccc(简写#000，#ccc)</li>
+</ul>
+<p><strong>CSS选择器</strong>:用来选取需要设置样式的元素(标签)</p>
+<ul>
+<li>元素选择器:根据标签类型来选择修改样式</li>
+<li>id选择器:根据id名来选择修改样式(id是唯一的)</li>
+<li>类选择器:根据class名来选择修改样式(类名可以重复)</li>
+<li>优先级:id选择器&gt;类选择器&gt;元素选择器</li>
+</ul>
+<p><strong>CSS属性</strong></p>
+<ul>
+<li>color:设置文本的颜色</li>
+<li>font-size:设置字体大小</li>
+<li>text-decoration:规定添加到文本的修饰，none表示定义标准的文本</li>
+<li>line-height:设置行高</li>
+<li>text-indent:定义第一行内容缩进</li>
+<li>text-align:规定元素中的文本的水平对齐方式</li>
+</ul>
+<p><strong>超链接</strong>:<code>&lt;a href=&quot;链接跳转地址&quot; target=&quot;定义是否在新页面打开&quot;&gt;</code><br>
+<em>注意:HTML中无论输入多少空格都只会显示一个，可以使用空格占位符&amp;nbsp</em><br></p>
+<p><strong>页面布局</strong><br>
+盒子:页面中所有的元素(标签)，都可以看做是一个盒子，由盒子将页面中的元素包含在一个矩形区域内，通过盒子的视角更方便的进行页面布局<br></p>
+<ul>
+<li>盒子模型的组成:内容区域(content)，内边距区域(padding)，边框区域(border)，外边框区域(margin)<br></li>
+<li>布局标签:实际开发中会大量使用div和span这俩个没有语义的布局标签<br></li>
+<li>div标签:一行只显示一个，宽度默认是夫元素的宽度，高度默认是内容撑开，可以设置宽高<br></li>
+<li>span标签:一行可以显示多个，宽度高度默认有内容撑开，不可以自己设置宽高<br></li>
+</ul>
+<p>例 div {<br>
+　　width: 200px;<br>
+　　height: 200px;<br>
+　　box-sizing: border-box;&ndash;指定width和height为盒子的宽高<br>
+　　background-color: red;&ndash;背景色<br>
+　　padding: 20px;&ndash;内边距 上-&gt;右-&gt;下-&gt;左<br>
+　　border: 10px solid red;&ndash;边框 边框-&gt;宽度-&gt;线条类型-&gt;颜色<br>
+　　margin: 30px;&ndash;外边距 上-&gt;右-&gt;下-&gt;左<br>
+　　}<br>
+<img src="/p/javaweb/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.jpg"
+	width="289"
+	height="218"
+	srcset="/p/javaweb/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B_hu16027846493424078178.jpg 480w, /p/javaweb/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B_hu819726171574015655.jpg 1024w"
+	loading="lazy"
+	
+		alt="盒子模型"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="318px"
+	
+>
+<em>注意:如果要设置某一个方位的属性只需要在属性名后加上方位就行</em> 如:padding-top，padding-left<br></p>
+<p><strong>表格标签</strong><br>
+表格中的数据会以行和列的形式展示出来<br>
+<code>&lt;table&gt;</code>定义表格整体，可以包裹多个<code>&lt;tr&gt;</code> border边框宽  windth宽  cellspacing间隙<br>
+<code>&lt;tr&gt;</code>表格的行可以包裹多个<code>&lt;tb&gt;&lt;br&gt;</code>
+<code>&lt;tb&gt;</code>表格单元格(普通)，可以包裹内容，如果是表头单元格可以替换成<th><br>
+表单标签<br>
+表单标签<code>&lt;form&gt;</code><br>
+场景: 在网页中主要负责数据采集功能如:注册，登录等<br>
+表单项: 不同类型的input元素，下拉列表，文本域等<br></p>
+<ul>
+<li><code>&lt;input&gt;</code>定义表单项，通过type属性控制输入形式<br></li>
+<li>input的type属性:text，password，radio，checkbox，file，date，datetime-local，time，number，hidden，button，submit<br></li>
+<li><code>&lt;select&gt;</code>定义下拉列表<br></li>
+<li><code>&lt;textarea&gt;</code>定义文本域<br></li>
+</ul>
+<p><em>注意:表单项必须有name属性才可以提交</em>    <br>
+属性<br>
+1：action:规定当提交表单时向何处发送表单数据，URL<br>
+2：method:规定用于发送表单数据的方式 get，post<br>
+get:url后面拼接表单数据，有长度限制，默认值  post:消息体中传递，参数无限制<br></p>
+<h3 id="javascriptbr">JavaScript<br>
+</h3><p>是一门跨平台，面向对象的脚本语言<br>
+<strong>JS引入方式</strong><br></p>
+<ul>
+<li>内部脚本:JS代码定义在HTML页面中位于<code>&lt;script&gt;&lt;/script&gt;</code>之间<br></li>
+<li>外部脚本:定义在外部JS文件中，只包含JS代码，<br></li>
+</ul>
+<p>注意:<code>&lt;script&gt;</code>可以在任何位置，但是一般在body元素底部，改善显示速度，JS文件里面不含<code>&lt;script&gt;</code>标签，<code>&lt;script&gt;</code>不能自闭合<br></p>
+<p><strong>JS基础语法</strong><br>
+书写语法<br></p>
+<ul>
+<li>区分大小写<br></li>
+<li>每行结尾的分号可有可无<br></li>
+<li>注释:单行注释&mdash;-//&hellip;   多行注释&mdash;-/<em>&hellip;</em>/<br></li>
+<li>大括号表示代码块<br></li>
+</ul>
+<p>输出语句<br>
+使用window.alert()&ndash;写入警告框<br>
+使用document.write()&ndash;写入HTML页面中<br>
+使用console.log()&ndash;写入浏览器控制台<br></p>
+<p>变量<br>
+JS中用var关键字来声明变量(全局，可重复声明)<br>
+JS是一门弱类型语言，变量可以存放不同类型的值<br>
+规则:组成是字母，数字，下划线，或美元符号，数字不能开头<br>
+新增的 let(代码块生效，不能重复声明)  const(只读声明，一旦定义不能更改)<br></p>
+<p>数据类型<br>
+JS中分为:原始类型和引用类型<br>
+number数字，string字符串，boolean布尔，null空，undefined未初始化默认值<br>
+使用typeof运算符可以获取数据类型<br></p>
+<p>运算符<br>
+算术运算符:+，-，<em>，/，%，++，&ndash;<br>
+赋值运算符:=，+=，-=，</em>=，/=，%=<br>
+比较运算符:&gt;，&lt;，&gt;=，&lt;=，!=，==，===<br>
+逻辑运算符:&amp;&amp;，||，!<br>
+三元运算符:&hellip;? a:b<br>
+==会进行类型转换 ===不会进行类型转换<br>
+类型转换
+1.字符串转换成数字，从第一个开始到第一个非数字，如果为空就是NaN<br>
+2.转换成布尔型，0和空和NaN和undefined都会转换成False<br>
+流程控制语句<br>
+省略&hellip;..<br></p>
+<p><strong>JS函数</strong><br>
+函数是被设计为执行特点任务的代码块<br>
+JS函数通过function关键字进行定义 语法为 function a(..){&hellip;}<br>
+形参不需要类型，返回值也不需要定义类型，直接return返回即可<br>
+第二种定义方式:var a=function(..){&hellip;}<br></p>
+<p><strong>JS对象</strong><br>
+Array对象<br>
+定义1: var 变量名 = new Array(&hellip;)<br>
+定义2: var 变量名 = [&hellip;]<br>
+访问: 变量名[索引] = 值<br>
+JS种数组长度可越界会自动增加索引，里面数据类型也可以存储任意类型<br>
+属性:length&ndash;返回数组元素数量<br>
+方法:forEach(..)=&gt;{..}&ndash;遍历有值的元素  push()&ndash;添加  splice()&ndash;删除<br>
+String字符串<br>
+定义1: var 变量名 = new String(&quot;&hellip;&quot;)<br>
+定义2: var 变量名 = &ldquo;&hellip;&quot;<br>
+属性:length&ndash;长度<br>
+方法:charAt()&ndash;返回指定位置字符  indexOf()&ndash;检索字符串  trim()&ndash;去除两边空格  substring()&ndash;截取(包头不包尾)<br></p>
+<p>JS自定义对象<br>
+定义格式:<br>
+var 对象名 = {<br>
+属性名1: 属性值1，<br>
+属性名2: 属性值2，<br>
+函数名称: function(形参列表){&hellip;}};<br>
+调用格式:对象名.属性名;   对象名.函数名();<br></p>
+<p>JSON<br></p>
+<ul>
+<li>JSON是通过JavaScript对象标记法书写的文本<br></li>
+<li>JSON就是key和value形式的键值对，只不过key需要用双引号引起来<br></li>
+</ul>
+<p>语法简单，层次鲜明，现多用于作为数据载体，在网络中进行数据传输<br>
+定义:var 变量名 = &lsquo;{&ldquo;key1&rdquo;:value1，&ldquo;key2&rdquo;:value2}&rsquo;;<br>
+value的数据类型 数字&ndash;正常写，字符串&ndash;双引号，逻辑值&ndash;true/false，数组&ndash;方括号，对象&ndash;花括号<br>
+例:var a = &lsquo;{&ldquo;name&rdquo;:&ldquo;Tom&rdquo;，&ldquo;age&rdquo;:20，&ldquo;add&rdquo;:[&ldquo;上&rdquo;，&ldquo;下&rdquo;]}&rsquo;;  <br>
+方法: parse()&ndash;将JSON变量转成JS对象    stringify()&ndash;将JS对象转成JSON变量<br></p>
+<p>BOM<br>
+BOM是浏览器对象模型，允许JS与浏览器对话，JS将浏览器的各个组成部分封装为对象<br></p>
+<ul>
+<li>Window:浏览器窗口对象<br>
+直接使用window，其中window可以省略<br></li>
+<li>属性:history:&mdash;location:&mdash;navigator: 获取对象的对象，详情参考官方文档<br></li>
+<li>方法:alert()警告弹窗 confirm()消息弹窗 setInterval()周期延迟运行 setTimeout()延迟运行<br></li>
+<li>Navigator:浏览器对象<br></li>
+<li>Screen:屏幕对象<br></li>
+<li>History:历史记录对象<br></li>
+<li>Location:地址栏对象<br></li>
+<li>获取:window.location.属性/location.属性<br></li>
+<li>属性:href设置或返回完整的URL<br></li>
+</ul>
+<p>DOM<br>
+DOM是文档对象模型<br>
+将标记语言的各个组成部分封装为对应的对象<br>
+JS通过DOM就能够对HTML进行操作<br>
+<img src="/p/javaweb/%E6%96%87%E6%A1%A3%E6%A8%A1%E5%9E%8B.jpg"
+	width="652"
+	height="705"
+	srcset="/p/javaweb/%E6%96%87%E6%A1%A3%E6%A8%A1%E5%9E%8B_hu2622013208711930112.jpg 480w, /p/javaweb/%E6%96%87%E6%A1%A3%E6%A8%A1%E5%9E%8B_hu6983915904304815664.jpg 1024w"
+	loading="lazy"
+	
+		alt="文档模型"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="92"
+		data-flex-basis="221px"
+	
+>
+DOM是W3C(万维网联盟)的标准，定义了HTML和XML的标准，有以下三种<br></p>
+<ol>
+<li>所有文档的标准模型<br>
+Document:整个文档对象<br>
+Element:元素对象<br>
+Attribute:属性对象<br>
+Text:文本对象<br>
+Comment:注释对象<br></li>
+<li>XML DOM-XML文档的标准模型<br></li>
+<li>HTML DOM-HTML文档的标准模型<br>
+image:<code>&lt;img&gt;</code><br>
+Button:<code>&lt;input type='button'&gt;</code><br>
+Document对象提供了以下获取Element元素的函数<br></li>
+<li>根据id属性值获取，返回单个Element对象<br>
+var h1 = document.getElementById(&rsquo;..&rsquo;);<br></li>
+<li>根据标签名称获取，返回Element对象数组<br>
+var h2 = document.getElementByTagName(&rsquo;..&rsquo;);<br></li>
+<li>根据name属性值获取，返回Element对象数组<br>
+var h3 = document.getElementByName(&rsquo;..&rsquo;);<br></li>
+<li>根据class属性值获取，返回Element对象数组<br>
+var h4 = document.getElementByClassName(&rsquo;..&rsquo;);<br></li>
+</ol>
+<p>具体操作步骤:先获取元素对象赋值-&gt;然后调用方法去改变内容-&gt;刷新页面<br>
+具体参考官方文档<br></p>
+<p><strong>事件监听</strong><br>
+事件:发生在HTML元素上的事件<br>
+绑定方式1:通过HTML标签中的事件进行绑定<br>
+绑定方式2:通过DOM元素属性绑定<br>
+常见事件<br></p>
+<ul>
+<li>onclick&mdash;鼠标单击事件<br></li>
+<li>onblur&mdash;元素失去焦点<br></li>
+<li>onfocus&mdash;元素获得焦点<br></li>
+<li>onload&mdash;某个页面或图像加载完毕<br></li>
+<li>onsubmit&mdash;表单提交事件<br></li>
+<li>onkeydown&mdash;键盘摁键事件<br></li>
+<li>onmouseover&mdash;鼠标移动到元素上<br></li>
+<li>onmouseout&mdash;鼠标从元素上移开<br></li>
+</ul>
+<p>插值表达式<br>
+形式: {{表达式}}<br>
+表达式内容可以是变量，三元运算符，函数调用，算术运算<br></p>
+<h2 id="vuebr">Vue<br>
+</h2><p>Vue是一套前端框架，免除原生JavaScript中的DOM操作，简化书写.<br>
+基于MVVM思想，实现数据的双向绑定<br>
+官网:Vue.js - 渐进式 JavaScript 框架 | Vue.js (vuejs.org)<br>
+框架:是一个半成品，是一套可重复的，通用的软件基础代码模型，基于框架开发，更加高效，更快捷<br>
+补充: 在Vue中以v-打头的叫做指令<br>
+常用指令<br></p>
+<ul>
+<li>v-bind:让HTML标签绑定属性值从静态变成动态，如设置href，css样式等<br></li>
+<li>v-model:为表单元素上创建双向数据绑定<br></li>
+<li>v-on:为HTML标签绑定事件(事件在methods:{..}中写)<br></li>
+<li>v-if/v-else-if/v-else:判断条件<br></li>
+<li>v-show:根据条件展示某元素，区别在于切换的是display属性的值<br></li>
+<li>v-for:列表渲染，遍历元素或对象的属性<br>
+display属性:表示元素是显示还是隐藏<br>
+创建Vue里面的方法 el&ndash;定义vue接管区域 data&ndash;定义用到的数据模型 mounted&ndash;挂载完成 methods&ndash;定义用到的事件<br>
+生命周期<br>
+生命周期的八个阶段:每触发一个生命周期事件，会自动执行一个生命周期法子(钩子)<br>
+<br></li>
+<li>beforeCreate&mdash;-创建前<br></li>
+<li>created&mdash;-创建后<br></li>
+<li>beforeMount&mdash;-挂载前<br></li>
+<li>mounted&mdash;-挂载完成<br></li>
+<li>beforeUpdate&mdash;-更新前<br></li>
+<li>updated&mdash;-更新后<br></li>
+<li>beforeDestroy&mdash;-销毁前<br></li>
+<li>destroyed&mdash;-销毁后<br>
+<br></li>
+</ul>
+<h2 id="ajaxbr">Ajax<br>
+</h2><p>Ajax是异步的JS和XML<br>
+作用<br></p>
+<ul>
+<li>数据交换:通过Ajax可以给服务器发送请求，并获取服务器响应的数据<br></li>
+<li>异步交互:可以在不重新加载整个页面的情况下，与服务器交换数据并更新部分网页的技术<br>
+原生Ajax<br>
+1.创建XMLHttpRequest对象:用于和服务器交换数据<br>
+var xmlHttpRequest = new XMLHttpRequest();<br>
+2.向服务器发送请求<br>
+xmlHttpRequest.open(&lsquo;get/post&rsquo;，&lsquo;url地址&rsquo;);<br>
+xmlHttpRequest.send();发送请求<br>
+3.获取服务器响应数据<br>
+先判断，如果响应成功就把数据赋值给一个变量<br>
+因为比较繁琐，所有已经弃用了<br>
+Axios<br>
+介绍:Axios对原生的Ajax进行了封装，简化书写<br>
+官网:Axios中文文档 | Axios中文网 (axios-http.cn)<br>
+一般写在mounted(){&hellip;}中，页面加载时完成函数回调，获取数据<br>
+请求方式别名&ndash;[表示可以省略]<br></li>
+<li>axios.get(URL[，config])<br></li>
+<li>axios.delete(URL[，config])<br></li>
+<li>axios.post(URL[，data[，config]])<br></li>
+<li>axios.put(URL[，data[，config]])<br>
+.then(result =&gt; {console.log(result.data);})回调函数<br>
+回调函数里面也可以改成this.aaa=result.data，将数据直接返回给数据模型里面的数据<br>
+<br></li>
+</ul>
+<h2 id="前端开发br">前端开发<br>
+</h2><p>前后端分离开发<br>
+前端和后端分开开发，就需要遵守一个共同的规则，这个规则就是接口文档<br>
+接口文档根据原型和需求来组成的<br>
+步骤:需求分析-&gt;接口定义(API接口文档)-&gt;前后端并行开发-&gt;测试-&gt;前后端联调测试<br>
+YApi<br>
+介绍:YApi是高效，易用，功能强大的api管理平台，旨在为开发，产品，测试人员提高更优雅的接口管理服务<br>
+地址: <a class="link" href="http://yapi.smart-xwork.cn/"  target="_blank" rel="noopener"
+    >http://yapi.smart-xwork.cn/</a><br>
+添加项目-&gt;添加分类-&gt;添加接口-&gt;然后就可以去mock地址查看生成的简略数据<br>
+前端开发工程化<br>
+介绍:是指在企业级的前端项目开发中，把前端开发所需要的工具，技术，流程，经验等进行规范化，标准化<br>
+环境准备  vue-cli<br>
+介绍: vue-cli是Vue官方提高的一个脚手架，用于快速生成一个Vue的项目模板<br>
+Vue-cli提高了以下功能<br></p>
+<ul>
+<li>统一的目录结构<br></li>
+<li>本地调试<br></li>
+<li>热部署<br></li>
+<li>单元测试<br></li>
+<li>继承打包上线<br>
+依赖环境: NodeJS<br>
+下载好node后配置好npm下载地址，然后更换好下载源，然后用npm命令下载vue-cli脚手架就配置好环境了<br>
+Vue项目-创建<br>
+<br></li>
+<li>第一种命令行: cmd里面输入vue create vue-project01<br></li>
+<li>第二种图形化界面: cnd里面输入vue ui<br>
+Vue项目-启动<br>
+第一种:在目录栏最小面找npm脚本，然后在server那点按钮<br>
+第二种:在cmd页面运行npm run serve<br>
+然后就可以去浏览器查看vue界面了<br>
+补充:如何修改端口号<br>
+在vue.config.js中在最后面加上devServer: {port: 8080，}<br>
+Vue项目开发流程<br>
+import:引用模块   &lt;==&gt;  export:导出为模块<br>
+Vue的组成文件以.vue结尾，每个组件由三个部分组成:<template>，<script>，<style><br></li>
+<li><template>:模板部分，由这个生成HTML代码<br></li>
+<li>
+<script>:控制模板的数据来源和行为<br>
+</li>
+<li>
+<style>:css样式部分<br>
+</li>
+</ul>
+<p>Vue组件库Element<br>
+Element:是饿了么团队研发的，一套为开发者，设计师和产品经理准备的基于Vue2.0的桌面组件库<br>
+组件:组成网页的部件，例如 超链接，按钮，图片，表格，表单等<br>
+官网:Element官网地址<br>
+运行提示的插件<br>
+<br>
+常见组件<br></p>
+<ul>
+<li>Table表格(去官方文档)<br></li>
+<li>Pagination分页(添加事件去官方文档查看)<br></li>
+<li>Dialog对话框(依靠visible.sync来控制显示的)<br></li>
+<li>Form表单(具体看官方文档)<br>
+补充标签插槽: <template slot-scope="scope"><br>
+{{ scope.row.gender==1 ? &lsquo;男&rsquo;:&lsquo;女&rsquo; }}<br>
+</template><br>
+Vue的路由<br>
+前端路由:URL中的hash(#号后的内容)与组件之间的对应关系<br>
+就是切换显示的页面<br>
+Vue Router插件<br>
+介绍:Vue Router市Vue的官方路由<br>
+组成: <br></li>
+<li>VueRouter:路由器类，根据路由请求在在路由视图中动态渲染选中的组件(路由表)<br></li>
+<li><router-link>:请求链接组件，浏览器会解析成<a><br></li>
+<li><router-view>:动态视图组件，用来渲染和展示与路由路径对应的组件<br>
+步骤:<br>
+先安装:npm install <a class="link" href="mailto:vue-router@3.5.1" >vue-router@3.5.1</a><br>
+然后定义路由:在router/index.js文件中<br>
+两种定义方法:一种是提前用import引用;一种是component:()=&gt;import(&rsquo;&hellip;.&rsquo;)直接引用<br>
+然后就可以使用<router-link to='/..'>定义跳转内容<br>
+然后在App.vue中注释掉引用的vue页面改成<router-view>动态视图<br>
+补充:path:&rsquo;/&rsquo;， (回车)redirect: &lsquo;/emp&rsquo; &mdash; 表示如果访问的是/就交给/emp处理<br>
+打包部署<br>
+先要打包:在终端运行npm run build然后会产生一个dist文件夹<br>
+然后用nginx部署Nginx官网<br>
+介绍nginx:conf&ndash;配置文件目录  html&ndash;静态资源文件目录  logs&ndash;日志文件目录  temp&ndash;临时文件目录<br>
+nginx默认占用80端口<br>
+netstat -ano | findStr 80 &ndash; 查看端口号    也可以去conf/nginx.conf中改端口号<br>
+<br></li>
+</ul>
+<h2 id="mavenbr">Maven<br>
+</h2><p>Maven的作用<br></p>
+<ul>
+<li>依赖管理:只需要在maven工程的pom.xml文件中根据格式写需要什么包maven会自动联网下载<br>
+<br></li>
+<li>统一项目结构:统一的项目结构<br></li>
+<li>项目构建:标准化的项目构建流程<br>
+Maven是一款管理和构建java项目的工具Maven官网<br>
+<br>
+仓库:用于存储资源，管理各种jar包<br></li>
+<li>本地仓库:自己计算机上的目录<br></li>
+<li>中央仓库:由Maven团队维护的全球唯一的.仓库地址: maven中央仓库<br></li>
+<li>远程仓库(私服):一般由公司团队搭建的私有仓库<br>
+安装<br>
+1.解压apache-maven-3.6.~-bin.zip<br>
+2.配置本地仓库:修改conf/settings.xml中的<localRepository><br>
+3.配置阿里云私服:修改conf/setting.xml中的<mirrors>添加下面内容<br>
+<mirror><br>
+<id>alimaven</id><br>
+<name>aliyun maven</name><br>
+<url><a class="link" href="http://maven.aliyun.com/nexus/content/groups/public"  target="_blank" rel="noopener"
+    >http://maven.aliyun.com/nexus/content/groups/public</a></url><br>
+<mirrorOf>central</mirrorOf><br>
+</mirror><br>
+4.配置环境变量:MAVEN_HOME为maven的解压目录，并将其bin目录加入PATH环境变量<br>
+配置Maven<br>
+1.idea中配置Maven环境<br>
+File-&gt;Settings-&gt;build，Execution，..-&gt;Build Tools-&gt;Maven<br>
+设置idea使用本地maven，并修改配置文件及本地仓库路径<br>
+全局配置是从close project进去Settings<br>
+2.创建Maven项目<br>
+创建模块，选择Maven，创建项目<br>
+3.导入Mavenue项目<br>
+方式一:在右侧Maven面版，点+号选择对应项目中的pom.xml文件即可<br>
+方式二:File-&gt;Project Stru&hellip;-&gt;Modules-&gt;+-&gt;import Module-&gt;Module-&gt;pom.xml<br>
+Maven坐标<br>
+Maven中的坐标是资源的唯一标识，可以用来定义项目和引入项目需要的依赖<br>
+Maven左边组成<br></li>
+<li>groupid:定义Maven项目属于什么组织<br></li>
+<li>artifactld:定义Maven项目名称<br></li>
+<li>version:定义当前版本号<br>
+依赖管理<br>
+依赖:指当前项目运行所需要的jar包，一个项目中可以引入多个依赖<br>
+依赖配置<br>
+1.在pom.xml中编写<dependencies>标签<br>
+2.在<dependencies>标签中使用<dependency>引入坐标<br>
+3.定义坐标的groupid，artifactid，version<br>
+4.点刷新按钮，引入最新加入的坐标<br>
+如果不知道依赖的坐标信息可以到 <a class="link" href="https://mvnrepository.com/"  target="_blank" rel="noopener"
+    >https://mvnrepository.com/</a> 中搜索<br>
+依赖传递<br>
+依赖具有传递性<br></li>
+<li>直接依赖:在当前项目中通过依赖配置建立的依赖关系<br></li>
+<li>间接依赖:被依赖的资源如果依赖其他资源，当前项目间接依赖其他资源<br>
+排除依赖:主动断开依赖的资源被排除的依赖不需要指定版本，用<exclusions>实现<br>
+依赖范围:默认情况下，可以在任何地方使用可以通过<scope>设置其使用范围<br>
+<br>
+生命周期<br>
+Maven的生命周期就是为了对所有的maven项目构建过程进行抽象和统一<br>
+Maven中有3套相互独立的生命周期<br></li>
+<li>clean:清理工作<br></li>
+<li>default:核心工作，如:编译，测试，打包，安装，部署等<br></li>
+<li>site:生成报告，发布站点等<br>
+每套生命周期包含一些阶段(phase)，阶段是有顺序的，后面的阶段依赖与前面的阶段    <br>
+常见的阶段:(在Maven面版的Lifecycle中都有)<br></li>
+<li>clean:移除上一次构建生成的文件<br></li>
+<li>compile:编译项目源代码<br></li>
+<li>test:使用合适的单元测试框架运行测试(junit)<br></li>
+<li>package:将编译后的文件打包<br></li>
+<li>install:安装项目到本地仓库<br>
+注意:在同一套生命周期中，运行后面阶段，前面阶段也会运行<br>
+运行方式:直接在面板中双击/在终端中用命令 mvn 阶段名<br>
+<br></li>
+</ul>
+<h2 id="web后端开发br">Web后端开发<br>
+</h2><p>SpringBootWeb入门   Spring官网<br>
+Spring发展到今天已经形成一种开发生态圈，Spring提高了若干子项目，每个项目用于完成特定功能<br>
+Spring全家桶中Spring Framework是基础，最底层，但是配置繁琐，入门难度大，所以有了Spring Boot<br>
+创建一个SpringBootWeb工程<br>
+1.创建springboot工程，并勾选web开发相关依赖<br>
+2.定义HelloController类，添加方法hello，并添加注解(请求处理类注解@Rest&hellip;，然后在方法上面定一个浏览器接口@Reque&hellip;)<br>
+3.运行测试<br></p>
+<h2 id="http协议br">HTTP协议<br>
+</h2><p>概念:超文本传输协议，规定了浏览器和服务器之间数据传输的规则<br>
+特点<br>
+基于TCP协议:面向连接，安全<br>
+基于请求-响应模型的:一次请求对应一次响应<br>
+HTTP协议是无状态的协议:对于事务处理没有记忆功能.每次请求响应都是独立的<br></p>
+<ul>
+<li>缺点:多次请求间不能共享数据<br></li>
+<li>优点:速度块<br>
+HTTP-请求数据格式<br>
+请求行:请求数据第一行(请求方式，资源路径，协议)<br>
+请求头:第二行开始(key:value的格式)<br></li>
+<li>Host:请求的主机名<br></li>
+<li>User-Agent:浏览器版本<br></li>
+<li>Accept:表示浏览器能接收的数据<br></li>
+<li>Accept-Language:表示浏览器偏好的语言<br></li>
+<li>Accept-Encoding:表示浏览器可以支持的压缩类型<br></li>
+<li>Content-Type:请求主体的数据类型<br></li>
+<li>Content-Length:请求主体的大小(单位:字节)<br>
+请求体:post请求，存放请求参数，和请求头之间存在一个空行分隔<br>
+注意:get请求没有请求体，请求参数在请求行中<br>
+HTTP-响应数据格式<br>
+响应行:响应数据第一行(协议，状态码，描述)<br>
+响应头:第二行开始(格式key:value)<br></li>
+<li>Content-Type:表示响应内容类型<br></li>
+<li>Content-Length:表示响应内容长度<br></li>
+<li>Content-Encoding:表示响应压缩算法<br></li>
+<li>Cache-Control:指示客户端应如何缓存<br></li>
+<li>Set-Cookie:告诉浏览器为当前页面所在域设置cookie<br>
+响应体:和响应头之间存在一个空行分隔，存放响应数据<br>
+响应码:响应状态码<br>
+<br></li>
+</ul>
+<h2 id="tomcatbr">Tomcat<br>
+</h2><p>Tocat是Apache软件基金会的一个核心项目，是开源免费的轻量级web服务器，支持Servelt/JSP少量JavaEE规范<br>
+JavaEE:Java企业版，只Java企业级开发技术总和<br>
+Tomcat也被称为Web容器，Servlet容器，Servlet程序需要依赖Tomcat才能运行<br>
+官网:Tomcat<br>
+bin:可执行文件 conf:配置文件 lib:依赖包文件 logs:日志文件 temp:临时文件 webapps应用发布目录 work:工作目录<br>
+请求响应<br>
+DispatcherServlet:前端控制器<br>
+把浏览器的请求信息封装到HttpServletRequest中去处理，把响应数据封装到HttpServletResponse中去响应<br>
+原始方式获取请求参数<br></p>
+<ul>
+<li>Controller方法形参中声明HttpServletRequest对象<br></li>
+<li>调用对象的getParameter(参数名)<br>
+SpringBoot中接收简单参数<br></li>
+<li>请求参数名与方法形参变量名相同<br></li>
+<li>会自动进行类型转换<br>
+@RequestParam注解<br></li>
+<li>方法形参名称与请求参数名称不匹配，通过该注解进行映射<br></li>
+<li>该注解的required属性默认是true，代表请求参数必须传递<br>
+实体参数:简单实体对象:请求参数名与形参对象属性名要相同，定义实体类接收即可(如果是复杂实体对象，按照层次对应起来就行)<br>
+数组集合参数<br>
+数组参数:请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数<br>
+集合参数:请求参数名与形参集合名称相同且请求参数为多个，@RequestParam绑定参数关系<br>
+日期参数:使用@DateTimeFormat(pattern=&ldquo;日期格式&rdquo;)注解完成日期参数格式转换<br>
+Json参数:JSON数据键名与形参类对象属性名相同，定义实体类类型形参即可接收参数，需要使用@RequestBody标识<br>
+路径参数:通过请求URL直接传递参数，使用{&hellip;}来标识该路径参数，需要使用@PathVariable获取参数路径<br></li>
+<li>注意例:@RequestMapping(&quot;/path/{id}/{name}/&hellip;&rdquo;)&mdash;在声明类注解时后面的URL地址不能写死<br>
+设置响应数据<br>
+@ResponseBody<br>
+类型:方法注解，类注解<br>
+位置:Controller方法上/类下<br>
+作用:将方法返回值直接响应，如果返回值类型是实体对象/集合，将转换成Json格式响应<br>
+说明:@RestController=@Controller+@ResponseBody;<br>
+返回类型不一致，不便管理，难以维护<br>
+创建一个Result(code，msg，data)实体类，code表示状态码，msg表示方法名，data表示要返回的数据，这样格式就统一了<br>
+实验例子<br>
+前提:引入了一个XmlParserUtils工具类解析xml文件的，和一个emp.xml文件里面是数据源，和一个静态html页面<br>
+要求:把emp.xml文件里面的数据解析出来，然后通过处理，最后封装到Result类中返回给前端，然后渲染出来<br>
+<br>
+解析:file的获取使用了反射的原理<br>
+List<Emp> empList = XmlParserUtils.parse(file，Emp.class)&mdash;Emp.class是一个类不是实例，empList是一个实例集合<br>
+<br></li>
+</ul>
+<h2 id="分层解耦br">分层解耦<br>
+</h2><p>把数据功能分层次安放<br>
+三层架构<br></p>
+<ul>
+<li>controller:控制层，接收前端发送的请求，对请求进行处理，并响应数据<br></li>
+<li>service:业务逻辑层，处理具体的业务逻辑<br></li>
+<li>dao:数据访问层(持久层)，负责数据访问操作，包括数据的增，删，改，查<br>
+便于管理，维护，和扩展<br>
+分层解耦<br></li>
+<li>内聚:软件中各个功能模块内部的功能联系<br></li>
+<li>耦合:衡量软件中各个层/模块之间的依赖，关联程度 <br>
+高内聚，低耦合<br>
+想要解耦就需要一个容器来存放对象，就有了控制反转和依赖注入<br></li>
+<li>控制反转:简称IOC，对象的创建控制权由程序自身转移到外部(容器)，这种思想叫控制反转<br></li>
+<li>依赖注入:简称DI，容器为应用程序提供运行时，所依赖的资源，称为依赖注入<br></li>
+<li>Bean对象:IOC容器中创建，管理的对象称为bean<br>
+IOC和DI入门<br>
+1.Service层及Dao层的实现类，交给IOC容器管理<br>
+2.为Controller及Service注入运行时，依赖的对象<br>
+3.运行测试<br>
+@Component 注解表示将当前类交给IOC容器管理，成为IOC容器对象(控制反转)<br>
+@Autowired 注解表示运行时，IOC容器会提供该类型的bean对象，并赋值给该变量(依赖注入)<br>
+IOC详解<br>
+Bean的声明<br></li>
+<li>@Component:声明bean的基础注解，不属于三类时就用这个注解，下面三个是这个的衍生注解<br></li>
+<li>@Controller:标注在控制器上<br></li>
+<li>@Service:标注在业务类上<br></li>
+<li>@Repository:标注在数据访问类上(由于与Mybatis整合，用的少)<br>
+注意:声明bean时，可通过value属性来声明名字，默认是类名首字母小写<br>
+使用以上四个注解都可以声明bean，但在springboot集成web开发中，声明控制器bean只能使用@Controller<br>
+Bean组件扫描<br>
+前面声明bean四大注解，要想生效，需要被组件扫描注解@ComponentScan扫描<br>
+该扫描注解没显示配置，但是包含在启动类声明注解中，默认扫描范围是启动类所在包及其子包<br>
+如果无法移动包就可以用@ComponentScan({&quot;..&quot;，&quot;..&quot;})可以定义要扫描的包(不建议)<br>
+DI详解<br>
+@Autowired注解，默认是按照类型进行，如果存在多个类型的bean，会报错<br>
+有以下解决方案<br></li>
+<li>@Primary<br>
+设置bean注入的优先级<br></li>
+<li>@Qualifier<br>
+@Qualifier(&ldquo;bean别名&rdquo;)指定注入的那个bean<br></li>
+<li>@Resource<br>
+不使用@Autowired直接用@Resource来指定注入哪个bean，这个是jdk里面的方法:@Resource(name=&ldquo;bean别名&rdquo;)<br>
+<br></li>
+</ul>
+<h2 id="mysql数据库br">MySQL数据库<br>
+</h2><p>数据库(DB)，是存储和管理数据的仓库<br>
+数据库管理系统(DBMS)，操纵和管理数据库的大型软件<br>
+SQL，操作关系型数据库的编程语言，定义了一套操作关系型数据库统一标准<br>
+MySQL概述<br>
+MySQL的按照与配置<br>
+MySQL数据模型<br></p>
+<ul>
+<li>
+<p>关系型数据库:建立在关系模型基础上，由多张相互关联的二维表组成的数据库<br>
+a.便于表存储数据，格式统一，便于维护<br>
+b.使用SQL语言操作，标准统一，使用方便可用于复杂查询<br>
+SQL简介<br></p>
+</li>
+<li>
+<p>SQL:一门操作关系型数据库的编程语言，定义操作所有关系型数据库的统一标准<br></p>
+</li>
+<li>
+<p>SQL语句可以多行和单行，以分号结尾<br></p>
+</li>
+<li>
+<p>不区分大小写，可以用空格缩进来增加可读性<br></p>
+</li>
+<li>
+<p>单行注释 &ndash; aaa或# aaa，多行注释 /<em>aaa</em>/<br>
+SQL的分类<br></p>
+</li>
+<li>
+<p>DDL:数据定义语言(表，字段)<br></p>
+</li>
+<li>
+<p>DML:数据操作语言(增删改查)<br></p>
+</li>
+<li>
+<p>DQL:数据查询语言<br></p>
+</li>
+<li>
+<p>DCL:数据控制语言<br>
+数据库设计-DDL<br></p>
+</li>
+<li>
+<p>show databases;select database();&ndash; 查询<br></p>
+</li>
+<li>
+<p>use 数据库名;&ndash; 选择操作的数据库<br></p>
+</li>
+<li>
+<p>create database [if not exists] 数据库名;&ndash; 创建数据库<br></p>
+</li>
+<li>
+<p>drop database[if exists] 数据库名;&ndash; 删除数据库<br>
+注意:上述语法中database可以替换成schema<br>
+创建表操作:create table 名(字段1 类型 [约束] [comment 字段1注释]，&hellip;)<br>
+约束:非空&ndash;not null  唯一&ndash;unique  主键&ndash;primary key  默认&ndash;default  外键&ndash;foreign key  auto_increment&ndash;自增<br>
+数据类型:主要分三类数值类型，字符串类型，日期时间类型<br>
+<br>
+<br>
+<br>
+查询表结构:desc 表名;<br>
+查询建表语句:show create table 表名;<br></p>
+</li>
+<li>
+<p>alter table 表名 add 字段名 类型 [comment 注释];<br></p>
+</li>
+<li>
+<p>alter table 表名 modifty 字段名 新字段类型;<br></p>
+</li>
+<li>
+<p>alter table 表名 change 旧字段名 新字段名 类型 [comment 注释];<br></p>
+</li>
+<li>
+<p>alter table 表名 drop column 字段名;&ndash;删除<br></p>
+</li>
+<li>
+<p>rename table 表名 to 新表名;<br>
+数据库操作-DML<br>
+添加数据(insert)<br></p>
+</li>
+<li>
+<p>insert into 表名 (字段1，&hellip;) values (值1，&hellip;);<br></p>
+</li>
+<li>
+<p>insert into 表名 values (值1，&hellip;);<br></p>
+</li>
+<li>
+<p>insert into 表名 (字段1，&hellip;) values (值1，&hellip;)，(值2，&hellip;);<br></p>
+</li>
+<li>
+<p>insert into 表名 values (值1，&hellip;)，(值2，&hellip;);<br>
+更新数据(update)<br></p>
+</li>
+<li>
+<p>update 表名 set 字段名1 = 值1，字段名2 = 值2，&hellip;[where 条件];<br>
+删除数据(delete)<br></p>
+</li>
+<li>
+<p>delete from 表名 [where 条件];<br>
+数据查询-DQL<br>
+语法: select [distinct&ndash;去重] 字段列表 [as 别名]，&hellip; from 表名列表 [group by 分组字段列表 [having 分组后条件列表]] [order by 字段1 排序方式1，&hellip;] [limit     起始索引，每页数据个数];
+注意:分组后一般查询字段为聚合函数和分组字段，分组后的判断条件要放到having后;排序&ndash;asc升序(默认)，desc降序
+比较运算符: &gt;，&gt;=，&lt;，&lt;=，=，&lt;&gt;/!=，between&hellip;and&hellip;，in(&hellip;)，like _a/%a&ndash;_表示一个字符%表示任意个字符，is null
+逻辑运算符: and/&amp;&amp;，or/||，not/!
+聚合函数:conunt(..)，min(..)，max(..)，avg(..)，sum(..)&mdash;null值不参于所有聚合函数运行
+流程控制</p>
+</li>
+<li>
+<p>if(条件表达式，true取值，false取值)&mdash;类似于三元运算符</p>
+</li>
+<li>
+<p>(case字段/表达式 when 值1 then 结果1 [when 值2 then 结果2 &hellip;] [else 值*] end)&mdash;如果是值1就展示结果1
+多表设计
+概述:多表结构分为三种&mdash;-一对多，多对多，一对一
+一对多表问题可能会造成数据的不完整，不一致问题，所有要进行外键约束，保证数据的完整和一致性</p>
+</li>
+<li>
+<p>创建表时关联:在语句最后加上[constraint] [外键名称] foreign key (外键字段名) references 主表 (字段名)</p>
+</li>
+<li>
+<p>修改表结构关联:alter table 表名 add constraint 外键名称 foreign key (外键字段名) references 主表(字段名);
+上面的定义的都是物理外键，缺点是影响增删改查(需要检索外键关系)，仅适用于单节点，不适应分布式，集群，容易引发数据库死锁问题
+一般开发都使用逻辑外键，概念:在业务层逻辑中，解决外键关联
+一对一多用于单表拆分，一张表基础字段放在一张表中，其他字段放在另一个表，提示操作效率
+实现:在任意一方加入外键，关联另一方主键，并且设置外键为唯一约束(unique)
+多对多用单纯的关联比较繁琐，所有可以用一个中间表来实现
+实现:建立第三个中间表，中间表至少包含两个外键，分别关联两方主键
+多表查询
+普通的多表查询在from后面直接加入表名，回导致笛卡尔积&mdash;两个表数据个数相乘用where消除无用的笛卡尔积
+分类:连接查询(内连接，外连接(左外连接，右外连接))，子查询
+内连接</p>
+</li>
+<li>
+<p>隐式内连接:select 字段列表 from 表1，表2 where 条件&hellip;;</p>
+</li>
+<li>
+<p>显式内连接:select 字段列表 from 表1 [inner] join 表2 on 连接条件&hellip;;
+外连接</p>
+</li>
+<li>
+<p>左外连接:select 字段列表 from 表1 left [outer] join 表2 on 连接条件&hellip;;</p>
+</li>
+<li>
+<p>右外连接:select 字段列表 from 表1 right [outer] join 表2 on 连接条件&hellip;;
+左外连接会完全包含左表数据同时包含交集数据，右外连接同理
+子查询</p>
+</li>
+<li>
+<p>SQL中语句嵌套select语句称为嵌套查询，也称子查询</p>
+</li>
+<li>
+<p>形式:select * from t1 where 字段名1=(select 字段名1 from t2 &hellip;);</p>
+</li>
+<li>
+<p>子查询外部的语句可以是insert/update/delete/select，常见的还得是select</p>
+</li>
+<li>
+<p>分类:标量子查询(返回单个值)，列子查询(返回一列)，行子查询(返回一行)，表子查询(返回多行多列)
+补充条件判断方法:in，not in，(aa，bb)=(<strong>，</strong>)，把查询结果当表使用&ndash;直接写在from后如何起个别名
+事务
+事务是一组操作的集合，它是一个不可分隔的工作单位，事务会把所有的操作作为一个整体，一起向系统提交或撤销操作申请，即这些操作要么同时成功，要么同时失败</p>
+</li>
+<li>
+<p>默认MySQL的事务时自动提交的，也就是说，当执行一条DML语句的时候，MySQL会立即隐式提交事务
+1.开启事务:start transaction; / begin;
+2.提交事务:commit;
+3.回滚事务:rollback;
+四大特性:原子性，一致性，隔离性，持久性
+索引
+索引是帮助数据库高效获取数据的数据结构
+优点:提高数据库查询的效率，通过索引列对数据排序，降低CPU消耗
+缺点:索引会占用磁盘空间，提高查询效率但是会降低insert，update，delete的效率
+索引结构:Hash索引，B+Tree索引，Full-Text索引，一般默认索引是B+Tree索引
+B+Tree(多路平衡搜索树):</p>
+</li>
+<li>
+<p>每个节点，可以存储多个key(有n个key，就有n个指针)</p>
+</li>
+<li>
+<p>所有的数据都存储在叶子节点，非叶子节点仅用于索引数据</p>
+</li>
+<li>
+<p>叶子节点形成一颗双向链表，便于数据的排序及区间范围查询
+创建索引:create [unique] index 索引名 on 表名 (字段名，&hellip;);
+查看索引:show index from 表名;
+删除索引:drop index 索引名 on 表名;</p>
+</li>
+</ul>
+<h2 id="mybatis">MyBatis
+</h2><p>MyBatis是一款优秀的持久层框架，用于简化JDBC的开发，mybatis官网
+在mybatis中，使用的任何功能都需要先引入依赖
+1.准备工作(创建sprignboot工程，数据库表user，实体类User)
+2.引入Mybatis的相关依赖，配置Mybatis
+3.编写SQL语句(接口类/注解/XML)
+例子: <br>
+a.准备好user表和User实体类
+b.然后去resources中配置数据库连接语句
+c.然后建立一个接口实现查询语句
+d.在接口类名上加上@Mapper会自动生成代理然后加入到ioc中，在方法名上加上@Select(&ldquo;select * from text&rdquo;)这样调用方法就会自动执行注解里面的查询语句
+e.然后再测试类中加入注解@Autowired用ioc自动生成注解然后就可以在测试方法上@Test注解表示测试调用接口中的方法去查询数据库表内容
+JDBC介绍
+JDBC就是使用Java语言操作关系型数据库的一套API
+sun公司官方定义的一套操作所有关系型数据库的规范，即接口
+各个数据库厂商去实现这套接口，提供数据库驱动jar包
+我们可以使用这套接口编程，真正执行代码的是驱动jar包中的实现类
+JDBC直接使用太过繁琐，现在大部分都是在使用类似于mybatis的工具包来进行连接和操作数据库
+数据库连接池
+数据库连接池是一个容器，负责分配，连接数据库(Connection)
+它允许数据库重复使用一个现有的数据库连接，而不是新建一个
+释放，空闲时间超过最大空闲时间的连接，来避免因为没有释放而引起的数据库连接遗漏</p>
+<ul>
+<li>标准接口: DataSource
+官方(sun)提供的数据库连接池接口，由第三方组织实现此接口
+功能:获取连接 &mdash; Connection getConnection() throws SQLException;
+产品:C3P0(淘汰)，DBCP(淘汰)，Druid(阿里云的)，Hikari(spring boot默认)
+Lombok
+Lombok是一个实用的Java类库，能通过注解的形式自动生成构造器.get/set，equals等方法，并可以自动生成日志变量，简化Java开发，提高效率</li>
+<li>@Getter/@Setter &ndash; 为所有的属性提高get和set方法</li>
+<li>@ToString &ndash; 会给类自动生成易阅读是toString方法</li>
+<li>@EqualsAndHashCode &ndash; 根据类所拥有的非静态字段自动重写equals方法和hashCode方法</li>
+<li>@Data &ndash; 提高了更综合的生成代码功能(get+set+tostring+equalsandhashcode)</li>
+<li>@NoArgsConstructor &ndash; 为实体类生成无参的构造器方法</li>
+<li>@AllArgsConstructor &ndash; 为实体类生成除了static修饰的字段之外带有各参数的构造器方法</li>
+<li>补充:@Slf4j &ndash; 引入日志框架，下面就可以直接使用日志了
+注意:需要插件，一般安装idea时自动安装好了
+增删改查
+删除
+在接口中定义一个方法，然后再方法上面加上@Delete(&quot;&hellip;&quot;)注解，然后去测试类中用ioc自动注入调用接口中的方法执行注解中的SQL语句
+新增
+和删除差不多，使用@Insert(&quot;&hellip;&quot;)，就是如果字段多了，可以用实体类封装一下
+如果要获取表字段信息: @Options(keyProperty=&ldquo;id&rdquo;，useGeneratedKeys=true):会自动将生成的主键值返回给id属性
+更新
+用id来确定更新那个字段，@Update(&quot;&hellip;&quot;)
+查询
+查询信息@Select(&quot;&hellip;&quot;)，但是查询中如果属性名和字段名不一致就无法自动封装
+数据封装:属性名和字段名一致mybatis会自动封装，不一致可以在查询时起别名或者开启驼峰映射或者使用@Results/@Result手动映射</li>
+<li>起别名:起一个和属性名一样的别名，就可以自动封装到实体类中</li>
+<li>驼峰映射:搜索关键字camel   &hellip;camel&hellip;=true</li>
+<li>@Results/@Result:网上搜索去吧，懒得写
+预编译SQL:性能更高，更安全(防止SQL注入)
+参数占位符 #{&hellip;}&ndash;执行时会变成?(预编译)   ${&hellip;}&ndash;执行时会拼接SQL语句存在SQL注入问题(对表名，列表动态设置时使用)
+字符串拼接函数:concat(&lsquo;aa&rsquo;，&lsquo;bb&rsquo;，&lsquo;cc&rsquo;) = aabbcc  &mdash;-  可以解决模糊查询时预编译?在&rsquo; &lsquo;里面的问题
+XML映射文件
+mybatis中文网
+🌐规范:</li>
+<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在同一个位置包下(同包同名)</li>
+<li>XML映射文件中的namespace属性为Mapper接口全限定名一致</li>
+<li>XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致</li>
+</ul>
+<p>MybatisX是一款基于IDEA的快速开发Mybaits的插件，为效率而生
+Mybatis动态SQL
+随着用户的输入或外部条件的变化而变化的SQL语句，我们称为动态SQL语句</p>
+<ul>
+<li><if>:用于判断条件是否成立，使用test属性进行条件判断，如果为true，就拼接SQL</li>
+<li><where>:外层包裹标签，可以自动识别里面是否有条件满足，如果没有就不会执行where语句，并且会自动去除开头多余的and</li>
+<li><set>:也是包裹标签，功能是动态的在行首插入一个set关键字，且可自动去除字段后多余的逗号(一般用于update中)</li>
+<li><foreach>:collection-遍历的集合;item-遍历出来的元素;separator-分隔符;open-开始前拼接的片段;close-结束后拼接的片段</li>
+<li><sql><include>:sql标签负责抽取xml文件中重复的SQL语句有id值，include负责引用sql标签使用refid属性引用sql的id值</li>
+</ul>
+<p>补充:开发规范-Restful-&gt;REST，表述性状态转换，它是一种软件架构风格</p>
+<h2 id="文件上传功能">文件上传功能
+</h2><p>是指将本地图片，视频，音频等文件上传到服务器，供其他用户浏览下载
+文件上传在项目中应用非常广泛，我们经常发微信，朋友圈，微博都用到了文件上传功能
+1.首先在前端定义有一个表单项input类型是file类型的，这样就有了选择文件的输入框
+2.其次上传方式要选择post方式
+3.然后在form表单中设置上传格式 enctype=&ldquo;multipart/form-data&rdquo;，因为默认提交方式不会提交大型数据
+4.在后端定义个接口，同时接收数据用MultipartFile(MultipartFile image)格式来接收文件数据
+5.如果要保存到本地中要使用，先用image.getOriginalFilename()方法来获取文件的全部名称(包括后缀名)
+6.然后调用image.transferTo(new File(&ldquo;D:\&quot;+文件名称))来将传输上来的文件保存到本地
+7.直接获取的文件名重复会覆盖文件，所以最好还是使用UUID来命名，JavaEE讲过的
+8.然后用字符串截取int index = lastIndexOf(&rdquo;.&quot;)/filename.substring(index)，获取文件后缀名，最后拼接成最终的文件名
+注意:</p>
+<p>spring.servlet.multipart.max-file-size=10MB &mdash;- 设置单个文件传输最大限额为10MB
+spring.servlet.multipart.max-request-size=100MB &mdash;- 设置多个文件上传总共限额为100MB
+在实际开发中，本地存储已经不咋使用了，因为容易磁盘饱满，而且用户也无法访问，一般都是使用云端存储
+示例阿里云
+阿里云是阿里巴巴旗下全球领先的云计算公司，也是国内最大的云服务提供商，阿里云存储服务OSS
+使用第三方服务的通用思路:准备工作-&gt;参照官方SDK编写入门程序-&gt;集成使用</p>
+<ul>
+<li>SDK:软件工具开发包，包括辅助软件开发依赖(jar)包，代码示例等，都可以叫做SDK
+阿里云OSS使用步骤:注册账号-&gt;充值-&gt;开通对象存储服务-&gt;创建bucket-&gt;获取AccessKey(密钥)-&gt;SDK入门程序-&gt;案例集成OSS</li>
+<li>Bucket:存储空间是用户用于存储对象(Object，就是文件)的容器，所有对象都必须隶属于某个存储空间
+阿里云idea配置
+先去官方文档找pom文件的依赖，配置好
+然后找文件上传实例代码复制，直接粘贴到idea的测试代码目录下
+配置信息</li>
+<li>endpoint:域名地区的访问地址</li>
+<li>accessKeyId:密钥ID</li>
+<li>accessKeySecret:密钥</li>
+<li>bucketName:要上传到那个bucke中</li>
+<li>objectName:上传上去的对象叫什么</li>
+<li>filePath:上传的文件本地路径</li>
+<li>再往下就是具体的执行代码了
+因为这些配置信息太多，而且一改动就很麻烦，所有将这些配置信息写道配置文件中最好
+properties</li>
+</ul>
+<p>再application.properties中写好key和value配置信息后
+再代码中需要用@value()来引用配置信息 具体语法: @value(&quot;${配置信息中的key}&quot;)
+示例: @Value(&quot;${aliyun.oss.endpoint}&quot;)
+private String endpoint;
+第二种配置文件格式yml或yaml</p>
+<p>yml和yaml就是后缀名不一样，其余一样，yml现在用的最多
+yml配置是按照层级配置的，数组，list，set元素前加个 -
+yml基本语法
+1.大小写敏感
+2.数值前必须有空格，作为分隔符
+3.使用缩进表示层级关系，缩进时不允许使用Tab键，只能用空格
+4.缩进空格数据不重要，只要相同级的元素左对齐就行
+第三种s配置文件格式xml</p>
+<p>xml配置是用标签来定义的</p>
+<p>上面书写了配置文件中定义了配置信息，然后再代码中引用配置文件中信息的方法，还是有点繁琐，需要每个元素都亲自写注解，解决方法:
+首先新建个实体类定义元素，和配置文件中的元素名字要一致
+然后加入@Component注解交给IOC容器
+然后加上@ConfigurationProperties(perfix=&quot;*<strong>.</strong>&quot;) &ndash; 这个作用是写上配置文件中key值的前缀
+然后就可以在代码类中加入@Autowired自动注入，就可以使用了
+图例
+可选操作:引入依赖，spring-boot-configuration-processor 这个依赖可以让在配置文件书写外部配置信息时idea自动提示配置信息，可以引入，也可以不引入，不影响程序执行，会把实体类中的红色警告变成灰色，没啥影响
+注意:@ConfigurationProperties和@Value都是注入外部配置信息的，配置信息少可以用value，批量配置信息可以用另一个</p>
+<h2 id="登录校验">登录校验
+</h2><p>会话技术
+传统的技术，用户登录成功后，每次请求都会获取到一个登录标记
+会话:用户打开浏览器，访问web服务器，会建立一个会话，直到一方断开连接，会话结束，一次会话包括多次请求和响应
+会话跟踪:一种维护浏览器状态的方法，服务器需要识别多次请求是否来自同一浏览器，以便在同一会话的多次请求间共享数据</p>
+<ul>
+<li>客户端会话跟踪技术:Cookie</li>
+<li>服务端会话跟踪技术:Session</li>
+<li>令牌技术(现在主流)
+方案一:Cookie
+优点:HTTP协议中支持的技术(Cookie请求头和Set-Cookie响应头)
+请求:(Cookie:name=value)/响应(Set-Cookie:name=value)
+缺点:1.移动端无法使用2.不安全，而且用户可以手动禁用Cookie3.Cookie不能跨域
+方案二:Session
+是通过Cookie服务来获取和传输Session的
+优点:存储在服务端，安全
+缺点:1.服务器集群下无法直接使用Session2.有Cookie的缺点
+方案三:令牌技术
+现在的主流技术
+优点:1.支持PC端，移动端2.解决集群下的认证问题3.减轻服务器端存储压力
+缺点:需要自己实现
+JWT令牌
+全程:JSON Wen Token JWT官网
+定义了一种简洁的，自包含的格式，用于在通信双方以json数据格式安全的传输信息.由于数字签名的存在，这些信息是可靠的
+令牌是通过Base64编码的
+Base64:是一种基于64个可打印字符(A-Z，a-z，0-9，+，/)来表示二进制的编码方式=表示补位
+组成</li>
+<li>第一部分:Header头，记录令牌类型，前面算法等.</li>
+<li>第二部分:Payload(有效载荷)，携带一些自定义信息，默认信息等.</li>
+<li>第三部分:Signature(签名)，防止Token被篡改，确保安全性.将第一，第二，并加入指定密钥，通过签名算法计算而来
+JWT场景:登录认证
+1.登录成功后生成令牌
+2.后续每个请求，都要携带JWT令牌，系统在每次请求处理之前，先校验令牌    ，通过后，再处理
+准备工作导入依赖
+<dependency>
+<groupId>io.jsonwebtoken</groupId>
+<artifactId>jjwt</artifactId>
+<version>0.9.1</version>
+</dependency>
+生成一个完成的JWT令牌:
+public void testGenJwt(){
+Map&lt;String， Object&gt; clicamt = new HashMap&lt;&gt;();
+clicamt.put(&ldquo;id&rdquo;，1);
+clicamt.put(&ldquo;name&rdquo;，&ldquo;李&rdquo;);
+clicamt.put(&ldquo;age&rdquo;，&ldquo;男&rdquo;);
+String jwt = Jwts.builder()
+.signWith(SignatureAlgorithm.HS256， &ldquo;liwenchuan&rdquo;)//签名算法和密钥
+.setClaims(clicamt)//载荷，一个集合，里面是自定义信息
+.setExpiration(new Date(System.currentTimeMillis() + 3600 * 100))//有效期
+.compact();
+System.out.println(jwt);
+}
+解析一个JWT令牌
+public void testParseJwt(){
+Claims claims = Jwts.parser()
+.setSigningKey(&ldquo;liwenchuan&rdquo;)//生成时输入的密钥
+.parseClaimsJws(&ldquo;eyJhbGciOiJ.2NCwiYWd55S3In0.aspbdDVN_KI4BV&rdquo;)//生成的令牌码
+.getBody();//获取body部分
+System.out.println(claims);
+}
+过滤器Filter
+概念:Filter过滤器，是JavaWeb三大组件(Servlet，Filter，Listener)之一
+过滤器可以把对资源的请求拦截下来，从而实现对一些特殊的功能
+过滤器一般完成一些通用的操作，如:登录校验，统一编码处理，敏感字符等</li>
+<li>定义一个Filter:定义一个类，实现Filter接口，并重写所有方法&mdash;其中&hellip;init(){}是初始化方法，启动时调用一次，&hellip;destroy(){}是销毁方法，关闭时调用一次</li>
+<li>配置Filter:Filter类上加@WebFilter注解，配置拦截资源路径.引导类上加@ServletComponentScan开启Servlet组件支持
+例:init方法和destroy方法不重写也不会报错
+@WebFilter(urlPatterns = &ldquo;/<em>&rdquo;)//表示拦截任何资源
+public class DemoFilter implements Filter {
+@Override
+public void doFilter(ServletRequest Request， ServletResponse Response， FilterChain Chain) throws IOException， ServletException {
+System.out.println(&ldquo;拦截到了请求&rdquo;);
+Chain.doFilter(Request，Response);//表示放行请求
+}
+}
+执行流程:请求-&gt;放行前逻辑-&gt;放行-&gt;资源-&gt;放行后逻辑
+过滤器链:一个web可以设置多个过滤器，就形成了一个过滤器链，执行顺序是按照过滤器类名的自然排序
+拦截路径:&quot;/</em>&quot;，&quot;/emp&quot;，&quot;/emp/<em>&quot; &ndash; 三种拦截方式
+登录验证Filter流程
+过滤器代码示例:
+@Slf4j
+@WebFilter(urlPatterns = &ldquo;/</em>&rdquo;)
+public class LoginCheckFilter implements Filter {
+@Override
+public void doFilter(ServletRequest servletRequest， ServletResponse servletResponse， FilterChain filterChain) throws IOException， ServletException {
+HttpServletRequest req = (HttpServletRequest) servletRequest;
+HttpServletResponse resp = (HttpServletResponse) servletResponse;
+//获取请求头url
+String url = req.getRequestURI().toString();
+log.info(&ldquo;获取的url为:{}&quot;，url);
+//判断是否是登录请求
+if (url.contains(&ldquo;login&rdquo;)){
+log.info(&ldquo;登录请求，放行&hellip;.&rdquo;);
+filterChain.doFilter(servletRequest，servletResponse);
+return;}
+//不是登录请求.获取JWT令牌，这个令牌是直接从请求头传过来的
+String jwt = req.getHeader(&ldquo;token&rdquo;);
+//注意这个的感叹号
+if (!StringUtils.hasLength(jwt)){
+log.info(&ldquo;请求头token为空返回未登录信息&rdquo;);
+Result error = Result.error(&ldquo;NOT_LOGIN&rdquo;);
+//手动转换成json格式数据返回回去 &mdash;&mdash;-&gt; 使用阿里巴巴的fastJSON工具包
+//这里返回规定的错误信息，前端接收后会强转跳转到登录页面
+String jsonString = JSONObject.toJSONString(error);
+resp.getWriter().write(jsonString);
+return;}
+//令牌报错的解决方案
+try {
+//之前导入的令牌分析代码，就是一个工具类
+JwtUtils.parseJWT(jwt);
+} catch (Exception e) {
+e.printStackTrace();
+log.info(&ldquo;令牌解析失败，未返回登录信息&rdquo;);
+P22~P27}
+//令牌通过，放行
+log.info(&ldquo;令牌解析成功，返回正确的登录信息&rdquo;);
+filterChain.doFilter(servletRequest，servletResponse)}};
+拦截器Interceptor</li>
+<li>概念:是一种动态拦截方法调用的机制，类似于过滤器.Spring框架中提供的，用来动态拦截控制器方法的执行</li>
+<li>作用:拦截请求，在指定的方法调用前后，根据业务需要，执行预先定义的代码</li>
+<li>定义拦截器:实现HandlerInterceptor接口，并重写其方法(三个方法都有默认实现，可以根据需要选择实现哪个方法)
+建立一个类实现HandlerInterceptor接口并且在类名上面加上注解@Component交给IOC管理
+注册拦截器然后实现其方法
+1.preHandle方法是入口，资源方法执行前执行，返回true表示放行，否则就是不放行，🎃
+2.postHandle方法是目标资源执行后执行
+3.afterCompletion方法是视图渲染完毕后执行，最后执行
+然后新建个类配置拦截器信息类名上加上注解@Configuration表示是配置类
+接着用@Autowired注解来自动注入拦截器类
+然后实现WebMvcConfigurer接口并且实现其addInterceptors方法，然后在方法里面去注册拦截器并且规定拦截路径
+拦截路径
+拦截器流程
+拦截器和过滤器区别:接口规范不同，过滤器会拦截所有资源，拦截器只会拦截Spring环境中的资源</li>
+</ul>
+<h2 id="异常处理">异常处理
+</h2><p>出现异常如何处理
+方案一:在Controller中进行try&hellip;catch处理 &mdash; 代码臃肿，不推荐
+方案二:全局处理异常 &mdash; 简洁，优雅，推荐
+定义全局处理异常流程</p>
+<ul>
+<li>新建一个类如何类上加注解@RestControllerAdvice表明这个类是异常处理类</li>
+<li>如何定义一个方法方法上加上注解@ExceptionHandler(&hellip;.class)表示处理什么类型的异常
+处理任何异常的示例代码</li>
+</ul>
+<h2 id="辅助学习系统实例总结">辅助学习系统实例总结
+</h2><p>目录格式的正确书写
+浏览器访问路径的注解RequestMapping(value=&quot;/aaa&rdquo;，method=&ldquo;get&rdquo;) &mdash; 可以简略为@GetMapper(&quot;/aaa&quot;) post，put delete 都是同理
+注意:一个完整的请求路径，应该是类上的@RequestMapping的value属性加上方法上的@RequestMapping的value属性，所以如果有公共请求路径，可以抽取到类上的注解中，方法自己的个有路径
+流程:前端请求-&gt;controller-&gt;service-&gt;mapper-&gt;数据库
+删除数据使用的是路径接口的形式</p>
+<ul>
+<li>@DeleteMapping(&quot;/depts/{id}&quot;)</li>
+<li>public Result delete(@PathVariable Integer id){&hellip;}
+修改是先根据id查询信息后，返回对应的实体类，然后修改接口接收这个实体类，然后去修改
+如果查询的结果是复合型的数据，就可以再定义个实体类封装这个数据
+一个接口实现类可以调用mapper里的两个方法，然后封装进去实体类，返回实体类
+@RequestParam的属性defaultvalue可以来设置默认值
+分页插件:PageHelper
+头像使用的是文件上传功能，上传图片直接调用上传文件接口，然后存储到云服务器，返回一个url地址，然后用标签渲染出来，实现回显功能
+修改要先实现根据ID查询，然后把信息返回给一个实体类，修改接口用这个实体类对象来接收数据，实现回显，然后再动态SQL语句实现修改单个或者全部字段数据</li>
+</ul>
+<h2 id="事务管理">事务管理
+</h2><p>事务回顾:事务就是一组命令，其中一个执行失败，全部回滚到初始状态
+Spring事务管理
+注解: @Transactional
+位置: 业务(service)层的方法上，类上，接口上
+作用: 将当前方法交给Spring事务管理，方法执行前，开启事务，执行完毕后提交事务，出现异常回滚事务.
+事务属性: rollbackFor
+默认情况下只有出现RuntimeException(运行时异常)才会回滚.rollbackFor属性用于控制出现何种异常，事务回滚
+示例:@Transactional(rollbackFor = Exception.class) &mdash; 表示所有异常都回滚
+事务属性: propagation
+事务传播行为:是指当一个事务被另一个事务方法调用时，这个事务方法改如何进行事务控制
+事务传播属性值
+示例:@Transactional(propagation = Propagation.REQUIRED)</p>
+<ul>
+<li>REQUIRED:大部分情况下用该事务传播</li>
+<li>REQUIRED_NEW:当我们不希望事务互相影响时可以使用该事务，比如日志操作保存，不论是否成功都要有保存</li>
+</ul>
+<h2 id="aop">AOP
+</h2><p>AOP:面向切面编程，面向方面编程，其实就是面向特定方法编程
+场景:案例部分功能运行较慢，定位执行耗时较长的业务方法，此时需要统计每一个业务方法的执行耗时
+实现:动态代理就是面向切面编程最主流的实现，而SpringAOP是Spring框架的高级技术，旨在管理bean对象的过程中，主要通过底层的动态代理机制，对特定的方法进行编程
+三个步骤:
+1.获取方法运行开始时间
+2.运行原始方法
+3.获取方法运行结束时间，计算执行耗时
+AOP有哪些应用场景:记录操作日志，权限控制，事务管理，&hellip;
+优势:代码无入侵，减少重复代码，提高开发效率，维护方便
+示例: 代码表示如果要调用mapper下面任何方法和接口都会先获取开始时间，然后再执行原始方法，最近获取结束时间</p>
+<ul>
+<li>
+<p>pom文件中先导入依赖
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-aop</artifactId>
+</dependency></p>
+</li>
+<li>
+<p>然后AOP类中的具体代码
+@Slf4j
+@Component //交给IOC管理
+@Aspect //表示这个类是一个AOP类
+public class TimeAspect {
+//这个方法可以抽取重复的切入点的路径，然后可以直接引用
+@Pointcut(&ldquo;execution(* com.itheima.tlias.service.<em>.</em>(..))&rdquo;)
+private void pt(){}
+@Around(&ldquo;pt()&rdquo;) //表示这个AOP类去管理哪些方法，类，接口
+public Object recordTime(ProceedingJoinPoint joinPoint) throws Throwable {
+long begin = System.currentTimeMillis(); //获取执行开始的时间
+Object proceed = joinPoint.proceed(); //调用原始方法
+long end = System.currentTimeMillis(); //获取方法运行结束后的时间
+log.info(joinPoint.getSignature()+&ldquo;方法执行的耗时:{}ms&rdquo;，end-begin); //日志输出时间差
+return proceed;}} //返回运行结果
+AOP核心概念</p>
+</li>
+<li>
+<p>连接点:JoinPoint，可以被AOP控制的方法(暗含方法执行时的相关信息)</p>
+</li>
+<li>
+<p>通知:Advice，指哪些重复的逻辑，也就是共性功能(最终体现为一个方法)</p>
+</li>
+<li>
+<p>切入点:PointCut，匹配连接点的条件，通知仅会在切入点方法执行时被应用</p>
+</li>
+<li>
+<p>切面:Aspect，描述通知与切入点的对应关系(通知+切入点)</p>
+</li>
+<li>
+<p>目标对象:Target，通知所应用的对象
+AOP进阶
+通知类型:</p>
+</li>
+<li>
+<p>@Around:环绕通知，此注解标注的在目标方法执行前后都会执行👀</p>
+</li>
+<li>
+<p>@Before:前置通知，此注解标注的在目标方法执行前执行</p>
+</li>
+<li>
+<p>@After:后置通知，此注解标注的在目标方法执行后执行，无论是否有异常</p>
+</li>
+<li>
+<p>@AfterReturning:返回后通知，此注解标注的在目标方法执行后执行，有异常就不执行</p>
+</li>
+<li>
+<p>@AfterThrowing:异常后通知，此注解标注的在方法发生异常后执行
+@Around环绕通知需要自己调用方法来执行原始方法，其他通知不需要考虑目标方法执行
+@Around环绕通知方法的返回值，必须指定是Object，来接收原始方法的返回值
+@Pointcut(&quot;&hellip;&hellip;&quot;)该注解功能是把公共切点表达式抽取出来，需要时引用该切点表达式即可
+通知顺序
+这里研究的是多个切面类的通知执行顺序，同一个切面的通知顺序就不研究了
+1.不同切面类中，默认按照切面类的类名字母排序
+2.用@Order(数字)加在切面类上来控制顺序
+切入点表达式
+描述切入点方法的一种表达式，主要用来决定项目中哪些方法需要加入通知
+常见形式: 1.execution(&hellip;&hellip;) &ndash; 根据方法签名来匹配  2.@annotation(&hellip;&hellip;) &ndash; 根据注解匹配
+🌐标准格式: execution(访问修饰符? 返回值 包名.类名.?方法名(方法参数) throws 异常?) &ndash; 带?表示可省略
+示例: @Pointcut(&ldquo;execution(* com.itheima.tlias.service.<em>.</em>(..))&rdquo; || &ldquo;execution(&hellip;)&rdquo;) &ndash; *表示任意的一个参数，..表示任意的参数
+注意:根据业务需要，可以用 且(&amp;&amp;) ， 或(||) ， 非(!) 来组合表达复杂的切入点表达式
+🌐标准格式: @annotation(com.itheima.aop.MyLog)
+在com.itheima.aop包下新建一个注解MyLog，然后需要哪个方法执行通知就在哪个方法上加上@MyLog注解
+连接点
+在Spring中JoinPoint抽象了连接点，用它可以获取方法执行时的类名，方法名，参数等
+对象@Around通知获取连接点信息只能使用ProceedingJoinPoint
+对于其他通知，获取连接点信息只能使用JoinPoint，它是ProceedingJoinPoint的父类型
+AOP案例
+准备工作:导入AOP依赖，导入数据库表，并引入对象实体类
+编码:自定义注解@Log，定义切面类，完成记录操作日志的逻辑
+注意:获取request对象，从请求头中获取jwt令牌，解析令牌取出当前用户id</p>
+</li>
+</ul>
+<h2 id="web后端开发原理篇">Web后端开发原理篇
+</h2><p>配置优先级
+application.properties&gt;yml&gt;yaml &mdash; 现在企业主流的时yml配置文件
+spring boot除了支持配置文件配置，还支持Java系统属性和命令行参数的方式进行属性配置
+Java系统属性 -Dserver.port = 9000 设置端口号为9000
+命令行参数 &ndash;server.port = 10010 设置端口号为10010 (比Java系统属性优先级高)
+最终优先级: 命令行参数&gt;Java系统属性&gt;application.properties&gt;yml&gt;yaml
+Bean管理
+1.获取bean
+bean别名默认是类名名称首字母小写
+根据name获取: Object getBean(String name)
+根据类型获取: <T> T getBean(Class<T> requiredType)
+根据name获取(带类型转换): <T> T getBean(String name，Class<T> requiredType)
+对于Spring项目启动时会把bean自动创建好会受到作用域和延迟初始化的影响，这里主要针对默认的单例非延迟加载的bean而言
+@Lazy &ndash; 懒加载 延迟加载
+2.bean的作用域
+spring支持五种作用域，后三者在web中生效
+singleton:容器内，同名称的bean只有一个实例 (单例) (默认)
+prototype:每次使用bean时都会创建一个新的实例对象 (非单例)
+request:每个请求范围内创建一个新的实例对象 (了解)
+session:每个会话范围内创建一个新的实例对象 (了解)
+application:每个应用范围内创建一个新的实例对象 (了解)
+可以通过@Scope注解来进行配置作用域 &ndash; @Scope(&ldquo;prototype&rdquo;)
+3.第三方bean
+如果要管理的bean对象来自于第三方(不是自定义)，是无法用@Component来衍生注解声明bean的，就需要用到@Bean注解
+若要管理多个第三方bean对象，建议对这些bean进行集中分类配置，可以通过@Configuration注解声明一个配置类</p>
+<ul>
+<li>通过@Bean注解的name和value属性可以声明bean别名，默认是方法名</li>
+<li>如果第三方bean需要依赖其他bean对象，直接在bean方法中设置形参即可，容器会自动根据类型匹配
+SpringBoot原理
+原理大部分都是面试题
+spring boot的起步依赖原理 - muven的依赖传递
+spring boot的自动配置原理 -</li>
+<li>spring boot的启动类只能扫描当前包及其子包</li>
+<li>如果是依赖导入自定义包需要修改启动类扫描范围才能自动配置bean</li>
+<li>方案一:@ComponentScan({&ldquo;com.aaa&rdquo;，&ldquo;com.bbb&rdquo;}) - 指定扫描这两个包，很麻烦，需要每次去配置</li>
+<li>方案二:@Import导入，使用Import导入的类会直接被spring加载到IOC容器中，导入类型主要有以下几种</li>
+<li>导入 普通类</li>
+<li>导入 配置类</li>
+<li>导入 ImportSelector接口实现类</li>
+<li>方案三:@EnableXxxx注解，封装@Import注解 -</li>
+<li>在自定义依赖中定义一个@Enable&hellip;注解</li>
+<li>在注解类上加上要注入的@Import(&hellip;)进行封装</li>
+<li>然后再启动类上加上@Enable&hellip;就直接把需要的bean注入了</li>
+<li>推荐这种
+源码解读 &ndash; P190
+自动配置原理@Conditional - 按照一定的条件进行判断，满足条件后才会注册对应的bean对象到IOC容器中 (可以加在方法或类上)
+@Conditional本身是一个父注解，派生了很多子注解</li>
+<li>@ConditionalOnClass - 判断环境是否有对应的字节码文件</li>
+<li>@ConditionalOnMissingBean - 判断环境中有没有对应的bean</li>
+<li>@ConditionalOnProperty - 判断配置文件中是否有对应的属性和值</li>
+<li>&hellip;&hellip;.省略</li>
+</ul>
+<p>P193自定义starter依赖
+web总结功能
+各功能属于什么</p>
+<h2 id="maven高级">Maven高级
+</h2><p>分模块设计
+分模块设计就是把各个功能封装成一个个模块，需要的时候直接引入依赖
+分模块设计方便维护，后期也方便引入使用
+分模块设计是先针对模块功能进行设计，再进行编码，不会先开发完毕再拆分
+继承与聚合
+继承
+继承描述的是两个工程之间的关系，与Java继承相似，子工程可以继承父工程的配置信息，常见多用于依赖的继承
+作用:简化工程配置，统一管理依赖
+实现:<parent>&hellip;&hellip;..</parent>
+三种打包方式
+格式:<packaging>pom</packaging>(默认是jar)
+1.jar:普通模块打包，springboot基本都[[[[是jar包，内嵌tomcat运行
+2.war:普通web打包，需要部署在外部的tomcat服务区中运行
+3.pom:父工程或聚合工程，该模块不写代码，仅进行依赖管理
+版本锁定:在maven中，可以在父工程中的pom文件中通过<dependencyManagement>来统一管理依赖版本
+注意:版本锁定是在父工程指定<version>版本号，子工程引入依赖时就不用指定版本号了，版本号由父工程统一管理，如果变更依赖版本，在父工程统一变更
+版本锁定的自定义属性/引用属性:
+<dependencyManagement>与<dependencies>区别是什么</p>
+<ul>
+<li><dependencies>是直接依赖，自工程会直接继承</li>
+<li><dependencyManagement>是统一依赖版本管理，子工程使用还需要引入依赖(无需指定版本号)
+聚合
+聚合:将多个模块组织成一个整体，同时进行项目的构建
+聚合工程:一个不具有业务功能的&quot;空&quot;工程(有且仅有一个pom文件)
+作用:快速构建项目，(无需根据依赖关系手动构建，直接在聚合工程上构建即可)
+在maven中通过<modules>设置当前聚合工程所包含的子模块名称</li>
+</ul>
+<p>注意:聚合工程构建时会根据模块间依赖关系设置构建顺序，与聚合工程中模块的配置书写位置无关
+继承与聚合
+作用</p>
+<ul>
+<li>聚合用于快速构建项目</li>
+<li>继承用于简化依赖配置，统一管理依赖
+相同点</li>
+<li>聚合与继承的pom文件打包方式均pom，可以将两种关系制作到同一个pom文件中</li>
+<li>聚合与继承均属于设计型模块，并无实际的模块内容
+不同点</li>
+<li>聚合是在聚合工程中配置关系，聚合可以感知到参与聚合的模块有哪些</li>
+<li>继承是在子模块中配置关系，父模块无法感知哪些子模块继承了自己</li>
+</ul>
+<h2 id="私服">私服
+</h2><p>私服是一种特殊的远程仓库，它是架设在局域网内的仓库服务，用来代理位于外部的中央仓库，用于解决团队内部的资源共享与资源同步问题
+依赖查找范围:本地仓库&gt;私服&gt;中央仓库
+资源的上传和下载
+1.设置私服的访问用户名和密码，在settings.xml中的servers中配置
+2.IDEA的maven工程的pom文件中配置上传地址
+3.设置私服依赖下载的仓库组地址，在settings.xml中的mirrors，proiles中配置</p>
+<p>报错信息:Syntax&ndash;语法，near&ndash;附件</p>
+<p>结束</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81/a.f71a353848c133ea1bfd076a1e97a62b_hu13265149615470703985.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 响应状态码"
+                        
+                        data-hash="md5-9xo1OEjBM&#43;ob/QdqHpemKw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">响应状态码</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/javase/">
+        
+        
+            <div class="article-image">
+                <img src="/p/javase/a.c5e0a91e8b4751827c657ccd37edd4fe_hu10524191561841910077.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post JavaSE"
+                        
+                        data-hash="md5-xeCpHotHUYJ8ZXzNN&#43;3U/g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaSE</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%8B%93%E5%B1%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%8B%93%E5%B1%95/a.e488ad7c0cb22e12558bd37e1e50e639_hu13514776735420934549.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 多线程拓展"
+                        
+                        data-hash="md5-5IitfAyyLhJVi9N&#43;HlDmOQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">多线程拓展</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%BB%91%E9%A9%AC%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%BB%91%E9%A9%AC%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/a.cfe3eb14b3596e6db2e53bb6d2ab1c33_hu12862003949813403367.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 黑马算法笔记"
+                        
+                        data-hash="md5-z&#43;PrFLNZbm2y5Tu20qscMw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">黑马算法笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/a.f505751d1ba638b46da99d055f911dcf_hu4406440469892139699.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用手册"
+                        
+                        data-hash="md5-9QV1HRumOLRtqZ0FX5Edzw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用手册</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 『呼吸别停』
+    </section>
+    
+    <section class="powerby">
+        
+            联系方式 1417451623@qq.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+
+    
+    <script src=https://hugo-add.github.io/js/topbar.min.js></script>
+
+<script>
+    const home = "https://hugo-add.github.io/";
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    
+    fixed: true,
+    mini: true,
+    lrcType: 3,
+    audio: [
+        {
+        name: '护花使者',
+        artist: '黄祖辉',
+        url: home + 'music/护花使者/song.mp3',
+        cover: home + 'music/护花使者/cover.jpg',
+        lrc: home + 'music/护花使者/thing.lrc',
+        },
+        {
+            name: 'My Stupid Heart',
+            artist: '未知',
+            url: home + 'music/My Stupid Heart/song.mp3',
+            cover: home + 'music/My Stupid Heart/cover.jpg',
+            lrc: home + 'music/My Stupid Heart/thing.lrc',
+        },
+        {
+            name: '年轻不懂爱',
+            artist: '方大树',
+            url: home + 'music/年轻不懂爱/song.mp3',
+            cover: home + 'music/年轻不懂爱/cover.jpg',
+            lrc: home + 'music/年轻不懂爱/thing.lrc',
+        },
+        {
+            name: '我的纸飞机',
+            artist: 'GooGoo',
+            url: home + 'music/我的纸飞机/song.mp3',
+            cover: home + 'music/我的纸飞机/cover.jpg',
+            lrc: home + 'music/我的纸飞机/thing.lrc',
+        },
+        {
+            name: '撞地球',
+            artist: '鱼儿七',
+            url: home + 'music/撞地球/song.mp3',
+            cover: home + 'music/撞地球/cover.jpg',
+            lrc: home + 'music/撞地球/thing.lrc',
+        },
+        {
+            name: '年轮',
+            artist: '张碧晨',
+            url: home + 'music/年轮/song.mp3',
+            cover: home + 'music/年轮/cover.jpg',
+            lrc: home + 'music/年轮/thing.lrc',
+        },
+        {
+            name: '秋天不回来',
+            artist: '王强',
+            url: home + 'music/秋天不回来/song.mp3',
+            cover: home + 'music/秋天不回来/cover.jpg',
+            lrc: home + 'music/秋天不回来/thing.lrc',
+        },
+    ]
+});
+    
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container"
+        ]
+        });
+    
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            
+            let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+            
+            let bodyClass = newDom.body.className;
+            document.body.setAttribute("class", bodyClass)
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    };
+
+    
+
+    window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+    
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+        
+        topbar.hide();
+    })
+</script>
+
+    </body>
+</html>

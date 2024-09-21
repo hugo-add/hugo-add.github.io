@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>『呼吸别停』</copyright>
-        <lastBuildDate>Thu, 19 Sep 2024 23:04:01 +0800</lastBuildDate><atom:link href="https://hugo-add.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Sep 2024 12:15:23 +0800</lastBuildDate><atom:link href="https://hugo-add.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>JavaWeb</title>
+        <link>https://hugo-add.github.io/categories/javaweb/</link>
+        <pubDate>Sat, 21 Sep 2024 12:15:23 +0800</pubDate>
+        
+        <guid>https://hugo-add.github.io/categories/javaweb/</guid>
+        <description>&lt;img src="https://hugo-add.github.io/categories/javaweb/a.jpg" alt="Featured image of post JavaWeb" /&gt;</description>
+        </item>
+        <item>
+        <title>学习笔记</title>
+        <link>https://hugo-add.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Sat, 21 Sep 2024 12:15:23 +0800</pubDate>
+        
+        <guid>https://hugo-add.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="https://hugo-add.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/a.jpg" alt="Featured image of post 学习笔记" /&gt;</description>
+        </item>
+        <item>
         <title>分享日记</title>
         <link>https://hugo-add.github.io/categories/%E5%88%86%E4%BA%AB%E6%97%A5%E8%AE%B0/</link>
         <pubDate>Thu, 19 Sep 2024 23:04:01 +0800</pubDate>
@@ -16,36 +32,12 @@
         <description>&lt;img src="https://hugo-add.github.io/categories/%E5%88%86%E4%BA%AB%E6%97%A5%E8%AE%B0/a.jpg" alt="Featured image of post 分享日记" /&gt;</description>
         </item>
         <item>
-        <title>JavaWeb</title>
-        <link>https://hugo-add.github.io/categories/javaweb/</link>
-        <pubDate>Thu, 19 Sep 2024 22:53:40 +0800</pubDate>
-        
-        <guid>https://hugo-add.github.io/categories/javaweb/</guid>
-        <description>&lt;img src="https://hugo-add.github.io/categories/javaweb/a.jpg" alt="Featured image of post JavaWeb" /&gt;</description>
-        </item>
-        <item>
-        <title>第二期</title>
-        <link>https://hugo-add.github.io/categories/%E7%AC%AC%E4%BA%8C%E6%9C%9F/</link>
-        <pubDate>Thu, 19 Sep 2024 22:53:40 +0800</pubDate>
-        
-        <guid>https://hugo-add.github.io/categories/%E7%AC%AC%E4%BA%8C%E6%9C%9F/</guid>
-        <description>&lt;img src="https://hugo-add.github.io/categories/%E7%AC%AC%E4%BA%8C%E6%9C%9F/a.jpg" alt="Featured image of post 第二期" /&gt;</description>
-        </item>
-        <item>
         <title>JavaSE</title>
         <link>https://hugo-add.github.io/categories/javase/</link>
-        <pubDate>Thu, 19 Sep 2024 21:39:11 +0800</pubDate>
+        <pubDate>Thu, 19 Sep 2024 22:53:40 +0800</pubDate>
         
         <guid>https://hugo-add.github.io/categories/javase/</guid>
         <description>&lt;img src="https://hugo-add.github.io/categories/javase/a.jpg" alt="Featured image of post JavaSE" /&gt;</description>
-        </item>
-        <item>
-        <title>第一期</title>
-        <link>https://hugo-add.github.io/categories/%E7%AC%AC%E4%B8%80%E6%9C%9F/</link>
-        <pubDate>Thu, 19 Sep 2024 21:39:11 +0800</pubDate>
-        
-        <guid>https://hugo-add.github.io/categories/%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid>
-        <description>&lt;img src="https://hugo-add.github.io/categories/%E7%AC%AC%E4%B8%80%E6%9C%9F/a.jpg" alt="Featured image of post 第一期" /&gt;</description>
         </item>
         
     </channel>

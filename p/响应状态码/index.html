@@ -10,7 +10,7 @@
 <meta property='og:description' content="一、状态码大类 状态码分类 说明 1xx 响应中——临时状态码，表示请求已经接受，告诉客户端应该继续请求或者如果它已经完成则忽略它 2xx 成功——表示请求已经被成功接收，处理已完成 3xx 重定向——重定向到其它地方：它让客户端再发起一个请求以完成整个处理。 4xx 客户端错误——处理发生错误，责任在客户端，如：客户端的请求一个不存在的资源，客户端未被授权，禁止访问等 5xx 服务器端错误——处理发生错误，责任在服务端，如：服务端抛出异常，路由出错，HTTP版本不支持等 二、常见的响应状态码 状态码 英文描述 解释 ==200== OK 客户端请求成功，即处理成功，这是我们最想看到的状态码 302 Found 指示所请求的资源已移动到由Location响应头给定的 URL，浏览器会自动重新访问到这个页面 304 Not Modified 告诉客户端，你请求的资源至上次取得后，服务端并未更改，你直接用你本地缓存吧。隐式重定向 400 Bad Request 客户端请求有语法错误，不能被服务器所理解 403 Forbidden 服务器收到请求，但是拒绝提供服务，比如：没有权限访问相关资源 ==404== Not Found 请求资源不存在，一般是URL输入有误，或者网站资源被删除了 405 Method Not Allowed 请求方式有误，比如应该用GET请求方式的资源，用了POST 428 Precondition Required 服务器要求有条件的请求，告诉客户端要想访问该资源，必须携带特定的请求头 429 Too Many Requests 指示用户在给定时间内发送了太多请求（“限速”），配合 Retry-After(多长时间后可以请求)响应头一起使用 431 Request Header Fields Too Large 请求头太大，服务器不愿意处理请求，因为它的头部字段太大。请求可以在减少请求头域的大小后重新提交。 ==500== Internal Server Error 服务器发生不可预期的错误。服务器出异常了，赶紧看日志去吧 503 Service Unavailable 服务器尚未准备好处理请求，服务器刚刚启动，还未初始化好 状态码大全：https://cloud.tencent.com/developer/chapter/13553\n">
 <meta property='og:url' content='https://hugo-add.github.io/p/%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81/'>
 <meta property='og:site_name' content='小李的神秘空间'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-19T22:53:40&#43;08:00'/><meta property='article:modified_time' content='2024-09-19T22:53:40&#43;08:00'/><meta property='og:image' content='https://hugo-add.github.io/p/%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81/a.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-19T21:39:11&#43;08:00'/><meta property='article:modified_time' content='2024-09-19T21:39:11&#43;08:00'/><meta property='og:image' content='https://hugo-add.github.io/p/%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81/a.jpg' />
 <meta name="twitter:title" content="响应状态码">
 <meta name="twitter:description" content="一、状态码大类 状态码分类 说明 1xx 响应中——临时状态码，表示请求已经接受，告诉客户端应该继续请求或者如果它已经完成则忽略它 2xx 成功——表示请求已经被成功接收，处理已完成 3xx 重定向——重定向到其它地方：它让客户端再发起一个请求以完成整个处理。 4xx 客户端错误——处理发生错误，责任在客户端，如：客户端的请求一个不存在的资源，客户端未被授权，禁止访问等 5xx 服务器端错误——处理发生错误，责任在服务端，如：服务端抛出异常，路由出错，HTTP版本不支持等 二、常见的响应状态码 状态码 英文描述 解释 ==200== OK 客户端请求成功，即处理成功，这是我们最想看到的状态码 302 Found 指示所请求的资源已移动到由Location响应头给定的 URL，浏览器会自动重新访问到这个页面 304 Not Modified 告诉客户端，你请求的资源至上次取得后，服务端并未更改，你直接用你本地缓存吧。隐式重定向 400 Bad Request 客户端请求有语法错误，不能被服务器所理解 403 Forbidden 服务器收到请求，但是拒绝提供服务，比如：没有权限访问相关资源 ==404== Not Found 请求资源不存在，一般是URL输入有误，或者网站资源被删除了 405 Method Not Allowed 请求方式有误，比如应该用GET请求方式的资源，用了POST 428 Precondition Required 服务器要求有条件的请求，告诉客户端要想访问该资源，必须携带特定的请求头 429 Too Many Requests 指示用户在给定时间内发送了太多请求（“限速”），配合 Retry-After(多长时间后可以请求)响应头一起使用 431 Request Header Fields Too Large 请求头太大，服务器不愿意处理请求，因为它的头部字段太大。请求可以在减少请求头域的大小后重新提交。 ==500== Internal Server Error 服务器发生不可预期的错误。服务器出异常了，赶紧看日志去吧 503 Service Unavailable 服务器尚未准备好处理请求，服务器刚刚启动，还未初始化好 状态码大全：https://cloud.tencent.com/developer/chapter/13553\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://hugo-add.github.io/p/%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81/a.jpg' />
@@ -342,12 +342,12 @@
     
     <header class="article-category">
         
-            <a href="/categories/javaweb/" style="background-color: #2a9d8f; color: #fff;">
-                JavaWeb
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                学习笔记
             </a>
         
-            <a href="/categories/%E7%AC%AC%E4%BA%8C%E6%9C%9F/" style="background-color: #CA5151; color: #fff;">
-                第二期
+            <a href="/categories/javaweb/" style="background-color: #2a9d8f; color: #fff;">
+                JavaWeb
             </a>
         
     </header>
@@ -514,6 +514,135 @@
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/javaweb/">
+        
+        
+            <div class="article-image">
+                <img src="/p/javaweb/a.5b6f005323b78cd8ccb22800f0358e99_hu5489462905408989611.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post JavaWeb"
+                        
+                        data-hash="md5-W28AUyO3jNjMsigA8DWOmQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaWeb</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/javase/">
+        
+        
+            <div class="article-image">
+                <img src="/p/javase/a.c5e0a91e8b4751827c657ccd37edd4fe_hu10524191561841910077.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post JavaSE"
+                        
+                        data-hash="md5-xeCpHotHUYJ8ZXzNN&#43;3U/g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaSE</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%8B%93%E5%B1%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%8B%93%E5%B1%95/a.e488ad7c0cb22e12558bd37e1e50e639_hu13514776735420934549.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 多线程拓展"
+                        
+                        data-hash="md5-5IitfAyyLhJVi9N&#43;HlDmOQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">多线程拓展</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%BB%91%E9%A9%AC%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%BB%91%E9%A9%AC%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/a.cfe3eb14b3596e6db2e53bb6d2ab1c33_hu12862003949813403367.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 黑马算法笔记"
+                        
+                        data-hash="md5-z&#43;PrFLNZbm2y5Tu20qscMw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">黑马算法笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/a.f505751d1ba638b46da99d055f911dcf_hu4406440469892139699.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用手册"
+                        
+                        data-hash="md5-9QV1HRumOLRtqZ0FX5Edzw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用手册</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     
